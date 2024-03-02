@@ -351,10 +351,18 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/AssetStore/Ships/StarSparrow/Readme/Readme Files/Scripts/ReadmeStarSparrow.cs"
+"Assets/Scripts/Enemies/Enemy.cs"
+"Assets/Scripts/Enemies/Enemy_0.cs"
+"Assets/Scripts/Global/BoundsCheck.cs"
+"Assets/Scripts/Global/GameManager.cs"
+"Assets/Scripts/Global/Spawner.cs"
+"Assets/Scripts/Global/WeaponControl.cs"
 "Assets/Scripts/Player/PlayerControl.cs"
 "Assets/Scripts/Player/PlayerStats.cs"
 "Assets/Scripts/Player/Shield.cs"
-"Assets/Scripts/Utils/BoundsCheck.cs"
+"Assets/Scripts/Projectiles/Projectile.cs"
+"Assets/Scripts/Weapons/Blaster.cs"
+"Assets/Scripts/Weapons/Weapon.cs"
 -langversion:9.0
 
 /deterministic

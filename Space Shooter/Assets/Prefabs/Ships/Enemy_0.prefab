@@ -75,8 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6231136088a62429a9ef5e1164a58893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   speed: 20
-  score: 10
 --- !u!114 &6508717934024568589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e49c6bd3613741aabd04bbd0b1f8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offSet: 2
+  offSet: 2
   keepOnScreen: 0
-  _radius: 1
+  _radius: -1
 --- !u!1 &7723420278054848810
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

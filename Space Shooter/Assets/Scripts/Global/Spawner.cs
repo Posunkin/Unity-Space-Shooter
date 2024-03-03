@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using SpaceShooter.Enemies;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
@@ -18,8 +21,10 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
+        Debug.Log("I spawn");
         int index = Random.Range(0, enemiesPrefabs.Length);
         GameObject go = Instantiate(enemiesPrefabs[0]);
+        // Enemy enemy = go.GetComponent<Enemy>();
 
         // Set the position of the new object
         go.transform.position = SetupPosition(go);

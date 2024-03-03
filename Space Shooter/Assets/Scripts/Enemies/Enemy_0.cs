@@ -14,6 +14,15 @@ public class Enemy_0 : Enemy
         CheckBounds();
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     internal override void Move()
     {
         pos = transform.position;
@@ -23,9 +32,10 @@ public class Enemy_0 : Enemy
 
     internal override void CheckBounds()
     {
-        if (bndCheck != null && !bndCheck.offDown)
+        if (bndCheck != null && bndCheck.offDown)
         {
-            // Destroy(gameObject);
+            Destroy(gameObject);
+            Debug.Log("I'm out off bounds!");   
         }
     }
 
@@ -41,6 +51,16 @@ public class Enemy_0 : Enemy
         else
         {
             Debug.Log("Triggered with no player: " + go.name);
+        }
+    }
+
+    internal override void OnCollisionEnter(Collision other)
+    {
+        Projectile proj = other.gameObject.GetComponent<Projectile>();
+        if (proj != null)
+        {
+            TakeDamage(proj.damageToDeal);
+            Debug.Log("Player shoot me!");
         }
     }
 }

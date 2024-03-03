@@ -356,13 +356,17 @@
 "Assets/Scripts/Global/BoundsCheck.cs"
 "Assets/Scripts/Global/GameManager.cs"
 "Assets/Scripts/Global/Spawner.cs"
-"Assets/Scripts/Global/WeaponControl.cs"
+"Assets/Scripts/Global/WeaponManager.cs"
+"Assets/Scripts/Interfaces/IDamageable.cs"
 "Assets/Scripts/Player/PlayerControl.cs"
 "Assets/Scripts/Player/PlayerStats.cs"
+"Assets/Scripts/Player/PlayerWeaponControl.cs"
 "Assets/Scripts/Player/Shield.cs"
+"Assets/Scripts/Projectiles/BlasterProjectile.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Weapons/Blaster.cs"
 "Assets/Scripts/Weapons/Weapon.cs"
+"Assets/Scripts/Weapons/WeaponControl.cs"
 -langversion:9.0
 
 /deterministic

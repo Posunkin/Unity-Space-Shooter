@@ -82,14 +82,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7305006819710890815}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3979148977606185791}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2664061584654208974
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -152,6 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21020944607946a6ae2619e4e30ea2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 269001687849392157, guid: 05efe9aed089d451bab8572c17fc546a, type: 3}
+  projectilePrefab: {fileID: 1886394380000338040, guid: 4fcf1efe568e6451c9234a0db3d7d77a, type: 3}
+  enemyProjectilePrefab: {fileID: 1886394380000338040, guid: be446b17fb7ab4119a9e69523271c534, type: 3}
+  currentDamage: 2
   projectileSpeed: 40
   delayBetweenShots: 0.3
+  type: 0
+  isHero: 0

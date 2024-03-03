@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - ProjectileHero
+  - ProjectilePlayer
   - Enemy
   - ProjectileEnemy
   - PowerUp

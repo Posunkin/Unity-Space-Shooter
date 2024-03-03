@@ -1,19 +1,27 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
-    private BoundsCheck bndCheck;
+    internal BoundsCheck bndCheck;
+    internal protected float damageToDeal;
+
+    internal void SetProjectile(float damage)
+    {
+        damageToDeal = damage;
+    }
     
-    private void Awake()
+    internal void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
     }
 
-    private void Update()
+    internal void Update()
     {   
         if (bndCheck != null && bndCheck.offUp)
         {
             Destroy(gameObject);
         }
     }
+
+    internal abstract void OnCollisionEnter();
 }

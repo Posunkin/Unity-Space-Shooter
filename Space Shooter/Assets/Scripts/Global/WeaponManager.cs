@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum WeaponType
 {
-    blaster
+    blaster,
+    blasterShotgun
 }
 
 public class WeaponManager : MonoBehaviour
@@ -29,6 +30,8 @@ public class WeaponManager : MonoBehaviour
             {
                 case WeaponType.blaster:
                     return WEAP_DICT[WeaponType.blaster];
+                case WeaponType.blasterShotgun:
+                    return WEAP_DICT[WeaponType.blasterShotgun];
                 default:
                     return null;
             }

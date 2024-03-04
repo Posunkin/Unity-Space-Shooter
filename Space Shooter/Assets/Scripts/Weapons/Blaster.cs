@@ -1,30 +1,32 @@
 using UnityEngine;
-using SpaceShooter.Weapons;
 
-public class Blaster : Weapon
+namespace SpaceShooter.Weapons
 {
-    private Vector3 projectileDirection;
-
-    private void Start()
+    public class Blaster : Weapon
     {
-        type = WeaponType.blaster;
-        projectileDirection = isPlayer ? Vector3.up : Vector3.down;
-    }
+        private Vector3 projectileDirection;
 
-    protected override void TempFire()
-    {
-        if (lastShootTime + delayBetweenShots > Time.time) return;
-        lastShootTime = Time.time;
-        GameObject projGo = Shoot();
-        Rigidbody rb = projGo.GetComponent<Rigidbody>();
-        rb.velocity =  projectileDirection * projectileSpeed;
-    }
+        private void Start()
+        {
+            type = WeaponType.blaster;
+            projectileDirection = isPlayer ? Vector3.up : Vector3.down;
+        }
 
-    protected override GameObject Shoot()
-    {
-        GameObject projGo = (GameObject) Instantiate(currentProjectile, projectileAnchor);
-        projGo.GetComponent<Projectile>().SetProjectile(currentDamage);
-        projGo.transform.position = transform.position;
-        return projGo;
+        protected override void TempFire()
+        {
+            if (lastShootTime + delayBetweenShots > Time.time) return;
+            lastShootTime = Time.time;
+            GameObject projGo = Shoot();
+            Rigidbody rb = projGo.GetComponent<Rigidbody>();
+            rb.velocity =  projectileDirection * projectileSpeed;
+        }
+
+        protected override GameObject Shoot()
+        {
+            GameObject projGo = (GameObject) Instantiate(currentProjectile, projectileAnchor);
+            projGo.GetComponent<Projectile>().SetProjectile(currentDamage);
+            projGo.transform.position = transform.position;
+            return projGo;
+        }
     }
 }

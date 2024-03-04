@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceShooter.Enemies
@@ -14,14 +15,56 @@ namespace SpaceShooter.Enemies
         protected Vector3 tempPos;
         protected BoundsCheck bndCheck;
 
+        // Realization of changing color on damage
+        protected Color[] originalColors;
+        protected Material[] materials;
+
+        protected virtual void Awake()
+        {
+            bndCheck = GetComponent<BoundsCheck>();
+            GetAllMaterials();
+        }
+
         protected virtual void Move()
         {
             tempPos = pos;
             tempPos.y -= speed * Time.deltaTime;
             pos = tempPos;
         }
+
+        protected virtual void GetAllMaterials()
+        {
+            materials = Utils.GetAllMaterials(gameObject);
+            originalColors = new Color[materials.Length];
+            for (int i = 0; i < materials.Length; i++)
+            {
+                originalColors[i] = materials[i].color;
+            }
+        }
         protected abstract void CheckBounds();
         protected abstract void OnCollisionEnter(Collision other);
         protected abstract void OnTriggerEnter(Collider other);
+        public void TakeDamage(float damage)
+        {
+            health -= damage;
+            StartCoroutine(nameof(ShowDamage));
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        protected virtual IEnumerator ShowDamage()
+        {
+            foreach (Material m in materials)
+            {
+                m.color = Color.red;
+            }
+            yield return new WaitForSeconds(0.15f);
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i].color = originalColors[i];
+            }
+        }
     }
 }

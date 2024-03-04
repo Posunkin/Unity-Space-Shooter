@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SpaceShooter.Enemies
@@ -11,11 +12,6 @@ namespace SpaceShooter.Enemies
 
         private float x0; // starting coordinate
         private float birthTime;
-
-        private void Awake()
-        {
-            bndCheck = GetComponent<BoundsCheck>();
-        }
 
         private void Start()
         {
@@ -48,15 +44,6 @@ namespace SpaceShooter.Enemies
         protected override void CheckBounds()
         {
             if (bndCheck != null && bndCheck.offDown)
-            {
-                Destroy(gameObject);
-            }
-        }
-
-        public void TakeDamage(float damage)
-        {
-            health -= damage;
-            if (health <= 0)
             {
                 Destroy(gameObject);
             }

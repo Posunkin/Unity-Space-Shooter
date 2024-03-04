@@ -366,7 +366,9 @@
 "Assets/Scripts/Player/Shield.cs"
 "Assets/Scripts/Projectiles/BlasterProjectile.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
+"Assets/Scripts/Utils/Utils.cs"
 "Assets/Scripts/Weapons/Blaster.cs"
+"Assets/Scripts/Weapons/BlasterShotgun.cs"
 "Assets/Scripts/Weapons/Weapon.cs"
 "Assets/Scripts/Weapons/WeaponControl.cs"
 -langversion:9.0

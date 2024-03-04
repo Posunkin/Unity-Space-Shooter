@@ -449,6 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 7305006819710890815, guid: 1aba2a38cfe8442e7862a9af9eff0581, type: 3}
+  - {fileID: 4727755139151311768, guid: e3362aa87fe854ba0bb35a04072c5e09, type: 3}
 --- !u!114 &1665051893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7416886560738757199, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}

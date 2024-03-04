@@ -1,7 +1,9 @@
 using System;
+using SpaceShooter.Enemies;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamageable
 {
     public Action OnPlayerDeath;
 
@@ -9,30 +11,42 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Shield shield;
     [SerializeField] private int shieldLevel;
     private GameObject lastTrigger = null;
+    private float lastTriggerDelay = 1;
+    private float lastTriggerEnter;
 
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
     }
 
+    private void TakeDamage()
+    {
+        shieldLevel--;
+        if (shieldLevel < 0)
+        {
+            OnPlayerDeath?.Invoke();
+            Destroy(gameObject);
+        }
+        else shield.ShieldLevelChange(shieldLevel);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (lastTriggerEnter < Time.time + lastTriggerDelay) lastTrigger = null;
         Transform root = other.gameObject.transform.root;
         GameObject go = root.gameObject;
-        
-        // Check for last trigger
+
         if (lastTrigger == go) return;
 
         lastTrigger = go;
-        if (go.tag == "Enemy")
+        lastTriggerEnter = Time.time;
+        if (other.gameObject.GetComponent<Projectile>() != null)
         {
-            shieldLevel--;
-            if (shieldLevel < 0) 
-            {
-                OnPlayerDeath?.Invoke();
-                Destroy(gameObject);
-            }
-            else shield.ShieldLevelChange(shieldLevel);
+            TakeDamage();
+        }
+        else if (go.GetComponent<Enemy>() != null)
+        {
+            TakeDamage();
         }
         else
         {

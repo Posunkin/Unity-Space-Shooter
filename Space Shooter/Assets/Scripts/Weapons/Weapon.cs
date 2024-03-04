@@ -1,29 +1,49 @@
 using System;
+using SpaceShooter.Enemies;
 using UnityEngine;
 
 namespace SpaceShooter.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
-        [SerializeField] internal GameObject projectilePrefab;
-        [SerializeField] internal GameObject enemyProjectilePrefab;
-        [SerializeField] internal float currentDamage;
-        [SerializeField] internal float projectileSpeed;
-        [SerializeField] internal float delayBetweenShots;
+        [SerializeField] protected GameObject playerProjectilePrefab;
+        [SerializeField] protected GameObject enemyProjectilePrefab;
+        [SerializeField] private float _currentDamage;
+        [SerializeField] private float _projectileSpeed;
+        [SerializeField] protected float _delayBetweenShots;
         [SerializeField] internal WeaponType type;
-        [SerializeField] internal bool isPlayer;
-        internal Transform parent;
-        internal float lastShootTime;
-        internal WeaponControl weaponControl;
+        [SerializeField] protected bool isPlayer;
+        
+        protected Transform projectileAnchor;
+        protected Transform parent;
+        protected float lastShootTime;
+        protected WeaponControl weaponControl;
+        protected GameObject currentProjectile;
 
-        internal void Start()
+        internal float delayBetweenShots { get => _delayBetweenShots; set => _delayBetweenShots = value;}
+        internal float projectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
+        internal float currentDamage { get => _currentDamage; set => _currentDamage = value; }
+
+        protected void Awake()
         {
             weaponControl = GetComponentInParent<WeaponControl>();
             weaponControl.OnWeaponShoot += TempFire;
+            parent = this.gameObject.transform.root;
+            projectileAnchor = GameObject.Find("PROJECTILE ANCHOR").transform;
+            if (parent.tag == "Player") 
+            {
+                isPlayer = true;
+                currentProjectile = playerProjectilePrefab;
+            }
+            else 
+            {
+                isPlayer = false;
+                currentProjectile = enemyProjectilePrefab;
+            }
         }
-
-        internal abstract void TempFire();
-        internal abstract GameObject Shoot();
+        
+        protected abstract void TempFire();
+        protected abstract GameObject Shoot();
     }
 }
 

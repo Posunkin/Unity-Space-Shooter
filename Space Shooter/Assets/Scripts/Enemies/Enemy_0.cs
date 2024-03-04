@@ -1,66 +1,63 @@
 using UnityEngine;
-using SpaceShooter.Enemies;
 
-public class Enemy_0 : Enemy
+namespace SpaceShooter.Enemies
 {
-    private void Awake()
+    public class Enemy_0 : Enemy
     {
-        bndCheck = GetComponent<BoundsCheck>();
-    }
-
-    private void Update()
-    {
-        Move();
-        CheckBounds();
-    }
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
+        private void Awake()
         {
-            Destroy(gameObject);
+            bndCheck = GetComponent<BoundsCheck>();
         }
-    }
 
-    internal override void Move()
-    {
-        pos = transform.position;
-        pos.y -= speed * Time.deltaTime;
-        transform.position = pos;
-    }
-
-    internal override void CheckBounds()
-    {
-        if (bndCheck != null && bndCheck.offDown)
+        private void Update()
         {
-            Destroy(gameObject);
-            Debug.Log("I'm out off bounds!");   
+            base.Move();
+            CheckBounds();
         }
-    }
 
-    internal override void OnTriggerEnter(Collider other)
-    {
-        Transform root = other.gameObject.transform.root;
-        GameObject go = root.gameObject;
-
-        if (go.tag == "Player")
+        public void TakeDamage(float damage)
         {
-            Destroy(gameObject);
+            health -= damage;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
-        else
-        {
-            Debug.Log("Triggered with no player: " + go.name);
-        }
-    }
 
-    internal override void OnCollisionEnter(Collision other)
-    {
-        Projectile proj = other.gameObject.GetComponent<Projectile>();
-        if (proj != null)
+        protected override void CheckBounds()
         {
-            TakeDamage(proj.damageToDeal);
-            Debug.Log("Player shoot me!");
+            if (bndCheck != null && bndCheck.offDown)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        protected override void OnTriggerEnter(Collider other)
+        {
+            Transform root = other.gameObject.transform.root;
+            GameObject go = root.gameObject;
+                    
+            if (go.GetComponent<PlayerStats>() != null)
+            {
+                TakeDamage(damageOnTrigger);
+            }
+            else
+            {
+                Debug.Log("Triggered with " + other.gameObject.name);
+            }
+        }
+
+        protected override void OnCollisionEnter(Collision other)
+        {
+            Projectile proj = other.gameObject.GetComponent<Projectile>();
+            if (proj != null)
+            {
+                TakeDamage(proj.damageToDeal);
+            }
+            else
+            {
+                Debug.Log("Collision with " + other.gameObject.name);
+            }
         }
     }
 }

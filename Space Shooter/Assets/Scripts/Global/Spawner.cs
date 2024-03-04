@@ -21,9 +21,8 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        Debug.Log("I spawn");
         int index = Random.Range(0, enemiesPrefabs.Length);
-        GameObject go = Instantiate(enemiesPrefabs[0]);
+        GameObject go = Instantiate(enemiesPrefabs[index]);
         // Enemy enemy = go.GetComponent<Enemy>();
 
         // Set the position of the new object

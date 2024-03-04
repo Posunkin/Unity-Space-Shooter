@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class BlasterProjectile : Projectile
 {
-    internal override void OnCollisionEnter()
+    protected override void OnCollisionEnter()
+    {
+        Destroy(gameObject);
+    }
+
+    protected override void OnTriggerEnter()
     {
         Destroy(gameObject);
     }

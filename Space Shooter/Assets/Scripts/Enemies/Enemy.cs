@@ -6,15 +6,22 @@ namespace SpaceShooter.Enemies
     public abstract class Enemy : MonoBehaviour, IDamageable
     {
         public Action<Enemy> OnDeath;
-        [SerializeField] internal float health;
-        [SerializeField] internal float speed;
-        [SerializeField] internal readonly float score;
-        internal Vector3 pos;
-        internal BoundsCheck bndCheck;
+        [SerializeField] protected float health;
+        [SerializeField] protected float speed;
+        [SerializeField] protected readonly float score;
+        protected float damageOnTrigger = 10;
+        protected Vector3 pos {get => this.transform.position; set => this.transform.position = value; }
+        protected Vector3 tempPos;
+        protected BoundsCheck bndCheck;
 
-        internal abstract void Move();
-        internal abstract void CheckBounds();
-        internal abstract void OnTriggerEnter(Collider other);
-        internal abstract void OnCollisionEnter(Collision other);
+        protected virtual void Move()
+        {
+            tempPos = pos;
+            tempPos.y -= speed * Time.deltaTime;
+            pos = tempPos;
+        }
+        protected abstract void CheckBounds();
+        protected abstract void OnCollisionEnter(Collision other);
+        protected abstract void OnTriggerEnter(Collider other);
     }
 }

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7729085793498709610}
   m_Layer: 9
   m_Name: EnemyBlasterProjectile
-  m_TagString: Untagged
+  m_TagString: ProjectileEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

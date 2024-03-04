@@ -2,20 +2,20 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    internal BoundsCheck bndCheck;
-    internal protected float damageToDeal;
+    protected BoundsCheck bndCheck;
+    internal float damageToDeal;
 
     internal void SetProjectile(float damage)
     {
         damageToDeal = damage;
     }
     
-    internal void Awake()
+    protected void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
     }
 
-    internal void Update()
+    protected void Update()
     {   
         if (bndCheck != null && bndCheck.offUp)
         {
@@ -23,5 +23,7 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
-    internal abstract void OnCollisionEnter();
+    protected abstract void OnCollisionEnter();
+    protected abstract void OnTriggerEnter();
+    
 }

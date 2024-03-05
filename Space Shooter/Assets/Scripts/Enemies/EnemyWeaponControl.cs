@@ -10,8 +10,8 @@ public class EnemyWeaponControl : WeaponControl
 
     private void Awake()
     {
-        weaponManager = GameObject.Find("Game Manager").GetComponent<WeaponManager>();
-        GameObject weapon = weaponManager.SetWeapon(type);
+        weaponManager = WeaponManager.S;
+        GameObject weapon = weaponManager.GetWeapon(type);
         weapon = SetWeaponPosition(weapon, 0);
         Weapon currentWeapon = weapon.GetComponent<Weapon>();
         currentWeapon.delayBetweenShots = enemyDelayBetweenShots;

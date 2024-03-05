@@ -6,7 +6,7 @@ public abstract class WeaponControl : MonoBehaviour
 {
     public Action OnWeaponShoot;
     [SerializeField] protected Transform[] weaponSlots;
-    [SerializeField] protected WeaponManager weaponManager;
+    [SerializeField] protected WeaponManager weaponManager = WeaponManager.S;
 
     protected void Update()
     {
@@ -15,7 +15,7 @@ public abstract class WeaponControl : MonoBehaviour
 
     protected GameObject SetWeaponPosition(GameObject weaponToSet, int slot)
     {
-        GameObject weapon = Instantiate(weaponToSet, weaponSlots[slot].position, weaponSlots[slot].rotation, this.gameObject.transform);
+        GameObject weapon = Instantiate(weaponToSet, weaponSlots[slot].position, weaponSlots[slot].rotation, weaponSlots[slot].transform);
         return weapon;
     }
     

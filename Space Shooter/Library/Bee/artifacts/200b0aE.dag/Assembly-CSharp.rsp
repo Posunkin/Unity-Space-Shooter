@@ -364,6 +364,8 @@
 "Assets/Scripts/Player/PlayerStats.cs"
 "Assets/Scripts/Player/PlayerWeaponControl.cs"
 "Assets/Scripts/Player/Shield.cs"
+"Assets/Scripts/PowerUp/PowerUp.cs"
+"Assets/Scripts/PowerUp/WeaponPowerUp.cs"
 "Assets/Scripts/Projectiles/BlasterProjectile.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Utils/Utils.cs"

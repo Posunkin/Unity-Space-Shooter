@@ -10,11 +10,13 @@ public enum WeaponType
 
 public class WeaponManager : MonoBehaviour
 {
+    public static WeaponManager S;
     [SerializeField] private GameObject[] weapons;
     public static Dictionary<WeaponType, GameObject> WEAP_DICT;
 
     private void Awake()
     {
+        S = this;
         WEAP_DICT = new Dictionary<WeaponType, GameObject>();
         foreach (GameObject weapon in weapons)
         {
@@ -22,7 +24,7 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public GameObject SetWeapon(WeaponType type)
+    public GameObject GetWeapon(WeaponType type)
     {
         if (WEAP_DICT.ContainsKey(type))
         {

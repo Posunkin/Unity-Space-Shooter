@@ -6,23 +6,33 @@ namespace SpaceShooter.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {
+        [Header("Weapon definition:")]
         [SerializeField] protected GameObject playerProjectilePrefab;
         [SerializeField] protected GameObject enemyProjectilePrefab;
-        [SerializeField] private float _currentDamage;
-        [SerializeField] private float _projectileSpeed;
+        [SerializeField] protected float _defDamage;
+        [SerializeField] protected float _currentDamage;
+        [SerializeField] protected float _projectileSpeed;
         [SerializeField] protected float _delayBetweenShots;
         [SerializeField] internal WeaponType type;
         [SerializeField] protected bool isPlayer;
-        
-        protected Transform projectileAnchor;
-        protected Transform parent;
-        protected float lastShootTime;
-        protected WeaponControl weaponControl;
-        protected GameObject currentProjectile;
-
+        protected float _lastShootTime;
+        internal float defDamage { get => _defDamage; }
+        internal float lastShootTime { get => _lastShootTime; set => _lastShootTime = value; }
         internal float delayBetweenShots { get => _delayBetweenShots; set => _delayBetweenShots = value;}
         internal float projectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
         internal float currentDamage { get => _currentDamage; set => _currentDamage = value; }
+        
+        [Header("Weapon parameters for WeaponPowerUp:")]
+        [SerializeField] protected Color _color;
+        [SerializeField] protected string _letter;
+        internal Color color { get => _color; }
+        internal string letter { get => _letter; }
+
+        protected Transform projectileAnchor;
+        protected Transform parent;
+        
+        protected WeaponControl weaponControl;
+        protected GameObject currentProjectile;
 
         protected void Awake()
         {
@@ -42,6 +52,11 @@ namespace SpaceShooter.Weapons
             }
         }
         
+        protected void OnDisable()
+        {
+            weaponControl.OnWeaponShoot -= TempFire;
+        }
+
         protected abstract void TempFire();
         protected abstract GameObject Shoot();
     }

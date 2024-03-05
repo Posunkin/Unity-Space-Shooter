@@ -1,12 +1,11 @@
 using System;
-using System.Collections;
 using SpaceShooter.Enemies;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour, IDamageable
 {
     public Action OnPlayerDeath;
+    public Action<WeaponType> OnWeaponAbsorb;
 
     [Header("Shield status")]
     [SerializeField] private Shield shield;
@@ -15,9 +14,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
     private float lastTriggerDelay = 1;
     private float lastTriggerEnter;
 
+    private PlayerWeaponControl weaponControl;
+
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
+        weaponControl = GetComponent<PlayerWeaponControl>();
     }
 
     private void TakeDamage()
@@ -37,7 +39,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         Transform root = other.gameObject.transform.root;
         GameObject go = root.gameObject;
 
-        if (lastTrigger == go) return;
+        if (lastTrigger == go && go.GetComponent<PowerUp>() == null) return;
 
         lastTrigger = go;
         lastTriggerEnter = Time.time;
@@ -48,6 +50,14 @@ public class PlayerStats : MonoBehaviour, IDamageable
         else if (go.GetComponent<Enemy>() != null)
         {
             TakeDamage();
+        }
+        else if (go.GetComponent<PowerUp>() != null)
+        {
+            if (go.GetComponent<WeaponPowerUp>() != null)
+            {
+                WeaponPowerUp pwr = go.GetComponent<WeaponPowerUp>();
+                OnWeaponAbsorb?.Invoke(pwr.GetWeaponType());
+            }
         }
         else
         {

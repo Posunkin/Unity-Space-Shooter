@@ -9,9 +9,13 @@ namespace SpaceShooter.Enemies
         public Action<Enemy> OnDeath;
         [SerializeField] protected float health;
         [SerializeField] protected float speed;
-        [SerializeField] protected readonly float score;
+        [SerializeField] protected float _score;
+        [SerializeField] protected float _chanceToSpawnPowerUp;
         protected float damageOnTrigger = 10;
         protected Vector3 pos {get => this.transform.position; set => this.transform.position = value; }
+        public float score { get => _score; }
+        public float chanceToSpawnPowerUp  { get => _chanceToSpawnPowerUp; }
+
         protected Vector3 tempPos;
         protected BoundsCheck bndCheck;
 
@@ -41,6 +45,13 @@ namespace SpaceShooter.Enemies
                 originalColors[i] = materials[i].color;
             }
         }
+
+        protected virtual void Death()
+        {
+            OnDeath?.Invoke(this);
+            Destroy(this.gameObject);
+        }
+        
         protected abstract void CheckBounds();
         protected abstract void OnCollisionEnter(Collision other);
         protected abstract void OnTriggerEnter(Collider other);
@@ -50,7 +61,7 @@ namespace SpaceShooter.Enemies
             StartCoroutine(nameof(ShowDamage));
             if (health <= 0)
             {
-                Destroy(gameObject);
+                Death();
             }
         }
 

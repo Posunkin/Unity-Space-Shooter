@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum WeaponType
 {
-    blaster,
-    blasterShotgun
+    blaster = 0,
+    blasterShotgun = 1
 }
 
 public class WeaponManager : MonoBehaviour

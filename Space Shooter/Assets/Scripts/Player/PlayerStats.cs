@@ -2,6 +2,10 @@ using System;
 using SpaceShooter.Enemies;
 using UnityEngine;
 
+/// <summary>
+/// Includes hp and triggers for player
+/// </summary>
+
 public class PlayerStats : MonoBehaviour, IDamageable
 {
     public Action OnPlayerDeath;

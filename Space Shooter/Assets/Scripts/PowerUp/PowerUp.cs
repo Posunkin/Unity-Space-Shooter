@@ -3,13 +3,13 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
+    [SerializeField] protected GameObject obj;
+    [SerializeField] protected TextMesh letter;
     [SerializeField] protected Vector2 rotMinMax = new Vector2(15, 90);
     [SerializeField] protected Vector2 driftMinMax = new Vector2(0.25f, 2);
     protected float lifeTime = 6f;
     protected float fadeTime = 4f;
-
-    protected GameObject obj;
-    protected TextMesh letter;
+    
     protected Vector3 rotPerSecod;
     protected float birthTime;
 
@@ -20,11 +20,10 @@ public abstract class PowerUp : MonoBehaviour
     protected virtual void Awake()
     {
         // Initialize all required components
-        obj = transform.Find("Object").gameObject;
-        letter = GetComponent<TextMesh>();
         rb = GetComponent<Rigidbody>();
         bnd = GetComponent<BoundsCheck>();
         rend = obj.GetComponent<Renderer>();
+        Debug.Log(rend);
         // Get random speed
         Vector3 vel = Random.onUnitSphere;
         vel.z = 0;

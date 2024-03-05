@@ -155,7 +155,7 @@ MonoBehaviour:
   playerProjectilePrefab: {fileID: 1886394380000338040, guid: 4fcf1efe568e6451c9234a0db3d7d77a, type: 3}
   enemyProjectilePrefab: {fileID: 1886394380000338040, guid: be446b17fb7ab4119a9e69523271c534, type: 3}
   _defDamage: 2
-  _currentDamage: 2
+  _currentDamage: 12
   _projectileSpeed: 30
   _delayBetweenShots: 0.4
   type: 0

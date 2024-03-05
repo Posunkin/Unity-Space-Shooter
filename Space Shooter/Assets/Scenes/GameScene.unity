@@ -387,6 +387,7 @@ MonoBehaviour:
   enemiesPrefabs:
   - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  powerUpPrefab: {fileID: 4419629633635875121, guid: 4e03a4f2b10c44532ac8906c2a856bbd, type: 3}
   startDelay: 2
   spawnDelay: 2
 --- !u!1 &1653992954

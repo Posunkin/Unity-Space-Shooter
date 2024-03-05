@@ -3,22 +3,22 @@ using UnityEngine;
 
 public class WeaponPowerUp : PowerUp
 {
-    private WeaponManager weaponManager;
     [SerializeField] private WeaponType powerWeaponType;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        weaponManager = WeaponManager.S;
-        SetType(powerWeaponType);
-    }
+    public WeaponType[] weaponTypeFrequency;
 
     public override void SetType(WeaponType weaponType)
     {
-        Weapon weap = weaponManager.GetWeapon(weaponType).GetComponent<Weapon>();
+        Debug.Log(rend);
+        Weapon weap = WeaponManager.S.GetWeapon(weaponType).GetComponent<Weapon>();
+        powerWeaponType = weap.type;
         rend.material.color = weap.color;
         letter.text = weap.letter;
         this.powerWeaponType = weaponType;
+    }
+
+    public WeaponType GetWeaponType(int index)
+    {
+        return weaponTypeFrequency[index];
     }
 
     public WeaponType GetWeaponType()

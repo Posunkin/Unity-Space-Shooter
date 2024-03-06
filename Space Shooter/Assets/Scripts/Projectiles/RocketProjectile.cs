@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class RocketProjectile : Projectile
 {
+    [SerializeField] private GameObject rocketExplosion;
     // Parameters
     private Rigidbody rb;
     private Transform target;
     private float speed;
     private float explosionRadius = 5;
     private bool isSearching = true;
+    private Vector3 direction;
 
     // Delay before rocket start moving and acceleration
     private float delayDescentSpeed = 5;
@@ -20,11 +22,8 @@ public class RocketProjectile : Projectile
     private bool isDelayed = true;
     private float currentSpeed = 0f;
 
-    [SerializeField] private GameObject fireEffect;
-
     protected override void Awake()
     {
-        fireEffect.SetActive(false);
         rb = GetComponent<Rigidbody>();
         base.Awake();
     }
@@ -34,9 +33,7 @@ public class RocketProjectile : Projectile
         damageToDeal = damage;
         this.speed = speed;
         transform.rotation = Quaternion.Euler(-90, 0, 0);
-        fireEffect.transform.rotation = Quaternion.Euler(-90, 0, 0);
         FindNearestTarget();
-        fireEffect.SetActive(true);
     }
 
     protected override void Update()
@@ -51,23 +48,26 @@ public class RocketProjectile : Projectile
         {
             if (target != null)
             {
-                Vector3 direction = (target.position - transform.position).normalized;
-                Quaternion rotation = Quaternion.LookRotation(direction);
-                transform.rotation = rotation;
-                fireEffect.transform.rotation = rotation;
-                currentSpeed = Mathf.Lerp(currentSpeed, speed, accelerationRate * Time.deltaTime);
-                rb.velocity = direction * currentSpeed;
+                direction = (target.position - transform.position).normalized;
+                transform.rotation = Quaternion.LookRotation(direction);
+                MoveToDirection();
                 
             }
             else
             {
-                Vector3 direction = Vector3.up;
-                currentSpeed = Mathf.Lerp(currentSpeed, speed, accelerationRate * Time.deltaTime);
-                rb.velocity = direction * currentSpeed;
-                transform.rotation = Quaternion.LookRotation(direction);
+                direction = Vector3.up;
+                if (currentSpeed <= 0) currentSpeed = 0;
+                rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(-90f, transform.rotation.eulerAngles.y, 0), currentSpeed * Time.deltaTime));
+                MoveToDirection();
             }
         }
         base.Update();
+    }
+
+    private void MoveToDirection()
+    {
+        currentSpeed = Mathf.Lerp(currentSpeed, speed, accelerationRate * Time.deltaTime);
+        rb.velocity = direction * currentSpeed;
     }
 
     private void FindNearestTarget()
@@ -101,7 +101,7 @@ public class RocketProjectile : Projectile
         isDelayed = false;
     }
 
-    private void Explode()
+    private void Explode(Transform enemyPos)
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
@@ -114,13 +114,14 @@ public class RocketProjectile : Projectile
                 enemy.TakeDamage(damageToDeal);
             }
         }
-
+        GameObject go = Instantiate(rocketExplosion);
+        go.transform.position = enemyPos.position;
         Destroy(gameObject);
     }
 
     protected override void OnCollisionEnter(Collision other)
     {
-        Explode();
+        Explode(other.transform);
     }
 
     protected override void OnTriggerEnter()

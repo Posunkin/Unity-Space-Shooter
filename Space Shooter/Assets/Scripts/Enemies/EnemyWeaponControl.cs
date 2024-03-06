@@ -12,7 +12,7 @@ public class EnemyWeaponControl : WeaponControl
     {
         weaponManager = WeaponManager.S;
         GameObject weapon = weaponManager.GetWeapon(type);
-        weapon = SetWeaponPosition(weapon, 0);
+        weapon = SetWeaponPosition(weapon, weaponSlots[0]);
         Weapon currentWeapon = weapon.GetComponent<Weapon>();
         currentWeapon.delayBetweenShots = enemyDelayBetweenShots;
         currentWeapon.projectileSpeed = enemyProjectileSpeed;

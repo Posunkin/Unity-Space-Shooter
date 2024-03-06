@@ -14,9 +14,9 @@ public abstract class WeaponControl : MonoBehaviour
         OnWeaponShoot?.Invoke();
     }
 
-    protected GameObject SetWeaponPosition(GameObject weaponToSet, int slot)
+    protected GameObject SetWeaponPosition(GameObject weaponToSet, Transform slot)
     {
-        GameObject weapon = Instantiate(weaponToSet, weaponSlots[slot].position, weaponSlots[slot].rotation, weaponSlots[slot].transform);
+        GameObject weapon = Instantiate(weaponToSet, slot.position, slot.rotation, slot.transform);
         return weapon;
     }
     

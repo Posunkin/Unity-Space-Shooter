@@ -369,6 +369,7 @@
 "Assets/Scripts/Projectiles/BlasterProjectile.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Projectiles/RocketProjectile.cs"
+"Assets/Scripts/Utils/DestroyWithDelay.cs"
 "Assets/Scripts/Utils/Utils.cs"
 "Assets/Scripts/Weapons/Blaster.cs"
 "Assets/Scripts/Weapons/BlasterShotgun.cs"

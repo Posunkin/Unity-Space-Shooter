@@ -1,5 +1,3 @@
-using System;
-using SpaceShooter.Enemies;
 using UnityEngine;
 
 namespace SpaceShooter.Weapons
@@ -37,7 +35,6 @@ namespace SpaceShooter.Weapons
         protected void Awake()
         {
             weaponControl = GetComponentInParent<WeaponControl>();
-            weaponControl.OnWeaponShoot += TempFire;
             parent = this.gameObject.transform.root;
             projectileAnchor = GameObject.Find("PROJECTILE ANCHOR").transform;
             if (parent.tag == "Player") 
@@ -52,7 +49,12 @@ namespace SpaceShooter.Weapons
             }
         }
         
-        protected void OnDisable()
+        protected virtual void Start()
+        {
+            weaponControl.OnWeaponShoot += TempFire;
+        }
+        
+        protected virtual void OnDisable()
         {
             weaponControl.OnWeaponShoot -= TempFire;
         }

@@ -17,6 +17,15 @@ public class PlayerWeaponControl : WeaponControl
         playerWeapons[0] = currentWeapons[0].GetComponent<Weapon>();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnSpecialWeaponShot?.Invoke();
+        }
+    }
+
     private void OnDisable()
     {
         player.OnWeaponAbsorb -= SetNewWeapon;

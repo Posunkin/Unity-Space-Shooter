@@ -10,12 +10,12 @@ public abstract class Projectile : MonoBehaviour
         damageToDeal = damage;
     }
     
-    protected void Awake()
+    protected virtual void Awake()
     {
         bndCheck = GetComponent<BoundsCheck>();
     }
 
-    protected void Update()
+    protected virtual void Update()
     {   
         if (bndCheck != null && bndCheck.offUp)
         {
@@ -23,7 +23,7 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
-    protected abstract void OnCollisionEnter();
+    protected abstract void OnCollisionEnter(Collision other);
     protected abstract void OnTriggerEnter();
     
 }

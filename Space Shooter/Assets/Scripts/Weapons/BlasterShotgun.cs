@@ -7,10 +7,11 @@ namespace SpaceShooter.Weapons
         private Vector3 projectileDirection;
         private float xAngle = 5;
 
-        private void Start()
+        protected override void Start()
         {
             type = WeaponType.blasterShotgun;
             projectileDirection = isPlayer ? Vector3.up : Vector3.down;
+            weaponControl.OnWeaponShoot += TempFire;
         }
 
         protected override void TempFire()
@@ -33,7 +34,7 @@ namespace SpaceShooter.Weapons
         protected override GameObject Shoot()
         {
             GameObject projGo = (GameObject) Instantiate(currentProjectile, projectileAnchor);
-            projGo.GetComponent<Projectile>().SetProjectile(currentDamage);
+            projGo.GetComponent<BlasterProjectile>().SetProjectile(currentDamage);
             projGo.transform.position = transform.position;
             return projGo;
         }

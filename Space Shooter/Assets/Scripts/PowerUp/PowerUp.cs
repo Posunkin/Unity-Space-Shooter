@@ -23,7 +23,6 @@ public abstract class PowerUp : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         bnd = GetComponent<BoundsCheck>();
         rend = obj.GetComponent<Renderer>();
-        Debug.Log(rend);
         // Get random speed
         Vector3 vel = Random.onUnitSphere;
         vel.z = 0;

@@ -6,10 +6,11 @@ namespace SpaceShooter.Weapons
     {
         private Vector3 projectileDirection;
 
-        private void Start()
+        protected override void Start()
         {
             type = WeaponType.blaster;
             projectileDirection = isPlayer ? Vector3.up : Vector3.down;
+            weaponControl.OnWeaponShoot += TempFire;
         }
 
         protected override void TempFire()

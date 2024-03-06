@@ -66,12 +66,6 @@ namespace SpaceShooter.Enemies
 
         protected override void OnCollisionEnter(Collision other)
         {
-            Projectile proj = other.gameObject.GetComponent<Projectile>();
-            if (proj != null)
-            {
-                TakeDamage(proj.damageToDeal);
-            }
-            else
             {
                 Debug.Log("Collision with " + other.gameObject.name);
             }

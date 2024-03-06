@@ -64,7 +64,6 @@ public class Spawner : MonoBehaviour
             int index = Random.Range(0, pwr.weaponTypeFrequency.Length);
             WeaponType type = pwr.GetWeaponType(index);
             go.GetComponent<PowerUp>().SetType(type);
-            Debug.Log(type);
         }
     }
 }

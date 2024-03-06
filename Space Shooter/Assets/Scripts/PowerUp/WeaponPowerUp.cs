@@ -8,7 +8,6 @@ public class WeaponPowerUp : PowerUp
 
     public override void SetType(WeaponType weaponType)
     {
-        Debug.Log(rend);
         Weapon weap = WeaponManager.S.GetWeapon(weaponType).GetComponent<Weapon>();
         powerWeaponType = weap.type;
         rend.material.color = weap.color;

@@ -5,10 +5,11 @@ using UnityEngine;
 public abstract class WeaponControl : MonoBehaviour
 {
     public Action OnWeaponShoot;
+    public Action OnSpecialWeaponShot;
     [SerializeField] protected Transform[] weaponSlots;
     [SerializeField] protected WeaponManager weaponManager = WeaponManager.S;
 
-    protected void Update()
+    protected virtual void Update()
     {
         OnWeaponShoot?.Invoke();
     }

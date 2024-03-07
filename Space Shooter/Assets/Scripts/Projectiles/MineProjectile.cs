@@ -4,15 +4,18 @@ using UnityEngine;
 public class MineProjectile : Projectile
 {
     [SerializeField] private float explosionRadius;
-    [SerializeField] private GameObject explosionVisual;
     [SerializeField] private float timeToExplose = 3;
     [SerializeField] private GameObject expEffect;
-    private Material radiusMat;
-    private Renderer radiusRenderer;
+    [SerializeField] private GameObject radiusVisual;
 
+    private Renderer radiusRend;
     private bool isPlayer;
     private float currentTime = 0f;
     
+    private void Start()
+    {
+        radiusRend = radiusVisual.GetComponent<Renderer>();
+    }   
 
     internal void SetProjectile(float damage, float timeToExplose, float explosionRadius, bool isPlayer)
     {
@@ -22,21 +25,16 @@ public class MineProjectile : Projectile
         this.isPlayer = isPlayer;
     }
 
-    private void Start()
-    {
-        radiusRenderer = explosionVisual.GetComponent<Renderer>();
-        radiusMat = radiusRenderer.material;
-    }
-
     protected override void Update()
     {   
         currentTime += Time.deltaTime;
-        float explosionProgress = Mathf.Clamp01(currentTime / timeToExplose);
-        Color color = radiusRenderer.material.color;
-        color.a = explosionProgress + 1;
-        radiusRenderer.material.color = color;
-        explosionVisual.transform.localScale = Vector3.one * (1f + explosionProgress) * explosionRadius;
         base.Update();
+        float explosionProgress = Mathf.Clamp01(currentTime / timeToExplose);
+
+        Color color = radiusRend.material.color;
+        color.a = 1f - explosionProgress;
+        radiusRend.material.color = color;
+        radiusVisual.transform.localScale = Vector3.one * (1f + explosionProgress) * explosionRadius;
 
         if (currentTime >= timeToExplose)
         {

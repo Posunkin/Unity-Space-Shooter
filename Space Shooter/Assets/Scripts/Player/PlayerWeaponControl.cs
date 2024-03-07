@@ -77,7 +77,7 @@ public class PlayerWeaponControl : WeaponControl
                 currentWeaponType[1].currentDamage = currentWeaponType[1].defDamage / 2;
                 currentWeaponType[1].lastShootTime = currentWeaponType[0].lastShootTime;
             }
-            else
+            else if (currentWeapons[2] == null)
             {
                 currentWeapons[2] = SetWeaponPosition(weapon, weaponSlots[2]);
                 currentWeaponType[2] = currentWeapons[2].GetComponent<Weapon>();
@@ -116,7 +116,7 @@ public class PlayerWeaponControl : WeaponControl
     {
         for (int i = 0; i < 3; i++)
         {
-            if (currentWeapons[i] != null)
+            if (currentWeaponType[i] != null)
             {
                 Destroy(currentWeapons[i].gameObject);
                 currentWeaponType[i] = null;

@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5927179924792861291}
   m_Layer: 6
-  m_Name: Weapon 2
+  m_Name: Weapon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ Transform:
   m_GameObject: {fileID: 930177274888204873}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -1.194, z: -0.161}
+  m_LocalPosition: {x: -1.82, y: -1.194, z: -0.161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -310,12 +310,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSlots:
   - {fileID: 2061386733721444243}
-  - {fileID: 52281691475569181}
   - {fileID: 5927179924792861291}
+  - {fileID: 52281691475569181}
   weaponManager: {fileID: 0}
   player: {fileID: 7416886560738757199}
   firstWeaponType: 0
-  specWeaponType: 2
+  specWeaponType: 3
   specSlot: {fileID: 5221571550406225646}
   specWeapons: 0200000003000000
   _specCharges: 1
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52281691475569181}
   m_Layer: 6
-  m_Name: Weapon 1
+  m_Name: Weapon 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

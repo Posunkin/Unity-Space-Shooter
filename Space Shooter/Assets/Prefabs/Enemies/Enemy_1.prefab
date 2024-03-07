@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 12
   speed: 14
-  _score: 0
+  _score: 10
   _chanceToSpawnPowerUp: 0.8
   waveFrequency: 2
   waveWidth: 6
@@ -170,6 +170,8 @@ MonoBehaviour:
   type: 00000000
   enemyDelayBetweenShots: 2
   enemyProjectileSpeed: 20
+  explosionRadius: 0
+  timeToExplose: 0
 --- !u!1001 &2225564857585998401
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,11 +9,11 @@ namespace SpaceShooter.Enemies
         public Action<Enemy> OnDeath;
         [SerializeField] protected float health;
         [SerializeField] protected float speed;
-        [SerializeField] protected float _score;
+        [SerializeField] protected int _score;
         [SerializeField] protected float _chanceToSpawnPowerUp;
         protected float damageOnTrigger = 10;
         protected Vector3 pos {get => this.transform.position; set => this.transform.position = value; }
-        public float score { get => _score; }
+        public int score { get => _score; }
         public float chanceToSpawnPowerUp  { get => _chanceToSpawnPowerUp; }
 
         protected Vector3 tempPos;
@@ -59,6 +59,7 @@ namespace SpaceShooter.Enemies
             StartCoroutine(nameof(ShowDamage));
             if (health <= 0)
             {
+                GameManager.Instance.UpdateScore(score);
                 Death();
             }
         }

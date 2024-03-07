@@ -23,18 +23,24 @@ public class PlayerStats : MonoBehaviour, IDamageable
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
+        GameManager.Instance.UpdateLifeCount(shieldLevel);
         weaponControl = GetComponent<PlayerWeaponControl>();
     }
 
     public void TakeDamage()
     {
         shieldLevel--;
+        GameManager.Instance.UpdateScore(-10);
         if (shieldLevel < 0)
         {
             OnPlayerDeath?.Invoke();
             Destroy(gameObject);
         }
-        else shield.ShieldLevelChange(shieldLevel);
+        else
+        {
+            shield.ShieldLevelChange(shieldLevel);
+            GameManager.Instance.UpdateLifeCount(shieldLevel);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,6 +63,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
         }
         else if (go.GetComponent<PowerUp>() != null)
         {
+            GameManager.Instance.UpdateScore(10);
+
             if (go.GetComponent<WeaponPowerUp>() != null)
             {
                 WeaponPowerUp pwr = go.GetComponent<WeaponPowerUp>();

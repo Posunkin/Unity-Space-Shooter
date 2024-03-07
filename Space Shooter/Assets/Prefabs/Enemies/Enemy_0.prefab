@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 8
   speed: 20
-  _score: 0
+  _score: 10
   _chanceToSpawnPowerUp: 0.6
 --- !u!114 &6508717934024568589
 MonoBehaviour:

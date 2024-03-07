@@ -167,7 +167,7 @@ MonoBehaviour:
   weaponSlots:
   - {fileID: 3059127040285876213}
   weaponManager: {fileID: 0}
-  type: 0
+  type: 00000000
   enemyDelayBetweenShots: 2
   enemyProjectileSpeed: 20
 --- !u!1001 &2225564857585998401

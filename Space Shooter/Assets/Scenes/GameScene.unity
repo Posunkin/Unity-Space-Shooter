@@ -386,7 +386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesPrefabs:
   - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
+  - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
   powerUpPrefab: {fileID: 4419629633635875121, guid: 4e03a4f2b10c44532ac8906c2a856bbd, type: 3}
   startDelay: 2
   spawnDelay: 2
@@ -452,6 +455,7 @@ MonoBehaviour:
   - {fileID: 7305006819710890815, guid: 1aba2a38cfe8442e7862a9af9eff0581, type: 3}
   - {fileID: 4727755139151311768, guid: e3362aa87fe854ba0bb35a04072c5e09, type: 3}
   - {fileID: 4027203834149986228, guid: 55a12672491544fcc9e06aad5f27f5ba, type: 3}
+  - {fileID: 4027203834149986228, guid: 38321870de248457a95f939307e73a7d, type: 3}
 --- !u!114 &1665051893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7416886560738757199, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
@@ -475,22 +479,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5221571550406225646, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5221571550406225646, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5221571550406225646, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 1653992957}
+    - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
+      propertyPath: specWeaponType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7719298772943943709, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

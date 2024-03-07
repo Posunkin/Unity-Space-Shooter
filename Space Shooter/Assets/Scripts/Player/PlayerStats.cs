@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         weaponControl = GetComponent<PlayerWeaponControl>();
     }
 
-    private void TakeDamage()
+    public void TakeDamage()
     {
         shieldLevel--;
         if (shieldLevel < 0)

@@ -22,8 +22,4 @@ public abstract class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    protected abstract void OnCollisionEnter(Collision other);
-    protected abstract void OnTriggerEnter();
-    
 }

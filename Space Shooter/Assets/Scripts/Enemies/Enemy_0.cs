@@ -10,7 +10,7 @@ namespace SpaceShooter.Enemies
             CheckBounds();
         }
 
-        protected override void CheckBounds()
+        private void CheckBounds()
         {
             if (bndCheck != null && bndCheck.offDown)
             {
@@ -30,13 +30,6 @@ namespace SpaceShooter.Enemies
             else
             {
                 Debug.Log("Triggered with " + other.gameObject.name);
-            }
-        }
-
-        protected override void OnCollisionEnter(Collision other)
-        {
-            {
-                Debug.Log("Collision with " + other.gameObject.name);
             }
         }
     }

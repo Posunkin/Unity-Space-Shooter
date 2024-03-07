@@ -6,6 +6,7 @@ namespace SpaceShooter.Enemies
     public class Enemy_1 : Enemy
     {
         // Enemy 1 moves along a sinusoid
+        [Header("Moving parameters:")]
         [SerializeField] private float waveFrequency;
         [SerializeField] private float waveWidth;
         [SerializeField] private float waveRotY;
@@ -41,7 +42,7 @@ namespace SpaceShooter.Enemies
             base.Move();
         }
 
-        protected override void CheckBounds()
+        private void CheckBounds()
         {
             if (bndCheck != null && bndCheck.offDown)
             {
@@ -61,13 +62,6 @@ namespace SpaceShooter.Enemies
             else
             {
                 Debug.Log("Triggered with " + other.gameObject.name);
-            }
-        }
-
-        protected override void OnCollisionEnter(Collision other)
-        {
-            {
-                Debug.Log("Collision with " + other.gameObject.name);
             }
         }
     }

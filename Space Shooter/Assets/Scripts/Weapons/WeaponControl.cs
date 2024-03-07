@@ -1,5 +1,4 @@
 using System;
-using SpaceShooter.Weapons;
 using UnityEngine;
 
 public abstract class WeaponControl : MonoBehaviour

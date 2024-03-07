@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class BlasterProjectile : Projectile
 {
-    protected override void OnCollisionEnter(Collision other)
+    protected void OnCollisionEnter(Collision other)
     {
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null) enemy.TakeDamage(damageToDeal);
         Destroy(gameObject);
     }
 
-    protected override void OnTriggerEnter()
+    protected void OnTriggerEnter()
     {
         Destroy(gameObject);
     }

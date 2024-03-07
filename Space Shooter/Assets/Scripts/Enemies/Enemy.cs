@@ -52,8 +52,6 @@ namespace SpaceShooter.Enemies
             Destroy(this.gameObject);
         }
         
-        protected abstract void CheckBounds();
-        protected abstract void OnCollisionEnter(Collision other);
         protected abstract void OnTriggerEnter(Collider other);
         public void TakeDamage(float damage)
         {

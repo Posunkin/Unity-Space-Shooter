@@ -58,7 +58,8 @@ public class RocketProjectile : Projectile
                 direction = Vector3.up;
                 if (currentSpeed <= 0) currentSpeed = 0;
                 rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(-90f, transform.rotation.eulerAngles.y, 0), currentSpeed * Time.deltaTime));
-                MoveToDirection();
+                currentSpeed = Mathf.Lerp(currentSpeed, speed, accelerationRate * Time.deltaTime);
+                rb.velocity = transform.forward * currentSpeed;
             }
         }
         base.Update();
@@ -119,13 +120,8 @@ public class RocketProjectile : Projectile
         Destroy(gameObject);
     }
 
-    protected override void OnCollisionEnter(Collision other)
+    protected void OnCollisionEnter(Collision other)
     {
         Explode(other.transform);
-    }
-
-    protected override void OnTriggerEnter()
-    {
-        // throw new System.NotImplementedException();
     }
 }

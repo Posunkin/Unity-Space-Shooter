@@ -145,7 +145,7 @@ MonoBehaviour:
   rotMinMax: {x: 15, y: 90}
   driftMinMax: {x: 0.25, y: 2}
   powerWeaponType: 0
-  weaponTypeFrequency: 000000000000000001000000010000000200000002000000
+  weaponTypeFrequency: 0000000000000000010000000100000002000000020000000300000003000000
 --- !u!114 &2084706560995961413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e49c6bd3613741aabd04bbd0b1f8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 2
+  offSet: 0
   keepOnScreen: 0
-  _radius: 1
+  _radius: -1
 --- !u!1 &8512459272593283864
 GameObject:
   m_ObjectHideFlags: 0

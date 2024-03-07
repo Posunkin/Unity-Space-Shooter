@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using SpaceShooter.Weapons;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class PlayerWeaponControl : WeaponControl
     [SerializeField] private WeaponType firstWeaponType;
     [SerializeField] private WeaponType specWeaponType;
     [SerializeField] private Transform specSlot;
+    [SerializeField] private WeaponType[] specWeapons;
     private GameObject[] currentWeapons = new GameObject[3];
     private Weapon[] currentWeaponType = new Weapon[3];
     private GameObject currentSpecWeap;
@@ -19,7 +21,6 @@ public class PlayerWeaponControl : WeaponControl
     private void Awake()
     {
         player.OnWeaponAbsorb += SetNewWeapon;
-        player.OnWeaponAbsorb += SetSpecWeapon;
         GameObject weapon = weaponManager.GetWeapon(firstWeaponType);
         currentWeapons[0] = SetWeaponPosition(weapon, weaponSlots[0]);
         currentWeaponType[0] = currentWeapons[0].GetComponent<Weapon>();
@@ -49,12 +50,15 @@ public class PlayerWeaponControl : WeaponControl
     private void OnDisable()
     {
         player.OnWeaponAbsorb -= SetNewWeapon;
-        player.OnWeaponAbsorb -= SetSpecWeapon;
     }
 
     private void SetNewWeapon(WeaponType type)
     {
-        if (type == WeaponType.rocketLauncher) return;
+        if (specWeapons.Contains(type))
+        {
+            SetSpecWeapon(type);
+            return;
+        }
         GameObject weapon = weaponManager.GetWeapon(type);
         if (type != currentWeapons[0].GetComponent<Weapon>().type)
         {
@@ -84,9 +88,9 @@ public class PlayerWeaponControl : WeaponControl
         }
     }
 
+
     private void SetSpecWeapon(WeaponType type)
     {
-        if (type != WeaponType.rocketLauncher) return;
         GameObject weapon = weaponManager.GetWeapon(type);
         if (currentSpecWeapType.type != type)
         {
@@ -94,6 +98,7 @@ public class PlayerWeaponControl : WeaponControl
             currentSpecWeap = SetWeaponPosition(weapon, specSlot);
             currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();
             currentSpecWeapType.currentDamage = currentSpecWeapType.defDamage;
+            _specCharges = 1;
         }
         else
         {
@@ -109,9 +114,9 @@ public class PlayerWeaponControl : WeaponControl
 
     private void ClearAllWeaponSlots()
     {
-        for (int i = 0; i < currentWeapons.Length; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if (currentWeapons[i] != null) 
+            if (currentWeapons[i] != null)
             {
                 Destroy(currentWeapons[i].gameObject);
                 currentWeaponType[i] = null;
@@ -119,3 +124,5 @@ public class PlayerWeaponControl : WeaponControl
         }
     }
 }
+
+

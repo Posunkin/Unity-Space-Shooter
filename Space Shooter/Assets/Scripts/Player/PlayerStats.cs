@@ -2,16 +2,13 @@ using System;
 using SpaceShooter.Enemies;
 using UnityEngine;
 
-/// <summary>
-/// Includes hp and triggers for player
-/// </summary>
-
 public class PlayerStats : MonoBehaviour, IDamageable
 {
     public Action OnPlayerDeath;
     public Action<WeaponType> OnWeaponAbsorb;
 
     [Header("Shield status")]
+    public Action<int> OnShieldLevelChange;
     [SerializeField] private Shield shield;
     [SerializeField] private int shieldLevel;
     private GameObject lastTrigger = null;
@@ -23,7 +20,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
-        GameManager.Instance.UpdateLifeCount(shieldLevel);
+        OnShieldLevelChange?.Invoke(shieldLevel);
         weaponControl = GetComponent<PlayerWeaponControl>();
     }
 
@@ -39,7 +36,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
         else
         {
             shield.ShieldLevelChange(shieldLevel);
-            GameManager.Instance.UpdateLifeCount(shieldLevel);
+            OnShieldLevelChange?.Invoke(shieldLevel);
+
         }
     }
 

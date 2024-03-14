@@ -12,7 +12,7 @@ public class EnemyWeaponControl : WeaponControl
 
     private void Awake()
     {
-        weaponManager = WeaponManager.S;
+        weaponManager = WeaponManager.Instance;
         for (int i = 0; i < type.Length; i++)
         {
             GameObject weapon = weaponManager.GetWeapon(type[i]);

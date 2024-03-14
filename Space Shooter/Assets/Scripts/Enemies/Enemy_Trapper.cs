@@ -47,22 +47,6 @@ namespace SpaceShooter.Enemies
 
             pos = (1 - u) * p0 + u * p1;
         }
-
-        protected override void OnTriggerEnter(Collider other)
-        {
-            Transform root = other.gameObject.transform.root;
-            GameObject go = root.gameObject;
-            
-            if (go.GetComponent<PlayerStats>() != null)
-            {
-                TakeDamage(damageOnTrigger);
-            }
-            else
-            {
-                Debug.Log("Triggered with " + other.gameObject.name);
-            }
-        }
-
     }
 }
 

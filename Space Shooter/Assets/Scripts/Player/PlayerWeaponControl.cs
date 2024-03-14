@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using SpaceShooter.Weapons;
@@ -5,11 +6,14 @@ using UnityEngine;
 
 public class PlayerWeaponControl : WeaponControl
 {
+    public Action<int> OnChargesSpend;
+
     [SerializeField] private PlayerStats player;
     [SerializeField] private WeaponType firstWeaponType;
     [SerializeField] private WeaponType specWeaponType;
     [SerializeField] private Transform specSlot;
     [SerializeField] private WeaponType[] specWeapons;
+    [SerializeField] private PlayerUI playerUI;
     private GameObject[] currentWeapons = new GameObject[3];
     private Weapon[] currentWeaponType = new Weapon[3];
     private GameObject currentSpecWeap;
@@ -27,6 +31,8 @@ public class PlayerWeaponControl : WeaponControl
         GameObject specWeapon = weaponManager.GetWeapon(specWeaponType);
         currentSpecWeap = SetWeaponPosition(specWeapon, specSlot);
         currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();
+        playerUI.UpdateSpecWeapon(currentSpecWeapType.type);
+        UpdateCharges(_specCharges);
     }
 
     protected override void Update()
@@ -35,7 +41,7 @@ public class PlayerWeaponControl : WeaponControl
         if (Input.GetKeyDown(KeyCode.Space) && _specCharges > 0 && !specWeaponOnCharge)
         {
             OnSpecialWeaponShot?.Invoke();
-            _specCharges--;
+            UpdateCharges(--_specCharges);
             StartCoroutine(nameof(ChargingWeapon));
         }
     }
@@ -98,11 +104,15 @@ public class PlayerWeaponControl : WeaponControl
             currentSpecWeap = SetWeaponPosition(weapon, specSlot);
             currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();
             currentSpecWeapType.currentDamage = currentSpecWeapType.defDamage;
-            _specCharges = 1;
+            playerUI.UpdateSpecWeapon(type);
+            UpdateCharges(1);
         }
         else
         {
-            if (_specCharges < 3) _specCharges++;
+            if (_specCharges < 3) 
+            {
+                UpdateCharges(++_specCharges);
+            }
         }
     }
 
@@ -122,6 +132,12 @@ public class PlayerWeaponControl : WeaponControl
                 currentWeaponType[i] = null;
             }
         }
+    }
+
+    private void UpdateCharges(int charges)
+    {
+        _specCharges = charges;
+        OnChargesSpend?.Invoke(_specCharges);
     }
 }
 

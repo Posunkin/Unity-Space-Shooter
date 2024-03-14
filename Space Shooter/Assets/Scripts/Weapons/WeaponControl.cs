@@ -6,7 +6,7 @@ public abstract class WeaponControl : MonoBehaviour
     public Action OnWeaponShoot;
     public Action OnSpecialWeaponShot;
     [SerializeField] protected Transform[] weaponSlots;
-    [SerializeField] protected WeaponManager weaponManager = WeaponManager.S;
+    [SerializeField] protected WeaponManager weaponManager = WeaponManager.Instance;
 
     protected virtual void Update()
     {

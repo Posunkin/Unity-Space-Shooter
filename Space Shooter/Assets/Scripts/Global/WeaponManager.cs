@@ -12,13 +12,20 @@ public enum WeaponType
 
 public class WeaponManager : MonoBehaviour
 {
-    public static WeaponManager S;
+    public static WeaponManager Instance;
     [SerializeField] private GameObject[] weapons;
     public static Dictionary<WeaponType, GameObject> WEAP_DICT;
 
     private void Awake()
     {
-        S = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
         WEAP_DICT = new Dictionary<WeaponType, GameObject>();
         foreach (GameObject weapon in weapons)
         {

@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 8315579610067843560}
   weaponManager: {fileID: 0}
   type: 03000000
-  enemyDelayBetweenShots: 2
+  enemyDelayBetweenShots: 3
   enemyProjectileSpeed: 20
   explosionRadius: 0
   timeToExplose: 0

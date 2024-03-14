@@ -52,8 +52,22 @@ namespace SpaceShooter.Enemies
             Destroy(this.gameObject);
         }
         
-        protected abstract void OnTriggerEnter(Collider other);
-        public void TakeDamage(float damage)
+        protected virtual void OnTriggerEnter(Collider other)
+        {
+            Transform root = other.gameObject.transform.root;
+            GameObject go = root.gameObject;
+            
+            if (go.GetComponent<PlayerStats>() != null)
+            {
+                TakeDamage(damageOnTrigger);
+            }
+            else
+            {
+                Debug.Log("Triggered with " + other.gameObject.name);
+            }
+        }
+        
+        public virtual void TakeDamage(float damage)
         {
             health -= damage;
             StartCoroutine(nameof(ShowDamage));

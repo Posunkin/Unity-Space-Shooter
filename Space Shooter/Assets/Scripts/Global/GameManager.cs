@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerStats player;
     private float gameRestartDelay = 2;
     private List<IScoreObserver> ScoreObservers = new();
-    private List<ILifeObserver> LifeObservers = new();
 
     private void OnEnable()
     {
@@ -52,29 +51,11 @@ public class GameManager : MonoBehaviour
         ScoreObservers.Remove(observer);
     }
 
-    public void AddLifeObserver(ILifeObserver observer)
-    {
-        LifeObservers.Add(observer);
-    }
-
-    public void RemoveLifeObserver(ILifeObserver observer)
-    {
-        LifeObservers.Remove(observer);
-    }
-
     public void UpdateScore(int score)
     {
         foreach(IScoreObserver observer in ScoreObservers)
         {
             observer.UpdateScore(score);
-        }
-    }
-
-    public void UpdateLifeCount(int count)
-    {
-        foreach(ILifeObserver observer in LifeObservers)
-        {
-            observer.UpdateLifeCount(count);
         }
     }
 }

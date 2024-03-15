@@ -10,8 +10,7 @@ namespace SpaceShooter.Enemies
         private Transform target;
         Vector3 direction;
         private float birthTime;
-        private float originalRotationY = 180;
-
+        
         private void Start()
         {
             target = GameObject.Find("Player")?.transform;

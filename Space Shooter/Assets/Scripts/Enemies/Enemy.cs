@@ -57,7 +57,7 @@ namespace SpaceShooter.Enemies
             Transform root = other.gameObject.transform.root;
             GameObject go = root.gameObject;
             
-            if (go.GetComponent<PlayerStats>() != null)
+            if (go.GetComponent<PlayerStats>() != null && !go.GetComponent<PlayerStats>().isInvulnerable)
             {
                 TakeDamage(damageOnTrigger);
             }

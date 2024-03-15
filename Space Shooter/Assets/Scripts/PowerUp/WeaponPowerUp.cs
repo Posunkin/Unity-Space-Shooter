@@ -6,7 +6,7 @@ public class WeaponPowerUp : PowerUp
     [SerializeField] private WeaponType powerWeaponType;
     public WeaponType[] weaponTypeFrequency;
 
-    public override void SetType(WeaponType weaponType)
+    public void SetType(WeaponType weaponType)
     {
         Weapon weap = WeaponManager.Instance.GetWeapon(weaponType).GetComponent<Weapon>();
         powerWeaponType = weap.type;

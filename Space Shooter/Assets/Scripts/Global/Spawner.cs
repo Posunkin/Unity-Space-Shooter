@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemiesPrefabs;
-    [SerializeField] private GameObject powerUpPrefab;
+    [SerializeField] private GameObject weaponPowerUpPrefab;
+    [SerializeField] private GameObject playerPowerUpPrefab;
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float spawnDelay = 2;
     internal List<GameObject> enemiesOnScene = new();
@@ -58,12 +59,25 @@ public class Spawner : MonoBehaviour
         float chance = enemy.chanceToSpawnPowerUp;
         if (chance > Random.Range(0f, 1f))
         {
-            GameObject go = Instantiate(powerUpPrefab);
-            go.transform.position = enemy.gameObject.transform.position;
-            WeaponPowerUp pwr = powerUpPrefab.GetComponent<WeaponPowerUp>();
-            int index = Random.Range(0, pwr.weaponTypeFrequency.Length);
-            WeaponType type = pwr.GetWeaponType(index);
-            go.GetComponent<PowerUp>().SetType(type);
+            if (0.5 > Random.Range(0f, 1f))
+            {
+                GameObject go = Instantiate(weaponPowerUpPrefab);
+                go.transform.position = enemy.gameObject.transform.position;
+                WeaponPowerUp pwr = weaponPowerUpPrefab.GetComponent<WeaponPowerUp>();
+                int index = Random.Range(0, pwr.weaponTypeFrequency.Length);
+                WeaponType type = pwr.GetWeaponType(index);
+                go.GetComponent<WeaponPowerUp>().SetType(type);
+            }
+            else
+            {
+                GameObject go = Instantiate(playerPowerUpPrefab);
+                go.transform.position = enemy.gameObject.transform.position;
+                PlayerPowerUp pwr = playerPowerUpPrefab.GetComponent<PlayerPowerUp>();
+                int index = Random.Range(0, pwr.powerUpTypeFrequency.Length);
+                PowerUpType type = pwr.GetPowerUpType(index);
+                go.GetComponent<PlayerPowerUp>().SetType(type);
+            }
+            
         }
     }
 }

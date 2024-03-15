@@ -1312,12 +1312,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPrefabs:
-  - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
-  - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
-  - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
+  - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
+  - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
+  - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
   - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
-  powerUpPrefab: {fileID: 4419629633635875121, guid: 4e03a4f2b10c44532ac8906c2a856bbd, type: 3}
+  - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
+  - {fileID: 7812035423099983307, guid: 863b0186505c04b969659ffa5ab64564, type: 3}
+  weaponPowerUpPrefab: {fileID: 4419629633635875121, guid: 4e03a4f2b10c44532ac8906c2a856bbd, type: 3}
+  playerPowerUpPrefab: {fileID: 4419629633635875121, guid: 6dd2c9a6a741f4c19a4c431d592908bd, type: 3}
   startDelay: 2
   spawnDelay: 2
 --- !u!1 &1588452834
@@ -1951,45 +1954,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 52281691475569181, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 638736567144040556, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 728357348539601973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 728357348539601973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 728357348539601973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 728357348539601973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 728357348539601973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1388358565119538041, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5927179924792861291, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 5927179924792861291, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.51
+    - target: {fileID: 1896167153869025114, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: playerUI
@@ -1999,13 +1970,13 @@ PrefabInstance:
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 1653992957}
-    - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: specWeaponType
-      value: 2
+    - target: {fileID: 7416886560738757199, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
+      propertyPath: invulnerabilityTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7416886560738757199, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
-      propertyPath: shieldLevel
-      value: 2
+      propertyPath: invulAfterTakeDamage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7719298772943943709, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: m_LocalPosition.x

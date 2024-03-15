@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using SpaceShooter.Enemies;
 using UnityEngine;
 
@@ -11,23 +12,28 @@ public class PlayerStats : MonoBehaviour, IDamageable
     public Action<int> OnShieldLevelChange;
     [SerializeField] private Shield shield;
     [SerializeField] private int shieldLevel;
-    private GameObject lastTrigger = null;
-    private float lastTriggerDelay = 1;
-    private float lastTriggerEnter;
+
+    [Header("Invulnerability stats:")]
+    [SerializeField] private float invulnerabilityTime;
+    [SerializeField] private float invulAfterTakeDamage;
+    public bool isInvulnerable = false;
 
     private PlayerWeaponControl weaponControl;
+    private Animator anim;
 
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
         OnShieldLevelChange?.Invoke(shieldLevel);
         weaponControl = GetComponent<PlayerWeaponControl>();
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage()
     {
         shieldLevel--;
         GameManager.Instance.UpdateScore(-10);
+        StartCoroutine(Invulnerability(invulAfterTakeDamage));
         if (shieldLevel < 0)
         {
             OnPlayerDeath?.Invoke();
@@ -41,21 +47,25 @@ public class PlayerStats : MonoBehaviour, IDamageable
         }
     }
 
+    private IEnumerator Invulnerability(float duration)
+    {
+        isInvulnerable = true;
+        anim.SetBool("Invulerable", true);
+        yield return new WaitForSeconds(duration);
+        anim.SetBool("Invulerable", false);
+        isInvulnerable = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (lastTriggerEnter < Time.time + lastTriggerDelay) lastTrigger = null;
         Transform root = other.gameObject.transform.root;
         GameObject go = root.gameObject;
 
-        if (lastTrigger == go && go.GetComponent<PowerUp>() == null) return;
-
-        lastTrigger = go;
-        lastTriggerEnter = Time.time;
-        if (other.gameObject.GetComponent<Projectile>() != null)
+        if (other.gameObject.GetComponent<Projectile>() != null && !isInvulnerable)
         {
             TakeDamage();
         }
-        else if (go.GetComponent<Enemy>() != null)
+        else if (go.GetComponent<Enemy>() != null && !isInvulnerable)
         {
             TakeDamage();
         }
@@ -67,6 +77,25 @@ public class PlayerStats : MonoBehaviour, IDamageable
             {
                 WeaponPowerUp pwr = go.GetComponent<WeaponPowerUp>();
                 OnWeaponAbsorb?.Invoke(pwr.GetWeaponType());
+            }
+            else 
+            {
+                PlayerPowerUp pwr = go.GetComponent<PlayerPowerUp>();
+                PowerUpType type = pwr.GetPowerUpType();
+                switch (type)
+                {
+                    case PowerUpType.shield:
+                        if (shieldLevel < 4)
+                        {
+                            shieldLevel++;
+                            shield.ShieldLevelChange(shieldLevel);
+                            OnShieldLevelChange?.Invoke(shieldLevel);
+                        }
+                        break;
+                    case PowerUpType.invulnerability:
+                        StartCoroutine(Invulnerability(invulnerabilityTime));
+                        break;
+                }
             }
         }
         else

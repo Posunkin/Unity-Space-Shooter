@@ -1,5 +1,11 @@
-using TMPro;
 using UnityEngine;
+
+public enum PowerUpType
+{
+    shield,
+    invulnerability
+}
+
 
 public abstract class PowerUp : MonoBehaviour
 {
@@ -66,6 +72,4 @@ public abstract class PowerUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    public abstract void SetType(WeaponType type);
 }

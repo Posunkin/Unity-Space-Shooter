@@ -101,7 +101,7 @@ MonoBehaviour:
   _defDamage: 1
   _currentDamage: 1
   _projectileSpeed: 45
-  _delayBetweenShots: 0.5
+  _delayBetweenShots: 0.7
   type: 1
   isPlayer: 0
   _color: {r: 0.9245283, g: 0.7194251, b: 0, a: 1}

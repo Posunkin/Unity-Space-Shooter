@@ -7,6 +7,7 @@ using UnityEngine;
 public class RocketProjectile : Projectile
 {
     [SerializeField] private GameObject rocketExplosion;
+    [SerializeField] private GameObject rocketSmoke;
     // Parameters
     private Rigidbody rb;
     private Transform target;
@@ -46,6 +47,7 @@ public class RocketProjectile : Projectile
         }
         else
         {
+            rocketSmoke.SetActive(true);
             if (target != null)
             {
                 direction = (target.position - transform.position).normalized;

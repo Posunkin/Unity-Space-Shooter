@@ -40,12 +40,16 @@ namespace SpaceShooter.Enemies
 
         public override void TakeDamage(float damage)
         {
-            health -= damage;
+            currentHealth -= damage;
             StartCoroutine(nameof(ShowDamage));
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);
                 Explode();
+            }
+            if (currentHealth <= maxHealth / 2)
+            {
+                smokeEffect.Play();
             }
         }
 

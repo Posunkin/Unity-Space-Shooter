@@ -7,10 +7,17 @@ namespace SpaceShooter.Enemies
     public abstract class Enemy : MonoBehaviour, IDamageable
     {
         public Action<Enemy> OnDeath;
-        [SerializeField] protected float health;
+        [Header("Enemy stats:")]
+        [SerializeField] protected float currentHealth;
         [SerializeField] protected float speed;
         [SerializeField] protected int _score;
         [SerializeField] protected float _chanceToSpawnPowerUp;
+        protected float maxHealth;
+
+        [Header("Effects:")]
+        [SerializeField] protected GameObject explosionEffect;
+        [SerializeField] protected ParticleSystem smokeEffect;
+
         protected float damageOnTrigger = 10;
         protected Vector3 pos {get => this.transform.position; set => this.transform.position = value; }
         public int score { get => _score; }
@@ -27,6 +34,7 @@ namespace SpaceShooter.Enemies
         {
             bndCheck = GetComponent<BoundsCheck>();
             GetAllMaterials();
+            maxHealth = currentHealth;
         }
 
         protected virtual void Move()
@@ -49,6 +57,8 @@ namespace SpaceShooter.Enemies
         protected virtual void Death()
         {
             OnDeath?.Invoke(this);
+            GameObject go = Instantiate(explosionEffect);
+            go.transform.position = this.transform.position;
             Destroy(this.gameObject);
         }
         
@@ -69,12 +79,16 @@ namespace SpaceShooter.Enemies
         
         public virtual void TakeDamage(float damage)
         {
-            health -= damage;
+            currentHealth -= damage;
             StartCoroutine(nameof(ShowDamage));
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);
                 Death();
+            }
+            else if (currentHealth <= maxHealth / 2)
+            {
+                smokeEffect.Play();
             }
         }
 

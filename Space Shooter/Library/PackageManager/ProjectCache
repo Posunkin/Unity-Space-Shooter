@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638449848670000000
+      ticks: 638462543430000000
     m_Hash: 3179857767
   m_LockFileStatus:
     m_FilePath: /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638449848670000000
+      ticks: 638462543430000000
     m_Hash: 2820761160
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -744,9 +744,11 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.9.0
     - 1.9.1
+    - 1.9.2
     compatible:
     - 1.9.1
-    recommended: 1.9.1
+    - 1.9.2
+    recommended: 1.9.2
     deprecated:
     - 1.8.0-pre.1
   dependencies:

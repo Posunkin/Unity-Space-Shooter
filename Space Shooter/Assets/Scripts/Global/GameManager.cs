@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] private PlayerStats player;
-    private float gameRestartDelay = 2;
+
+    [SerializeField] private GameObject playerUI;
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private LeaderBoard leaderBoard;
+
     private List<IScoreObserver> ScoreObservers = new();
 
     private void OnEnable()
@@ -33,12 +37,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOverMenu()
     {
-        Invoke(nameof(Restart), gameRestartDelay);
-    }
-
-    private void Restart()
-    {
-        SceneManager.LoadScene("GameScene");
+        playerUI.SetActive(false);
+        gameOverMenu.SetActive(true);
     }
 
     public void AddScoreObserver(IScoreObserver observer)

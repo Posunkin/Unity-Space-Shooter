@@ -14,4 +14,5 @@ public class ScoreSystem : MonoBehaviour, IScoreObserver
         score += newScore;
         if (score < 0) score = 0;
     }
+
 }

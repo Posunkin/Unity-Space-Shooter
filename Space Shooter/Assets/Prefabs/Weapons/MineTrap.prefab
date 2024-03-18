@@ -102,7 +102,7 @@ MonoBehaviour:
   _currentDamage: 25
   _projectileSpeed: 0
   _delayBetweenShots: 3
-  type: 3
+  type: 4
   isPlayer: 1
   _color: {r: 1, g: 0.3254717, b: 0.3254717, a: 1}
   _letter: M

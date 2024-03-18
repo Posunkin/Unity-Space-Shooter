@@ -17,7 +17,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual void Update()
     {   
-        if ((bndCheck != null && bndCheck.offUp) || (bndCheck != null && bndCheck.offDown))
+        if (bndCheck != null && !bndCheck.isOnScreen)
         {
             Destroy(gameObject);
         }

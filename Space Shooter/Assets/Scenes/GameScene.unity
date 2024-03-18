@@ -4081,6 +4081,7 @@ MonoBehaviour:
   - {fileID: 7305006819710890815, guid: 1aba2a38cfe8442e7862a9af9eff0581, type: 3}
   - {fileID: 4727755139151311768, guid: e3362aa87fe854ba0bb35a04072c5e09, type: 3}
   - {fileID: 4727755139151311768, guid: 8fe96b94dd5cf45719eaefec4ce915bd, type: 3}
+  - {fileID: 4727755139151311768, guid: 2fc2b2b414f2a4cffb0190f0d4d93b55, type: 3}
   - {fileID: 4027203834149986228, guid: 55a12672491544fcc9e06aad5f27f5ba, type: 3}
   - {fileID: 4027203834149986228, guid: 38321870de248457a95f939307e73a7d, type: 3}
 --- !u!114 &1665051893 stripped
@@ -5136,6 +5137,14 @@ PrefabInstance:
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 1653992957}
+    - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
+      propertyPath: specWeaponType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409571105850557973, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
+      propertyPath: firstWeaponType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7719298772943943709, guid: 459b75a75eb9348b8b8c55dbe5e14bdf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

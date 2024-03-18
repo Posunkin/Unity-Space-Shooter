@@ -8,7 +8,8 @@ public enum WeaponType
     blasterShotgun,
     plasmaGun,
     rocketLauncher,
-    mineTrap
+    mineTrap,
+    laserGun
 }
 
 public class WeaponManager : MonoBehaviour
@@ -46,6 +47,8 @@ public class WeaponManager : MonoBehaviour
                     return WEAP_DICT[WeaponType.blasterShotgun];
                 case WeaponType.plasmaGun:
                     return WEAP_DICT[WeaponType.plasmaGun];
+                case WeaponType.laserGun:
+                    return WEAP_DICT[WeaponType.laserGun];
                 case WeaponType.rocketLauncher:
                     return WEAP_DICT[WeaponType.rocketLauncher];
                 case WeaponType.mineTrap:

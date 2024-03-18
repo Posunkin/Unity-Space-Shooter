@@ -74,7 +74,8 @@ public class PlayerWeaponControl : WeaponControl
             currentWeaponType[0] = currentWeapons[0].GetComponent<Weapon>();
             currentWeaponType[0].currentDamage = currentWeaponType[0].defDamage;
         }
-        else
+        else if (type == WeaponType.laserGun) return;
+        else 
         {
             if (currentWeapons[1] == null)
             {

@@ -386,6 +386,7 @@
 "Assets/Scripts/Utils/Utils.cs"
 "Assets/Scripts/Weapons/Blaster.cs"
 "Assets/Scripts/Weapons/BlasterShotgun.cs"
+"Assets/Scripts/Weapons/LaserGun.cs"
 "Assets/Scripts/Weapons/MineTrap.cs"
 "Assets/Scripts/Weapons/PlasmaGun.cs"
 "Assets/Scripts/Weapons/RocketLauncher.cs"

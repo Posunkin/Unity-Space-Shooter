@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerProjectilePrefab: {fileID: 1886394380000338040, guid: e32dea441002e48969025a2da87ec5cd, type: 3}
   enemyProjectilePrefab: {fileID: 1886394380000338040, guid: e32dea441002e48969025a2da87ec5cd, type: 3}
-  _defDamage: 3
-  _currentDamage: 3
+  _defDamage: 2
+  _currentDamage: 2
   _projectileSpeed: 35
-  _delayBetweenShots: 0.8
+  _delayBetweenShots: 0.4
   type: 2
   isPlayer: 0
   _color: {r: 0.83739054, g: 0.19424175, b: 0.9150943, a: 1}

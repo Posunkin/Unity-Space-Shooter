@@ -111,7 +111,7 @@ public class RocketProjectile : Projectile
         foreach (Collider collider in colliders)
         {
             
-            Enemy enemy = collider.GetComponentInParent<Enemy>();
+            IDamageable enemy = collider.GetComponentInParent<IDamageable>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damageToDeal);

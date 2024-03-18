@@ -5,8 +5,8 @@ public class BlasterProjectile : Projectile
 {
     protected void OnCollisionEnter(Collision other)
     {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null) enemy.TakeDamage(damageToDeal);
+        IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+        if (damageable != null) damageable.TakeDamage(damageToDeal);
         Destroy(gameObject);
     }
 

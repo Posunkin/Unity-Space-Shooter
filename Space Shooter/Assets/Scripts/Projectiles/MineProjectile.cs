@@ -55,9 +55,8 @@ public class MineProjectile : Projectile
             }
             else
             {
-                Debug.Log(collider.transform.root.gameObject.name);
-                Enemy enemy = collider.GetComponentInParent<Enemy>();
-                if (enemy != null) enemy.TakeDamage(damageToDeal);
+                IDamageable damageable = collider.gameObject.GetComponent<IDamageable>();
+                if (damageable != null) damageable.TakeDamage(damageToDeal);
             }
         }
 

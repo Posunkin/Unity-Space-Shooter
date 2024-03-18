@@ -25,8 +25,8 @@ public class PlasmaProjectile : Projectile
 
     protected void OnCollisionEnter(Collision other)
     {
-        Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if (enemy != null) enemy.TakeDamage(damageToDeal);
+        IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+        if (damageable != null) damageable.TakeDamage(damageToDeal);
         bouncesCount++;
         damageToDeal += 0.5f;
         if (bouncesCount >= maxBounces)

@@ -41,24 +41,16 @@ namespace SpaceShooter.Weapons
         private IEnumerator Shooting()
         {
             startParticles.Play();
-            Damage();
-            yield return shotDuration;
-            Damage();
-            yield return shotDuration;
-            Damage();
-            yield return shotDuration;
-            Damage();
-            yield return shotDuration;
-            Damage();
-            yield return shotDuration;
-            Damage();
-            yield return shotDuration;
-            Damage();
+            for (int i = 0; i < 7; i++)
+            {
+                DoDamage();
+                yield return shotDuration;
+            }
             lineRenderer.enabled = false;
             startParticles.Stop();
         }
 
-        private void Damage()
+        private void DoDamage()
         {
             lineRenderer.enabled = true;
             RaycastHit[] hits = Physics.RaycastAll(new Vector3(tr.position.x, tr.position.y, 0), Vector3.up,maxLength,enemyLayer);

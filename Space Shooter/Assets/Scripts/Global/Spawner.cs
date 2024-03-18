@@ -17,9 +17,12 @@ public class Spawner : MonoBehaviour
 
     internal float OffSet { get => _offSet; private set => _offSet = value; }
 
+    [Header("For Stars Eater:")]
+    [SerializeField] private GameObject[] starEaterTeam;
+
     private void Start()
     {
-        Invoke(nameof(SpawnEnemies), startDelay);
+        // Invoke(nameof(SpawnEnemies), startDelay);
     }
 
     private void SpawnEnemies()
@@ -34,6 +37,16 @@ public class Spawner : MonoBehaviour
         enemiesOnScene.Add(go);
 
         Invoke(nameof(SpawnEnemies), spawnDelay);
+    }
+
+    public void SpawnBossTeam()
+    {
+        int index = Random.Range(0, starEaterTeam.Length);
+        GameObject go = Instantiate(starEaterTeam[index]);
+        Enemy enemy = go.GetComponent<Enemy>();
+        enemy.OnDeath += SpawnPowerUp;
+
+        go.transform.position = SetupPosition(go);
     }
 
     private Vector3 SetupPosition(GameObject go)

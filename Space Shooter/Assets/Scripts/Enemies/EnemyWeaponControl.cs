@@ -4,28 +4,29 @@ using UnityEngine;
 public class EnemyWeaponControl : WeaponControl
 {
     [SerializeField] private WeaponType[] type;
-    [SerializeField] private float enemyDelayBetweenShots;
-    [SerializeField] private float enemyProjectileSpeed;
+    [SerializeField] private float[] enemyDelayBetweenShots;
+    [SerializeField] private float[] enemyProjectileSpeed;
     [SerializeField] private float explosionRadius;
     [SerializeField] private float timeToExplose;
     private GameObject weapon;
+    private Weapon[] currentWeapon;
 
     private void Awake()
     {
+        currentWeapon = new Weapon[type.Length];
         weaponManager = WeaponManager.Instance;
         for (int i = 0; i < type.Length; i++)
         {
             GameObject weapon = weaponManager.GetWeapon(type[i]);
             weapon = SetWeaponPosition(weapon, weaponSlots[i]);
-            Weapon currentWeapon = weapon.GetComponent<Weapon>();
-            currentWeapon.delayBetweenShots = enemyDelayBetweenShots;
-            currentWeapon.projectileSpeed = enemyProjectileSpeed;
-            if (currentWeapon.type == WeaponType.mineTrap)
+            currentWeapon[i] = weapon.GetComponent<Weapon>();
+            currentWeapon[i].delayBetweenShots = enemyDelayBetweenShots[i];
+            currentWeapon[i].projectileSpeed = enemyProjectileSpeed[i];
+            if (currentWeapon[i].type == WeaponType.mineTrap)
             {
-                currentWeapon.GetComponent<MineTrap>().explosionRadius = explosionRadius;
-                currentWeapon.GetComponent<MineTrap>().timeToExplose = timeToExplose;
+                currentWeapon[i].GetComponent<MineTrap>().explosionRadius = explosionRadius;
+                currentWeapon[i].GetComponent<MineTrap>().timeToExplose = timeToExplose;
             }
         }
-       
     }
 }

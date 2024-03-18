@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void TakeDamage()
     {
+        if (isInvulnerable) return;
         shieldLevel--;
         GameManager.Instance.UpdateScore(-10);
         StartCoroutine(Invulnerability(invulAfterTakeDamage));
@@ -61,11 +62,11 @@ public class PlayerStats : MonoBehaviour, IDamageable
         Transform root = other.gameObject.transform.root;
         GameObject go = root.gameObject;
 
-        if (other.gameObject.GetComponent<Projectile>() != null && !isInvulnerable)
+        if (other.gameObject.GetComponent<Projectile>() != null)
         {
             TakeDamage();
         }
-        else if (go.GetComponent<Enemy>() != null && !isInvulnerable)
+        else if (go.GetComponent<Enemy>() != null)
         {
             TakeDamage();
         }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SpaceShooter.Enemies
 {
@@ -12,10 +14,14 @@ namespace SpaceShooter.Enemies
             laserAttack
         }
 
-        [SerializeField] private float changeStatusTime = 10f;
+        [SerializeField] private float shootStatusTime;
+        [SerializeField] private float chasingLaserStatusTime;
+        [SerializeField] private float laserAttackStatusTime;
         [SerializeField] private EnemyWeaponControl weapControl;
-        [SerializeField] private Spawner spawner;
+        [SerializeField] private BossHealthBar healthBar;
+        private Spawner spawner;
         private float startedNewStatusTime;
+        private int stateIndex = 0;
         // Shooting movement stats
         private Vector3 p0, p1;
         private float timeStart;
@@ -37,7 +43,9 @@ namespace SpaceShooter.Enemies
         private void Start()
         {
             weapControl = GetComponent<EnemyWeaponControl>();
+            healthBar.SetMaxHealth(maxHealth);
             state = StarsEaterState.shooting;
+            spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
             p0 = p1 = pos;
             StartCoroutine(nameof(Shooting));
             widMinRad = bndCheck.CamWidth - bndCheck.Radius;
@@ -45,11 +53,47 @@ namespace SpaceShooter.Enemies
             startSpeed = speed;
         }
 
-        // Methods for Shooting status
+        private void ChangeStatus()
+        {
+            if (stateIndex < 2) stateIndex++;
+            else stateIndex = 0;
+            state = (StarsEaterState)stateIndex;
+            StopAllCoroutines();
+            switch (state)
+            {
+                case StarsEaterState.shooting:
+                    StartCoroutine(nameof(Shooting));
+                    break;
+                case StarsEaterState.chasingLaser:
+                    StartCoroutine(nameof(ChasingLaser));
+                    break;
+                case StarsEaterState.laserAttack:
+                    StartCoroutine(nameof(LaserGo));
+                    break;
+            }
+        }
+
+        public override void TakeDamage(float damage)
+        {
+            currentHealth -= damage;
+            healthBar.ChangeHealth(currentHealth);
+            StartCoroutine(nameof(ShowDamage));
+            if (currentHealth <= 0)
+            {
+                GameManager.Instance.UpdateScore(score);
+                Death();
+            }
+            else if (currentHealth <= maxHealth / 2)
+            {
+                smokeEffect.Play();
+            }
+        }
+
+        #region Methods for Shooting status
         private IEnumerator Shooting()
         {
             startedNewStatusTime = Time.time;
-            while (Time.time - startedNewStatusTime < changeStatusTime)
+            while (Time.time - startedNewStatusTime < shootStatusTime)
             {
                 if (!isMoving)
                 {
@@ -64,9 +108,7 @@ namespace SpaceShooter.Enemies
                 MoveShooting();
                 yield return null;
             }
-            state = StarsEaterState.chasingLaser;
-            StartCoroutine(nameof(ChasingLaser));
-            StopCoroutine(nameof(Shooting));
+            ChangeStatus();
         }
 
         private void MoveShooting()
@@ -79,8 +121,9 @@ namespace SpaceShooter.Enemies
             movePos += p1.normalized * speed * Time.deltaTime;
             transform.position = movePos;
         }
+        #endregion
 
-        // Methods for Chasing laser status
+        #region Methods for Chasing laser status
         private IEnumerator ChasingLaser()
         {
             InvokeRepeating(nameof(SpawnBossTeam), 1, 3.5f);
@@ -88,15 +131,13 @@ namespace SpaceShooter.Enemies
             chargingEffect.Play();
             Debug.Log("Start chasing laser");
             startedNewStatusTime = Time.time;
-            while (Time.time - startedNewStatusTime < changeStatusTime)
+            while (Time.time - startedNewStatusTime < chasingLaserStatusTime)
             {
                 MoveWithLaser();
                 yield return null;
             }
             chargingEffect.Stop();
-            state = StarsEaterState.laserAttack;
-            StartCoroutine(nameof(LaserGo));
-            StopCoroutine(nameof(ChasingLaser));
+            ChangeStatus();
         }
 
         private void MoveWithLaser()
@@ -132,15 +173,17 @@ namespace SpaceShooter.Enemies
                 }
             }
         }
-    
-        // Methods for Laser attack status
+
+        #endregion
+        
+        #region  Methods for Laser attack status
         private IEnumerator LaserGo()
         {
             weapControl.Stop();
             speed = speedWhileAttack;
             Debug.Log("Start attacking!");
             startedNewStatusTime = Time.time;
-            while (Time.time - startedNewStatusTime < changeStatusTime)
+            while (Time.time - startedNewStatusTime < laserAttackStatusTime)
             {
                 MoveWithLaser();
                 laserAttack.Attack();
@@ -150,14 +193,14 @@ namespace SpaceShooter.Enemies
             speed = startSpeed;
             weapControl.Activate();
             CancelInvoke(nameof(SpawnBossTeam));
-            StartCoroutine(nameof(Shooting));
-            StopCoroutine(nameof(ChasingLaser));
+            ChangeStatus();
         }
 
         private void SpawnBossTeam()
         {
             spawner.SpawnBossTeam();
         }
+        #endregion
     }
 }
 

@@ -379,6 +379,7 @@
 "Assets/Scripts/Projectiles/PlasmaProjectile.cs"
 "Assets/Scripts/Projectiles/Projectile.cs"
 "Assets/Scripts/Projectiles/RocketProjectile.cs"
+"Assets/Scripts/UI/BossHealthBar.cs"
 "Assets/Scripts/UI/GameOverMenu.cs"
 "Assets/Scripts/UI/LeaderBoard.cs"
 "Assets/Scripts/UI/PlayerUI.cs"

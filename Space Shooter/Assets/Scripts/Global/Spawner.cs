@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemiesPrefabs;
+    [SerializeField] private GameObject[] bossesPrefabs;
+    [SerializeField] private Transform bossPosition;
     [SerializeField] private GameObject weaponPowerUpPrefab;
     [SerializeField] private GameObject playerPowerUpPrefab;
     [SerializeField] private float startDelay = 2;
@@ -23,6 +25,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         // Invoke(nameof(SpawnEnemies), startDelay);
+        Invoke(nameof(SpawnBoss), startDelay);
     }
 
     private void SpawnEnemies()
@@ -33,10 +36,21 @@ public class Spawner : MonoBehaviour
         enemy.OnDeath += SpawnPowerUp;
 
         // Set the position of the new object
-        go.transform.position = SetupPosition(go);
+        go.transform.position = bossPosition.position;
         enemiesOnScene.Add(go);
 
         Invoke(nameof(SpawnEnemies), spawnDelay);
+    }
+
+    private void SpawnBoss()
+    {
+        GameObject go = Instantiate(bossesPrefabs[0]);
+        Enemy enemy = go.GetComponent<Enemy>();
+        enemy.OnDeath += SpawnPowerUp;
+
+        // Set the position of the new object
+        go.transform.position = SetupPosition(go);
+        enemiesOnScene.Add(go);
     }
 
     public void SpawnBossTeam()

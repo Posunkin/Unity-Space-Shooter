@@ -48,6 +48,11 @@ public class PlayerStats : MonoBehaviour, IDamageable
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        TakeDamage();
+    }
+
     private IEnumerator Invulnerability(float duration)
     {
         isInvulnerable = true;

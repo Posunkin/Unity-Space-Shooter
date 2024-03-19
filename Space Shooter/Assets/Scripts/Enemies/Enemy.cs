@@ -69,11 +69,26 @@ namespace SpaceShooter.Enemies
             
             if (go.GetComponent<PlayerStats>() != null && !go.GetComponent<PlayerStats>().isInvulnerable)
             {
-                TakeDamage(damageOnTrigger);
+                TakeDamage();
             }
             else
             {
                 Debug.Log("Triggered with " + other.gameObject.name);
+            }
+        }
+
+        public virtual void TakeDamage()
+        {
+            currentHealth -= damageOnTrigger;
+            StartCoroutine(nameof(ShowDamage));
+            if (currentHealth <= 0)
+            {
+                GameManager.Instance.UpdateScore(score);
+                Death();
+            }
+            else if (currentHealth <= maxHealth / 2)
+            {
+                smokeEffect.Play();
             }
         }
         
@@ -99,6 +114,11 @@ namespace SpaceShooter.Enemies
                 m.color = Color.red;
             }
             yield return new WaitForSeconds(0.15f);
+            ReturnColors();
+        }
+
+        protected void ReturnColors()
+        {
             for (int i = 0; i < materials.Length; i++)
             {
                 materials[i].color = originalColors[i];

@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
-using SpaceShooter.Enemies;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RocketProjectile : Projectile
 {
     [SerializeField] private GameObject rocketExplosion;
     [SerializeField] private GameObject rocketSmoke;
+    [SerializeField] private float lifeTime;
     // Parameters
     private Rigidbody rb;
     private Transform target;
@@ -15,6 +13,8 @@ public class RocketProjectile : Projectile
     private float explosionRadius = 5;
     private bool isSearching = true;
     private Vector3 direction;
+    private bool isPlayer;
+    private float birthTime;
 
     // Delay before rocket start moving and acceleration
     private float delayDescentSpeed = 5;
@@ -29,8 +29,10 @@ public class RocketProjectile : Projectile
         base.Awake();
     }
 
-    internal void SetProjectile(float damage, float speed)
+    internal void SetProjectile(float damage, float speed, bool isPlayer)
     {
+        birthTime = Time.time;
+        this.isPlayer = isPlayer;
         damageToDeal = damage;
         this.speed = speed;
         transform.rotation = Quaternion.Euler(-90, 0, 0);
@@ -39,6 +41,10 @@ public class RocketProjectile : Projectile
 
     protected override void Update()
     {
+        if (Time.time - birthTime > lifeTime)
+        {
+            Explode(this.transform);
+        }
         if (isSearching) return;
         else if (isDelayed)
         {
@@ -53,7 +59,6 @@ public class RocketProjectile : Projectile
                 direction = (target.position - transform.position).normalized;
                 transform.rotation = Quaternion.LookRotation(direction);
                 MoveToDirection();
-                
             }
             else
             {
@@ -75,27 +80,38 @@ public class RocketProjectile : Projectile
 
     private void FindNearestTarget()
     {
-        isSearching = true;
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        float closestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-
-        foreach (GameObject enemy in enemies)
+        switch (isPlayer)
         {
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                nearestEnemy = enemy;
-            }
-
-            if (nearestEnemy != null)
-            {
-                target = nearestEnemy.transform;
+            case false:
+                isSearching = true;
+                GameObject player = GameObject.Find("Player");
+                target = player.transform;
                 isSearching = false;
-            }
+                break;
+            case true:
+                isSearching = true;
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                float closestDistance = Mathf.Infinity;
+                GameObject nearestEnemy = null;
+
+                foreach (GameObject enemy in enemies)
+                {
+                    float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        nearestEnemy = enemy;
+                    }
+
+                    if (nearestEnemy != null)
+                    {
+                        target = nearestEnemy.transform;
+                        isSearching = false;
+                    }
+                }
+                isSearching = false;
+                break;
         }
-        isSearching = false;
     }
 
     private IEnumerator Delay()
@@ -110,12 +126,23 @@ public class RocketProjectile : Projectile
 
         foreach (Collider collider in colliders)
         {
-            
-            IDamageable enemy = collider.GetComponentInParent<IDamageable>();
-            if (enemy != null)
+            if (isPlayer)
             {
-                enemy.TakeDamage(damageToDeal);
+                IDamageable enemy = collider.GetComponentInParent<IDamageable>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damageToDeal);
+                }
             }
+            else
+            {
+                PlayerStats player = collider.GetComponentInParent<PlayerStats>();
+                if (player != null)
+                {
+                    player.TakeDamage();
+                }
+            }
+            
         }
         GameObject go = Instantiate(rocketExplosion);
         go.transform.position = enemyPos.position;
@@ -123,6 +150,11 @@ public class RocketProjectile : Projectile
     }
 
     protected void OnCollisionEnter(Collision other)
+    {
+        Explode(other.transform);
+    }
+
+    protected void OnTriggerEnter(Collider other)
     {
         Explode(other.transform);
     }

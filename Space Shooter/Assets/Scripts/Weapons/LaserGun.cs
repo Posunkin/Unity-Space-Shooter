@@ -58,8 +58,7 @@ namespace SpaceShooter.Weapons
             {
                 if (hit.collider != null)
                 {
-                    Transform parent = hit.collider.transform.root;
-                    Enemy enemy = parent.GetComponent<Enemy>();
+                    Enemy enemy = hit.collider.GetComponent<Enemy>();
                         if (enemy != null)
                         {
                             enemy.TakeDamage(currentDamage);

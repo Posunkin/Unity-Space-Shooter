@@ -44,12 +44,12 @@ public class Spawner : MonoBehaviour
 
     private void SpawnBoss()
     {
-        GameObject go = Instantiate(bossesPrefabs[0]);
+        GameObject go = Instantiate(bossesPrefabs[1]);
         Enemy enemy = go.GetComponent<Enemy>();
         enemy.OnDeath += SpawnPowerUp;
 
         // Set the position of the new object
-        go.transform.position = SetupPosition(go);
+        go.transform.position = bossPosition.position;
         enemiesOnScene.Add(go);
     }
 

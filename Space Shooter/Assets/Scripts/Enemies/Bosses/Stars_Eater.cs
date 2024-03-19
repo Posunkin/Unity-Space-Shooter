@@ -17,8 +17,8 @@ namespace SpaceShooter.Enemies
         [SerializeField] private float shootStatusTime;
         [SerializeField] private float chasingLaserStatusTime;
         [SerializeField] private float laserAttackStatusTime;
-        [SerializeField] private EnemyWeaponControl weapControl;
         [SerializeField] private BossHealthBar healthBar;
+        private EnemyWeaponControl weapControl;
         private Spawner spawner;
         private float startedNewStatusTime;
         private int stateIndex = 0;
@@ -97,18 +97,23 @@ namespace SpaceShooter.Enemies
             {
                 if (!isMoving)
                 {
-                    Debug.Log("Start moving");
-                    isMoving = true;
-                    p0 = transform.position;
-                    p1 = transform.position;
-                    p1.x = Random.Range(-widMinRad, widMinRad);
-                    p1.y = Random.Range(-hgtMinRad + 10, hgtMinRad);
-                    timeStart = Time.time;
+                    InitMovement();
                 }
                 MoveShooting();
                 yield return null;
             }
             ChangeStatus();
+        }
+
+        private void InitMovement()
+        {
+            Debug.Log("Start moving");
+            isMoving = true;
+            p0 = transform.position;
+            p1.x = Random.Range(-widMinRad, widMinRad);
+            p1.y = Random.Range(-hgtMinRad + 15, hgtMinRad);
+            Debug.Log(p1);
+            timeStart = Time.time;
         }
 
         private void MoveShooting()
@@ -117,9 +122,13 @@ namespace SpaceShooter.Enemies
             {
                 isMoving = false;
             }
-            Vector3 movePos = transform.position;
-            movePos += p1.normalized * speed * Time.deltaTime;
-            transform.position = movePos;
+            transform.position = Vector3.MoveTowards(transform.position, p1, speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, p1) < 0.1f)
+            {
+                isMoving = false;
+                InitMovement();
+            }
         }
         #endregion
 
@@ -149,7 +158,7 @@ namespace SpaceShooter.Enemies
                 transform.position = movePos;
                 return;
             }
-            if (endOfScreen) 
+            if (endOfScreen)
             {
                 x = transform.position.x;
                 endOfScreen = false;
@@ -175,7 +184,7 @@ namespace SpaceShooter.Enemies
         }
 
         #endregion
-        
+
         #region  Methods for Laser attack status
         private IEnumerator LaserGo()
         {

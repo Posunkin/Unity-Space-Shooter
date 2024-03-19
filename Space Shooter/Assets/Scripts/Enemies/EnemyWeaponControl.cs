@@ -13,8 +13,13 @@ public class EnemyWeaponControl : WeaponControl
 
     private void Awake()
     {
-        currentWeapon = new Weapon[type.Length];
         weaponManager = WeaponManager.Instance;
+        Init();
+    }
+
+    public void Init()
+    {
+        currentWeapon = new Weapon[type.Length];
         for (int i = 0; i < type.Length; i++)
         {
             GameObject weapon = weaponManager.GetWeapon(type[i]);

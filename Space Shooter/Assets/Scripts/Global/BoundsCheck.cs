@@ -5,6 +5,7 @@ public class BoundsCheck : MonoBehaviour
     [SerializeField] private float offSet;
     [SerializeField] private bool keepOnScreen = true;
     [SerializeField] private float _radius;
+    private float widthScreen = 30;
     internal bool isOnScreen = true;
     internal bool offRight, offLeft, offUp, offDown;
     private float _camWidth, _camHeight;
@@ -17,7 +18,8 @@ public class BoundsCheck : MonoBehaviour
     private void Awake()
     {
         CamHeight = Camera.main.orthographicSize - offSet;
-        CamWidth = (CamHeight + offSet) * Camera.main.aspect;
+        CamWidth = (CamHeight - offSet) * Camera.main.aspect;
+        CamWidth -= widthScreen;
     }
 
     private void LateUpdate()

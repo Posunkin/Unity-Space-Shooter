@@ -35,7 +35,7 @@ namespace SpaceShooter.Enemies
         [SerializeField] private ParticleSystem chargingEffect;
         private bool endOfScreen = true;
         private float x = 0;
-        private float speedWhileAttack = 5;
+        private float speedWhileAttack = 15;
         private float startSpeed;
 
         private StarsEaterState state;

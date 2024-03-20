@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2517031873826086888}
   - component: {fileID: 3727433156859271674}
   - component: {fileID: 7729085793498709610}
+  - component: {fileID: 3786998582953089560}
   m_Layer: 7
   m_Name: BlasterProjectile
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cb6fb356d2264499894ab04ffa03c1c, type: 2}
+  - {fileID: 2100000, guid: af2bddfe5a30e45069a7b6ae47e8f7d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -162,3 +163,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4148136be9a4dd88c32e829b634fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &3786998582953089560
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886394380000338040}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4292526949
+  m_Size: 1

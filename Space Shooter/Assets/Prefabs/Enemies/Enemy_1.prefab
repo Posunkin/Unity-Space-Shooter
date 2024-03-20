@@ -1,58 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5525768076579851936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3876222425981619937}
-  - component: {fileID: 6077567536064321053}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3876222425981619937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525768076579851936}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1868518146488800473}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6077567536064321053
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525768076579851936}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6543634234108650082
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +13,7 @@ GameObject:
   - component: {fileID: 7542378263974402049}
   - component: {fileID: 2621459415399926979}
   - component: {fileID: 3985842572964780552}
+  - component: {fileID: 2177035969723724265}
   m_Layer: 8
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -87,7 +35,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 376545922027940227}
-  - {fileID: 3876222425981619937}
   - {fileID: 3059127040285876213}
   - {fileID: 9218091592067198838}
   m_Father: {fileID: 0}
@@ -134,7 +81,7 @@ MonoBehaviour:
   currentHealth: 8
   speed: 14
   _score: 10
-  _chanceToSpawnPowerUp: 0.15
+  _chanceToSpawnPowerUp: 0.25
   explosionEffect: {fileID: 1312920955905056711, guid: 782db307f6d5a44918ba89ed5bfe708b, type: 3}
   smokeEffect: {fileID: 6866997408287798889}
   waveFrequency: 2
@@ -152,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e49c6bd3613741aabd04bbd0b1f8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 2
+  offSet: 5
   keepOnScreen: 0
   _radius: -3
 --- !u!114 &3985842572964780552
@@ -177,6 +124,27 @@ MonoBehaviour:
   - 25
   explosionRadius: 0
   timeToExplose: 0
+--- !u!135 &2177035969723724265
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543634234108650082}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &776417474416759968
 PrefabInstance:
   m_ObjectHideFlags: 0

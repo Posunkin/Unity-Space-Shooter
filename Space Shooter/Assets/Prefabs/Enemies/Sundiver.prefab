@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e49c6bd3613741aabd04bbd0b1f8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 2
+  offSet: 5
   keepOnScreen: 0
   _radius: 2
 --- !u!114 &8208327211632052365
@@ -596,7 +596,7 @@ MonoBehaviour:
   - {fileID: 3888406761269601272}
   - {fileID: 7453933499090885258}
   sunShield: {fileID: 1805125999740742153}
-  timeToNewDefenders: 10
+  timeToNewDefenders: 12
   delayBetweenRocketAttacks: 2
 --- !u!1 &3760605644831726271
 GameObject:

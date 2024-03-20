@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 6508717934024568589}
   - component: {fileID: 7701679762624653358}
   - component: {fileID: 6905965913400738732}
+  - component: {fileID: 8326225729701983219}
   m_Layer: 8
   m_Name: Stars_Eater
   m_TagString: Enemy
@@ -351,7 +352,6 @@ Transform:
   m_Children:
   - {fileID: 6069195726159520891}
   - {fileID: 6862485372421248320}
-  - {fileID: 1409229074026265912}
   - {fileID: 2338752268471135671}
   - {fileID: 2724810161305227231}
   - {fileID: 2858658023687696973}
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e49c6bd3613741aabd04bbd0b1f8ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offSet: 2
+  offSet: 5
   keepOnScreen: 0
   _radius: 2
 --- !u!114 &7701679762624653358
@@ -443,17 +443,38 @@ MonoBehaviour:
   - {fileID: 8044908974856368081}
   - {fileID: 4735363324583306048}
   weaponManager: {fileID: 0}
-  type: 000000000000000004000000
+  type: 000000000000000001000000
   enemyDelayBetweenShots:
   - 2
   - 2
-  - 7
+  - 3.5
   enemyProjectileSpeed:
   - 25
   - 25
-  - 0
+  - 30
   explosionRadius: 5
   timeToExplose: 2
+--- !u!135 &8326225729701983219
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2713875814267055619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3760605644831726271
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,59 +548,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!1 &4933146624579381348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1409229074026265912}
-  - component: {fileID: 2921503235382666571}
-  m_Layer: 8
-  m_Name: Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1409229074026265912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4933146624579381348}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3502560976212413409}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2921503235382666571
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4933146624579381348}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6974660779323866701
 GameObject:
   m_ObjectHideFlags: 0

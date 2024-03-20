@@ -95,7 +95,7 @@ namespace SpaceShooter.Enemies
         public virtual void TakeDamage(float damage)
         {
             currentHealth -= damage;
-            StartCoroutine(nameof(ShowDamage));
+            if (gameObject.activeSelf) StartCoroutine(nameof(ShowDamage));
             if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);

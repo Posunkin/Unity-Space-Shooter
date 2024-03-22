@@ -13,7 +13,7 @@ namespace SpaceShooter.Enemies
             weaponControl = GetComponent<EnemyWeaponControl>();
         }
 
-        protected override void Death()
+        protected override void Death(bool fromPlayer)
         {
             onDefenderDeath?.Invoke();
             GameObject go = Instantiate(explosionEffect);

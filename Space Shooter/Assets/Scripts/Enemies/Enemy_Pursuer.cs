@@ -67,7 +67,7 @@ namespace SpaceShooter.Enemies
             }
             GameObject go = Instantiate(explosion);
             go.transform.position = transform.position;
-            Death();
+            Death(true);
         }
     }
 }

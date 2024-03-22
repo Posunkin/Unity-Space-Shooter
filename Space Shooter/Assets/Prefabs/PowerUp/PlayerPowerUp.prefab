@@ -145,7 +145,7 @@ MonoBehaviour:
   rotMinMax: {x: 15, y: 90}
   driftMinMax: {x: 0.25, y: 2}
   powerUpType: 0
-  powerUpTypeFrequency: 000000000000000001000000
+  powerUpTypeFrequency: 0000000000000000000000000100000002000000
 --- !u!114 &2084706560995961413
 MonoBehaviour:
   m_ObjectHideFlags: 0

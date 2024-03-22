@@ -347,6 +347,7 @@
 "Assets/Scripts/Enemies/Enemy_Trapper.cs"
 "Assets/Scripts/Global/BackgroundMovement.cs"
 "Assets/Scripts/Global/BoundsCheck.cs"
+"Assets/Scripts/Global/DifficultyControl.cs"
 "Assets/Scripts/Global/GameManager.cs"
 "Assets/Scripts/Global/ScoreSystem.cs"
 "Assets/Scripts/Global/Spawner.cs"

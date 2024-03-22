@@ -53,6 +53,12 @@ namespace SpaceShooter.Enemies
             startSpeed = speed;
         }
 
+        public override void Init()
+        {
+            base.Init();
+            healthBar.SetMaxHealth(maxHealth);
+        }
+        
         private void ChangeStatus()
         {
             if (stateIndex < 2) stateIndex++;
@@ -81,7 +87,7 @@ namespace SpaceShooter.Enemies
             if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);
-                Death();
+                Death(true);
             }
             else if (currentHealth <= maxHealth / 2)
             {

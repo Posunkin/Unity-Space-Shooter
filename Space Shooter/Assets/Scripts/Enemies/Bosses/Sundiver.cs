@@ -57,6 +57,12 @@ namespace SpaceShooter.Enemies
             rocketWeapon.Stop();
         }
 
+        public override void Init()
+        {
+            base.Init();
+            healthBar.SetMaxHealth(maxHealth);
+        }
+
         private void ChangeStatus()
         {
             if (stateIndex < 2) stateIndex++;

@@ -101,6 +101,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
                     case PowerUpType.invulnerability:
                         StartCoroutine(Invulnerability(invulnerabilityTime));
                         break;
+                    case PowerUpType.damage:
+                        weaponControl.UpdateDamage();
+                        break;
                 }
             }
         }

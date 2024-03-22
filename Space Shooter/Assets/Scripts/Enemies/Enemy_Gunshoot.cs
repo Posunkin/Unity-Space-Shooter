@@ -42,7 +42,7 @@ namespace SpaceShooter.Enemies
 
             if (u > 1)
             {
-                Destroy(this.gameObject);
+                Death(false);
                 return;
             }
 

@@ -6,12 +6,15 @@ namespace SpaceShooter.Enemies
 {
     public abstract class Enemy : MonoBehaviour, IDamageable
     {
-        public Action<Enemy> OnDeath;
+        public Action<Enemy, bool> OnDeath;
         [Header("Enemy stats:")]
         [SerializeField] protected float currentHealth;
         [SerializeField] protected float speed;
         [SerializeField] protected int _score;
         [SerializeField] protected float _chanceToSpawnPowerUp;
+        public float MaxHealth { get => maxHealth; set => maxHealth = value; }
+        public float Speed {get => speed; set => speed = value;}
+        public float ChanceToSpawnPowerUp {get => _chanceToSpawnPowerUp; set => _chanceToSpawnPowerUp = value; }
         protected float maxHealth;
 
         [Header("Effects:")]
@@ -44,6 +47,11 @@ namespace SpaceShooter.Enemies
             pos = tempPos;
         }
 
+        public virtual void Init()
+        {
+            currentHealth = maxHealth;
+        }
+
         protected virtual void GetAllMaterials()
         {
             materials = Utils.GetAllMaterials(gameObject);
@@ -54,9 +62,9 @@ namespace SpaceShooter.Enemies
             }
         }
 
-        protected virtual void Death()
+        protected virtual void Death(bool fromPlayer)
         {
-            OnDeath?.Invoke(this);
+            OnDeath?.Invoke(this, fromPlayer);
             GameObject go = Instantiate(explosionEffect);
             go.transform.position = this.transform.position;
             Destroy(this.gameObject);
@@ -84,7 +92,7 @@ namespace SpaceShooter.Enemies
             if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);
-                Death();
+                Death(false);
             }
             else if (currentHealth <= maxHealth / 2)
             {
@@ -99,7 +107,7 @@ namespace SpaceShooter.Enemies
             if (currentHealth <= 0)
             {
                 GameManager.Instance.UpdateScore(score);
-                Death();
+                Death(true);
             }
             else if (currentHealth <= maxHealth / 2)
             {

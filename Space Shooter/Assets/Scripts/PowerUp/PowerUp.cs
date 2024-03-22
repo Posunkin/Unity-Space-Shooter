@@ -3,7 +3,8 @@ using UnityEngine;
 public enum PowerUpType
 {
     shield,
-    invulnerability
+    invulnerability,
+    damage
 }
 
 

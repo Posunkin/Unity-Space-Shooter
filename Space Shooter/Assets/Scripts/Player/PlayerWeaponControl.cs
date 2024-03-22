@@ -22,6 +22,8 @@ public class PlayerWeaponControl : WeaponControl
     private bool specWeaponOnCharge = false;
     private float specWeaponChargingTime = 2;
 
+    private float damageMult = 1;
+
     private void Awake()
     {
         player.OnWeaponAbsorb += SetNewWeapon;
@@ -72,7 +74,7 @@ public class PlayerWeaponControl : WeaponControl
             weapon = weaponManager.GetWeapon(type);
             currentWeapons[0] = SetWeaponPosition(weapon, weaponSlots[0]);
             currentWeaponType[0] = currentWeapons[0].GetComponent<Weapon>();
-            currentWeaponType[0].currentDamage = currentWeaponType[0].defDamage;
+            currentWeaponType[0].currentDamage = currentWeaponType[0].defDamage * damageMult;
         }
         else if (type == WeaponType.laserGun) return;
         else 
@@ -81,14 +83,14 @@ public class PlayerWeaponControl : WeaponControl
             {
                 currentWeapons[1] = SetWeaponPosition(weapon, weaponSlots[1]);
                 currentWeaponType[1] = currentWeapons[1].GetComponent<Weapon>();
-                currentWeaponType[1].currentDamage = currentWeaponType[1].defDamage / 2;
+                currentWeaponType[1].currentDamage = currentWeaponType[1].defDamage / 2 * damageMult;
                 currentWeaponType[1].lastShootTime = currentWeaponType[0].lastShootTime;
             }
             else if (currentWeapons[2] == null)
             {
                 currentWeapons[2] = SetWeaponPosition(weapon, weaponSlots[2]);
                 currentWeaponType[2] = currentWeapons[2].GetComponent<Weapon>();
-                currentWeaponType[2].currentDamage = currentWeaponType[2].defDamage / 2;
+                currentWeaponType[2].currentDamage = currentWeaponType[2].defDamage / 2 * damageMult;
                 currentWeaponType[2].lastShootTime = currentWeaponType[0].lastShootTime;
 
             }
@@ -139,6 +141,24 @@ public class PlayerWeaponControl : WeaponControl
     {
         _specCharges = charges;
         OnChargesSpend?.Invoke(_specCharges);
+    }
+
+    public void UpdateDamage()
+    {
+        damageMult += 0.1f;
+        for (int i = 0; i < currentWeaponType.Length; i++)
+        {
+            if (currentWeaponType[i] != null)
+            {
+                if (i == 0) currentWeaponType[i].currentDamage = currentWeaponType[i].defDamage * damageMult;
+                else
+                {
+                    currentWeaponType[i].currentDamage = currentWeaponType[i].defDamage / 2 * damageMult;
+                }
+            }
+        }
+        currentSpecWeapType.currentDamage = currentSpecWeapType.defDamage * damageMult;
+        playerUI.UpdateDamage(damageMult);
     }
 }
 

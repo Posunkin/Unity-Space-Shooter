@@ -19,6 +19,11 @@ public class PlayerPowerUp : PowerUp
                 rend.material.color = Color.white;
                 letter.text = "I";
                 break;
+            case PowerUpType.damage:
+                powerUpType = type;
+                rend.material.color = Color.red;
+                letter.text = "D";
+                break;
         }
     }
 

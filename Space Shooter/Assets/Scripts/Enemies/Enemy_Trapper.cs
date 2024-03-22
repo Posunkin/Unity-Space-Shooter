@@ -41,7 +41,7 @@ namespace SpaceShooter.Enemies
         {
             float u = (Time.time - birthTime) / lifeTime;
 
-            if (u > 1) Destroy(gameObject);
+            if (u > 1) Death(false);
 
             u = u + sinEccentricity*(Mathf.Sin(u * Mathf.PI * 2));
 

@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     [SerializeField] private TextMeshProUGUI lifeCountText;
     [SerializeField] private TextMeshProUGUI specChargesText;
     [SerializeField] private TextMeshProUGUI endScoreText;
+    [SerializeField] private TextMeshProUGUI damageText;
     [SerializeField] private RawImage[] specWeaponImages; // 0 = rocket, 1 = mine
     [SerializeField] private GameObject playerObj;
     private PlayerStats player;
@@ -102,6 +103,11 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
                 specChargesText.text = "III";
                 break;
         }
+    }
+
+    public void UpdateDamage(float damageMult)
+    {
+        damageText.text = damageMult.ToString();
     }
 
     public void LeaderboardUpdate()

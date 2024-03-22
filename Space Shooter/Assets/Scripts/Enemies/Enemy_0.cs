@@ -14,7 +14,7 @@ namespace SpaceShooter.Enemies
         {
             if (bndCheck != null && bndCheck.offDown)
             {
-                Death();
+                Death(false);
             }
         }
     }

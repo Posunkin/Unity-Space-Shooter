@@ -7,7 +7,11 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemiesPrefabs;
+    [SerializeField] private GameObject[][] enemiesPrefabs = new GameObject[4][];
+    [SerializeField] private GameObject[] enemiesPrefabsLevel1;
+    [SerializeField] private GameObject[] enemiesPrefabsLevel2;
+    [SerializeField] private GameObject[] enemiesPrefabsLevel3;
+    [SerializeField] private GameObject[] enemiesPrefabsLevel4;
     [SerializeField] private GameObject[] bossesPrefabs;
     [SerializeField] private Transform bossPosition;
     [SerializeField] private GameObject weaponPowerUpPrefab;
@@ -22,11 +26,18 @@ public class Spawner : MonoBehaviour
 
     internal float OffSet { get => _offSet; private set => _offSet = value; }
 
-    [Header("For Stars Eater:")]
+    [Header("For Bosses:")]
     [SerializeField] private GameObject[] starEaterTeam;
+    [SerializeField] private GameObject[] spaceKeeperTeam;
+
+    
 
     private void Start()
     {
+        enemiesPrefabs[0] = enemiesPrefabsLevel1;
+        enemiesPrefabs[1] = enemiesPrefabsLevel2;
+        enemiesPrefabs[2] = enemiesPrefabsLevel3;
+        enemiesPrefabs[3] = enemiesPrefabsLevel4;
         difficultyControl = new();
         timeSinceLastBoss = Time.time;
         Invoke(nameof(SpawnEnemies), startDelay);
@@ -46,8 +57,8 @@ public class Spawner : MonoBehaviour
             Invoke(nameof(SpawnEnemies), difficultyControl.SpawnDelay);
             return;
         }
-        int index = Random.Range(0, enemiesPrefabs.Length);
-        GameObject go = Instantiate(enemiesPrefabs[index]);
+        int index = Random.Range(0, enemiesPrefabs[difficultyControl.CurrentLevel].Length);
+        GameObject go = Instantiate(enemiesPrefabs[difficultyControl.CurrentLevel][index]);
         Enemy enemy = go.GetComponent<Enemy>();
         enemy.OnDeath += SpawnPowerUp;
         difficultyControl.UpEnemy(enemy);
@@ -84,14 +95,28 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void SpawnBossTeam()
+    public void SpawnBossTeam(string bossName)
     {
-        int index = Random.Range(0, starEaterTeam.Length);
-        GameObject go = Instantiate(starEaterTeam[index]);
-        Enemy enemy = go.GetComponent<Enemy>();
-        enemy.OnDeath += SpawnPowerUp;
-
-        go.transform.position = SetupPosition(go);
+        int index;
+        GameObject go;
+        Enemy enemy;
+        switch (bossName)
+        {
+            case "Stars_Eater":
+                index = Random.Range(0, starEaterTeam.Length);
+                go = Instantiate(starEaterTeam[index]);
+                enemy = go.GetComponent<Enemy>();
+                enemy.OnDeath += SpawnPowerUp;
+                go.transform.position = SetupPosition(go);
+                break;
+            case "Space_Keeper":
+                index = Random.Range(0, spaceKeeperTeam.Length);
+                go = Instantiate(spaceKeeperTeam[index]);
+                enemy = go.GetComponent<Enemy>();
+                enemy.OnDeath += SpawnPowerUp;
+                go.transform.position = SetupPosition(go);
+                break;
+        }
     }
 
     private Vector3 SetupPosition(GameObject go)

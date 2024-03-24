@@ -6,8 +6,12 @@ public class EnemyWeaponControl : WeaponControl
     [SerializeField] private WeaponType[] type;
     [SerializeField] private float[] enemyDelayBetweenShots;
     [SerializeField] private float[] enemyProjectileSpeed;
+    [Header("Mine trapp:")]
     [SerializeField] private float explosionRadius;
     [SerializeField] private float timeToExplose;
+    [Header("Shotgun:")]
+    [SerializeField] private int projectilesNum;
+    [SerializeField] private float projectileAngle;
     private GameObject weapon;
     private Weapon[] currentWeapon;
 
@@ -31,6 +35,11 @@ public class EnemyWeaponControl : WeaponControl
             {
                 currentWeapon[i].GetComponent<MineTrap>().explosionRadius = explosionRadius;
                 currentWeapon[i].GetComponent<MineTrap>().timeToExplose = timeToExplose;
+            }
+            if (currentWeapon[i].type == WeaponType.blasterShotgun)
+            {
+                currentWeapon[i].GetComponent<BlasterShotgun>().projectilesNum = projectilesNum;
+                currentWeapon[i].GetComponent<BlasterShotgun>().projectileAngle = projectileAngle;
             }
         }
     }

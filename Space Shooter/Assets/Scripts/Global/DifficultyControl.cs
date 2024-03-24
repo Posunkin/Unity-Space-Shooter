@@ -7,13 +7,16 @@ public class DifficultyControl
     private float speedMult = 0.8f;
     private float maxEnemiesOnScreen = 4;
     private float chanceToSpawnPowerUp = 0.5f;
+    private int currentLevel = 0;
     
     public float SpawnDelay {get => spawnDelay; private set => spawnDelay = value;}
     public float MaxEnemiesOnScreen {get => maxEnemiesOnScreen; private set => maxEnemiesOnScreen = value;}
+    public int CurrentLevel {get => currentLevel; private set => currentLevel = value;}
    
 
     public void DifficultyChange()
     {
+        if (currentLevel < 4) currentLevel++;
         hpMult += 0.2f;
         if (spawnDelay > 0.8f) spawnDelay -= 0.15f;
         if (speedMult < 1.6f) speedMult += 0.2f;

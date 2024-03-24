@@ -213,7 +213,7 @@ namespace SpaceShooter.Enemies
 
         private void SpawnBossTeam()
         {
-            spawner.SpawnBossTeam();
+            spawner.SpawnBossTeam("Stars_Eater");
         }
         #endregion
     }

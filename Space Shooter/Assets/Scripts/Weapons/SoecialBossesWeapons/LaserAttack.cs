@@ -1,4 +1,5 @@
 using System.Collections;
+using SpaceShooter.Enemies;
 using UnityEngine;
 
 public class LaserAttack : MonoBehaviour
@@ -7,7 +8,7 @@ public class LaserAttack : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private float laserWidth = 0.4f;
     [SerializeField] private float maxLength = 300f;
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask hitLayer;
     private Transform tr;
     private float duration = 3;
     private float attackStart;
@@ -51,14 +52,19 @@ public class LaserAttack : MonoBehaviour
     private void DoDamage()
     {
         RaycastHit hit;
-        Physics.Raycast(new Vector3(tr.position.x, tr.position.y, 0), Vector3.down, out hit, maxLength, playerLayer);
+        Physics.Raycast(new Vector3(tr.position.x, tr.position.y, 0), Vector3.down, out hit, maxLength, hitLayer);
+
         if (hit.collider != null)
         {
             Transform parent = hit.collider.transform.root;
-            PlayerStats player = parent.GetComponent<PlayerStats>();
-            if (player != null)
+            
+            if (parent.TryGetComponent<PlayerStats>(out PlayerStats player))
             {
                 player.TakeDamage();
+            }
+            else if (parent.TryGetComponent<Enemy>(out Enemy enemy))
+            {
+                enemy.TakeDamage();
             }
         }
     }

@@ -48,9 +48,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 5392248336854512324}
   laserWidth: 0.4
   maxLength: 300
-  playerLayer:
+  hitLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!120 &5392248336854512324
 LineRenderer:
   serializedVersion: 2
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eedf00ec81c9d447e98f4dcb03e53d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 300
+  currentHealth: 350
   speed: 10
   _score: 500
   _chanceToSpawnPowerUp: 0
@@ -293,6 +293,8 @@ MonoBehaviour:
   - 30
   explosionRadius: 5
   timeToExplose: 2
+  projectilesNum: 9
+  projectileAngle: 5
 --- !u!135 &8326225729701983219
 SphereCollider:
   m_ObjectHideFlags: 0

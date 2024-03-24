@@ -49,6 +49,7 @@ namespace SpaceShooter.Enemies
             foreach (Defender def in defenders)
             {
                 def.onDefenderDeath += DefenderDead;
+                def.Init(maxHealth);
             }
             deadDefenders = 0;
             widMinRad = bndCheck.CamWidth - bndCheck.Radius;
@@ -99,6 +100,8 @@ namespace SpaceShooter.Enemies
                 MoveShooting();
                 yield return null;
             }
+            float damageTaken = maxHealth * 0.1f;
+            TakeDamage(damageTaken);
             ChangeStatus();
         }
 
@@ -216,7 +219,7 @@ namespace SpaceShooter.Enemies
             foreach (Defender def in defenders)
             {
                 def.gameObject.SetActive(true);
-                def.Alive();
+                def.Alive(maxHealth);
             }
             sunShield.SetActive(true);
         }

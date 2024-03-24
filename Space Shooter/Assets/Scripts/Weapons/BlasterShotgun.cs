@@ -4,8 +4,9 @@ namespace SpaceShooter.Weapons
 {
     public class BlasterShotgun : Weapon
     {
+        public int projectilesNum = 3;
+        public float projectileAngle = 5f;
         private Vector3 projectileDirection;
-        private float xAngle = 5;
 
         protected override void Start()
         {
@@ -18,17 +19,27 @@ namespace SpaceShooter.Weapons
         {
             if (lastShootTime + delayBetweenShots > Time.time) return;
             lastShootTime = Time.time;
-            GameObject projGo = Shoot();
-            Rigidbody rb = projGo.GetComponent<Rigidbody>();
-            rb.velocity =  projectileDirection * projectileSpeed;
-            projGo = Shoot();
-            rb = projGo.GetComponent<Rigidbody>();
-            projGo.transform.rotation = Quaternion.AngleAxis(xAngle, Vector3.back);
-            rb.velocity = projGo.transform.rotation * projectileDirection * projectileSpeed;
-            projGo = Shoot();
-            rb = projGo.GetComponent<Rigidbody>();
-            projGo.transform.rotation = Quaternion.AngleAxis(-xAngle, Vector3.back);
-            rb.velocity = projGo.transform.rotation * projectileDirection * projectileSpeed;
+            if (projectilesNum % 2 == 1)
+            {
+                GameObject projGo = Shoot();
+                Rigidbody rb = projGo.GetComponent<Rigidbody>();
+                rb.velocity =  projectileDirection * projectileSpeed;
+                int proj = projectilesNum / 2;
+                for (int i = 1; i <= proj; i++)
+                {
+                    projGo = Shoot();
+                    rb = projGo.GetComponent<Rigidbody>();
+                    projGo.transform.rotation = Quaternion.AngleAxis(projectileAngle * i, Vector3.back);
+                    rb.velocity =  projGo.transform.rotation * projectileDirection * projectileSpeed;
+                }
+                for (int i = 1; i <= proj; i++)
+                {
+                    projGo = Shoot();
+                    rb = projGo.GetComponent<Rigidbody>();
+                    projGo.transform.rotation = Quaternion.AngleAxis(-projectileAngle * i, Vector3.back);
+                    rb.velocity =  projGo.transform.rotation * projectileDirection * projectileSpeed;
+                }
+            }
         }
 
         protected override GameObject Shoot()

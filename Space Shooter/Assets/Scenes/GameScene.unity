@@ -4250,17 +4250,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5363ceb618b0470988f7c2379070912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesPrefabs:
+  enemiesPrefabsLevel1:
   - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
   - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
   - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  enemiesPrefabsLevel2:
+  - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
+  - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  - {fileID: 7812035423099983307, guid: 863b0186505c04b969659ffa5ab64564, type: 3}
   - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
   - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
+  enemiesPrefabsLevel3:
+  - {fileID: 2713875814267055619, guid: 6165fa954dbad448b90e493f2508f8cf, type: 3}
+  - {fileID: 6543634234108650082, guid: 855e919333fec4ef4a047974e47e09ed, type: 3}
+  - {fileID: 7812035423099983307, guid: 863b0186505c04b969659ffa5ab64564, type: 3}
+  - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
+  - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
+  enemiesPrefabsLevel4:
+  - {fileID: 6543634234108650082, guid: d51a8a97133624f689b220d7f12e873c, type: 3}
+  - {fileID: 6543634234108650082, guid: d51a8a97133624f689b220d7f12e873c, type: 3}
   - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
   - {fileID: 7812035423099983307, guid: 863b0186505c04b969659ffa5ab64564, type: 3}
+  - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
   bossesPrefabs:
+  - {fileID: 2713875814267055619, guid: 4801156559c904d2396763a78d9590c4, type: 3}
   - {fileID: 2713875814267055619, guid: 44d53b240c2cc43d691252f5c8235735, type: 3}
   - {fileID: 2713875814267055619, guid: cc4a7acbb9f76411babd8e147f8c8467, type: 3}
   bossPosition: {fileID: 284107636}
@@ -4272,6 +4287,9 @@ MonoBehaviour:
   - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
   - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
   - {fileID: 7812035423099983307, guid: 23cec7b64a576435bbdfc2eceef7a221, type: 3}
+  spaceKeeperTeam:
+  - {fileID: 7812035423099983307, guid: 863b0186505c04b969659ffa5ab64564, type: 3}
+  - {fileID: 7812035423099983307, guid: 0d9efa09477da405483a7473b13645ff, type: 3}
 --- !u!1 &1588452834
 GameObject:
   m_ObjectHideFlags: 0

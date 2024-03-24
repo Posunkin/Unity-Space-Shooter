@@ -21,10 +21,15 @@ namespace SpaceShooter.Enemies
             gameObject.SetActive(false);
         }
 
-        public void Alive()
+        public void Alive(float sundiverHp)
         {
-            currentHealth = maxHealth;
+            currentHealth = sundiverHp * 0.1f;
             weaponControl.Init();
+        }
+
+        public void Init(float sundiverHp)
+        {
+            currentHealth = sundiverHp * 0.1f;
         }
     }
 }

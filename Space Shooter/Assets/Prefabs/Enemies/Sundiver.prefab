@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d976661e0bb4833bdd52a74ad53680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 150
+  currentHealth: 350
   speed: 12
   _score: 800
   _chanceToSpawnPowerUp: 0

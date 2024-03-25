@@ -510,6 +510,12 @@
             "icon": "package/com.unity.modules.imgui"
           },
           {
+            "name": "Required by ImageConversion Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.imageconversion"
+          },
+          {
             "name": "Required by InputLegacy Module",
             "scenes": [],
             "dependencyType": 2,
@@ -538,6 +544,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by TLS Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.tls"
           },
           {
             "name": "Required by TextCoreFontEngine Module",
@@ -570,6 +582,18 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
+          },
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
@@ -585,6 +609,17 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          }
+        ]
+      },
+      {
+        "name": "ImageConversion",
+        "dependencies": [
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
           }
         ]
       },
@@ -742,6 +777,12 @@
             "icon": "package/com.unity.modules.imgui"
           },
           {
+            "name": "Required by ImageConversion Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.imageconversion"
+          },
+          {
             "name": "Required by InputLegacy Module",
             "scenes": [],
             "dependencyType": 2,
@@ -770,6 +811,12 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by TLS Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.tls"
           },
           {
             "name": "Required by TextCoreFontEngine Module",
@@ -802,10 +849,33 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
+          },
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          }
+        ]
+      },
+      {
+        "name": "TLS",
+        "dependencies": [
+          {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
           }
         ]
       },
@@ -932,6 +1002,21 @@
       },
       {
         "name": "UIElements",
+        "dependencies": []
+      },
+      {
+        "name": "UnityWebRequest",
+        "dependencies": [
+          {
+            "name": "Required by UnityWebRequestTexture Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequesttexture"
+          }
+        ]
+      },
+      {
+        "name": "UnityWebRequestTexture",
         "dependencies": []
       },
       {

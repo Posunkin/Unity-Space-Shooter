@@ -386,6 +386,7 @@
 "Assets/Scripts/Weapons/SoecialBossesWeapons/RocketAttack.cs"
 "Assets/Scripts/Weapons/Weapon.cs"
 "Assets/Scripts/Weapons/WeaponControl.cs"
+"Assets/Yandex/Plugins/YandexSDK.cs"
 -langversion:9.0
 
 /deterministic

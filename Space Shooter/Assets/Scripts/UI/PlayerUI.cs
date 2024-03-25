@@ -13,7 +13,6 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     [SerializeField] private TextMeshProUGUI specChargesText;
     [SerializeField] private TextMeshProUGUI endScoreText;
     [SerializeField] private TextMeshProUGUI damageText;
-    [SerializeField] private RawImage[] specWeaponImages; // 0 = rocket, 1 = mine
     [SerializeField] private GameObject playerObj;
     private PlayerStats player;
     private PlayerWeaponControl playerWeaponControl;
@@ -24,14 +23,12 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
         scoreText.text = startScore.ToString();
         player = playerObj.GetComponent<PlayerStats>();
         playerWeaponControl = playerObj.GetComponent<PlayerWeaponControl>();
-        player.OnPlayerDeath += LeaderboardUpdate;
         player.OnShieldLevelChange += UpdateLifeCount;
         playerWeaponControl.OnChargesSpend += UpdateSpecCharges;
     }
 
     private void OnDisable()
     {
-        player.OnPlayerDeath -= LeaderboardUpdate;
         player.OnShieldLevelChange -= UpdateLifeCount;
         playerWeaponControl.OnChargesSpend -= UpdateSpecCharges;
 
@@ -47,21 +44,6 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
         startScore += score;
         if (startScore < 0) startScore = 0;
         scoreText.text = startScore.ToString();
-    }
-
-    public void UpdateSpecWeapon(WeaponType type)
-    {
-        switch(type)
-        {
-            case WeaponType.rocketLauncher:
-                specWeaponImages[0].gameObject.SetActive(true);
-                specWeaponImages[1].gameObject.SetActive(false);
-                break;
-            case WeaponType.mineTrap:
-                specWeaponImages[1].gameObject.SetActive(true);
-                specWeaponImages[0].gameObject.SetActive(false);
-                break;
-        }
     }
 
     private void UpdateLifeCount(int count)
@@ -108,11 +90,5 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     public void UpdateDamage(float damageMult)
     {
         damageText.text = damageMult.ToString();
-    }
-
-    public void LeaderboardUpdate()
-    {
-        endScoreText.text = startScore.ToString();
-        SubmitScoreEvent?.Invoke(inputName.text, int.Parse(scoreText.text));
     }
 }

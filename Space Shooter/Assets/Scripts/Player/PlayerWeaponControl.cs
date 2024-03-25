@@ -33,7 +33,6 @@ public class PlayerWeaponControl : WeaponControl
         GameObject specWeapon = weaponManager.GetWeapon(specWeaponType);
         currentSpecWeap = SetWeaponPosition(specWeapon, specSlot);
         currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();
-        playerUI.UpdateSpecWeapon(currentSpecWeapType.type);
         UpdateCharges(_specCharges);
     }
 
@@ -107,7 +106,6 @@ public class PlayerWeaponControl : WeaponControl
             currentSpecWeap = SetWeaponPosition(weapon, specSlot);
             currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();
             currentSpecWeapType.currentDamage = currentSpecWeapType.defDamage;
-            playerUI.UpdateSpecWeapon(type);
             UpdateCharges(1);
         }
         else

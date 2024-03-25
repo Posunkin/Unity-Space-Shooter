@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 15
-  speed: 25
+  speed: 20
   _score: 15
   _chanceToSpawnPowerUp: 0.2
   explosionEffect: {fileID: 1312920955905056711, guid: 782db307f6d5a44918ba89ed5bfe708b, type: 3}

@@ -324,7 +324,6 @@
 "Assets/Scripts/Projectiles/SundiverRocket.cs"
 "Assets/Scripts/UI/BossHealthBar.cs"
 "Assets/Scripts/UI/GameOverMenu.cs"
-"Assets/Scripts/UI/LeaderBoard.cs"
 "Assets/Scripts/UI/PlayerUI.cs"
 "Assets/Scripts/UI/StartMenu.cs"
 "Assets/Scripts/Utils/DestroyWithDelay.cs"
@@ -339,6 +338,7 @@
 "Assets/Scripts/Weapons/SoecialBossesWeapons/RocketAttack.cs"
 "Assets/Scripts/Weapons/Weapon.cs"
 "Assets/Scripts/Weapons/WeaponControl.cs"
+"Assets/Yandex/Plugins/YandexEndSession.cs"
 "Assets/Yandex/Plugins/YandexSDK.cs"
 -langversion:9.0
 

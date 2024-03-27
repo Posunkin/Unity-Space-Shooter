@@ -16,11 +16,12 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     [SerializeField] private GameObject playerObj;
     private PlayerStats player;
     private PlayerWeaponControl playerWeaponControl;
-    private int startScore = 0;
+    private int playerScore = 0;
+    public int PlayerScore {get => playerScore;}
 
     private void Awake()
     {
-        scoreText.text = startScore.ToString();
+        scoreText.text = playerScore.ToString();
         player = playerObj.GetComponent<PlayerStats>();
         playerWeaponControl = playerObj.GetComponent<PlayerWeaponControl>();
         player.OnShieldLevelChange += UpdateLifeCount;
@@ -41,9 +42,9 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
 
     public void UpdateScore(int score)
     {
-        startScore += score;
-        if (startScore < 0) startScore = 0;
-        scoreText.text = startScore.ToString();
+        playerScore += score;
+        if (playerScore < 0) playerScore = 0;
+        scoreText.text = playerScore.ToString();
     }
 
     private void UpdateLifeCount(int count)

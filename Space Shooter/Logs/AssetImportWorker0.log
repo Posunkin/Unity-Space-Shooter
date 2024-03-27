@@ -22,7 +22,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56373
+50172
 Successfully changed project path to: /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter
 /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,12 +56,12 @@ Successfully changed project path to: /Users/vlad/Documents/Unity Learning/Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [8229976768] Host "[IP] 192.168.0.154 [Port] 0 [Flags] 2 [Guid] 1672700484 [EditorId] 1672700484 [Version] 1048832 [Id] OSXEditor(0,MBP-Vladislav.dlink) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [8719088320] Host "[IP] 192.168.0.154 [Port] 0 [Flags] 2 [Guid] 3703208666 [EditorId] 3703208666 [Version] 1048832 [Id] OSXEditor(0,MBP-Vladislav.dlink) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [8229976768] Host "[IP] 192.168.0.154 [Port] 0 [Flags] 2 [Guid] 1672700484 [EditorId] 1672700484 [Version] 1048832 [Id] OSXEditor(0,MBP-Vladislav.dlink) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [8719088320] Host "[IP] 192.168.0.154 [Port] 0 [Flags] 2 [Guid] 3703208666 [EditorId] 3703208666 [Version] 1048832 [Id] OSXEditor(0,MBP-Vladislav.dlink) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
-Refreshing native plugins compatible for Editor in 6.30 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 8.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.15f1 (b58023a2b463)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -76,48 +76,48 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56708
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.15f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.15f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002150 seconds.
-- Loaded All Assemblies, in  0.238 seconds
+Registered in 0.001615 seconds.
+- Loaded All Assemblies, in  0.239 seconds
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.160 seconds
-Domain Reload Profiling: 398ms
-	BeginReloadAssembly (74ms)
+- Finished resetting the current domain, in  0.161 seconds
+Domain Reload Profiling: 400ms
+	BeginReloadAssembly (78ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
+		CreateAndSetChildDomain (0ms)
 	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (101ms)
-		LoadAssemblies (74ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (98ms)
+		LoadAssemblies (79ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (99ms)
-			TypeCache.Refresh (97ms)
-				TypeCache.ScanAssembly (86ms)
+		AnalyzeDomain (95ms)
+			TypeCache.Refresh (94ms)
+				TypeCache.ScanAssembly (85ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (160ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (161ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (122ms)
+		SetupLoadedEditorAssemblies (123ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (3ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (84ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
+			ProcessInitializeOnLoadAttributes (87ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -125,8 +125,66 @@ Domain Reload Profiling: 398ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.475 seconds
-Refreshing native plugins compatible for Editor in 1.07 ms, found 2 plugins.
+Symbol file data-0x1205e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e210000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1306d8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12ed58600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140260000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30aa23800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12ed58600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120620000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140278000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e220200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1489d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1205e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1206e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x3081f7a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x308203200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e220200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148a18000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140288000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1489d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140030000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140288000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1206e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12ed58600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1306d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12ed60400 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30aa2ca00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12f017600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1308a8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1306d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.451 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
@@ -135,95 +193,49 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.329 seconds
-Domain Reload Profiling: 804ms
-	BeginReloadAssembly (80ms)
+- Finished resetting the current domain, in  0.361 seconds
+Domain Reload Profiling: 813ms
+	BeginReloadAssembly (89ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (17ms)
-	RebuildCommonClasses (23ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (26ms)
 	RebuildNativeTypeToScriptingClass (8ms)
 	initialDomainReloadingComplete (22ms)
-	LoadAllAssembliesAndSetupDomain (343ms)
-		LoadAssemblies (235ms)
+	LoadAllAssembliesAndSetupDomain (306ms)
+		LoadAssemblies (208ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (146ms)
-			TypeCache.Refresh (135ms)
-				TypeCache.ScanAssembly (112ms)
-			ScanForSourceGeneratedMonoScriptInfo (7ms)
+		AnalyzeDomain (142ms)
+			TypeCache.Refresh (130ms)
+				TypeCache.ScanAssembly (107ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (329ms)
+	FinalizeReload (361ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (240ms)
+		SetupLoadedEditorAssemblies (258ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
+			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (31ms)
-			ProcessInitializeOnLoadAttributes (193ms)
-			ProcessInitializeOnLoadMethodAttributes (10ms)
+			BeforeProcessingInitializeOnLoad (35ms)
+			ProcessInitializeOnLoadAttributes (204ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (2ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
 Launching external process: /Applications/Unity/Hub/Editor/2022.3.15f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.23 seconds
-Refreshing native plugins compatible for Editor in 0.91 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.95 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3177 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 33 unused Assets / (51.5 KB). Loaded Objects now: 3642.
-Memory consumption went from 134.3 MB to 134.3 MB.
-Total: 2.355167 ms (FindLiveObjects: 0.127417 ms CreateObjectMapping: 0.045708 ms MarkObjects: 2.093167 ms  DeleteObjects: 0.088417 ms)
+Unloading 3179 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (51.9 KB). Loaded Objects now: 3646.
+Memory consumption went from 135.2 MB to 135.1 MB.
+Total: 2.634958 ms (FindLiveObjects: 0.122000 ms CreateObjectMapping: 0.045708 ms MarkObjects: 2.375125 ms  DeleteObjects: 0.091375 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 1.81 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (3.0 KB). Loaded Objects now: 3642.
-Memory consumption went from 81.0 MB to 81.0 MB.
-Total: 15.476417 ms (FindLiveObjects: 0.185583 ms CreateObjectMapping: 0.038958 ms MarkObjects: 15.206042 ms  DeleteObjects: 0.045417 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 2.21 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (3.0 KB). Loaded Objects now: 3642.
-Memory consumption went from 80.4 MB to 80.4 MB.
-Total: 7.021791 ms (FindLiveObjects: 0.160959 ms CreateObjectMapping: 0.041958 ms MarkObjects: 6.781042 ms  DeleteObjects: 0.037625 ms)
-
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -239,20 +251,119 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 22585.128571 seconds.
-  path: Assets/UI
-  artifactKey: Guid(c7c397098a929467b9c6856f1e26e4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI using Guid(c7c397098a929467b9c6856f1e26e4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3796c27546b98a98665b5c8e680886bc') in 0.016853 seconds
+  Time since last request: 3363.357360 seconds.
+  path: Assets/Yandex/Plugins/YandexEndSession.cs
+  artifactKey: Guid(13e886dbdc2da47489fda0643e6cf6f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Yandex/Plugins/YandexEndSession.cs using Guid(13e886dbdc2da47489fda0643e6cf6f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5baed81ef8543d9ddd0df9ad60195e') in 0.001407 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 1.83 ms, found 2 plugins.
+Begin MonoManager ReloadAssembly
+Thread 0x310367000 may have been prematurely finalized
+Symbol file data-0x1404c8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309932c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1404e0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309934e00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30993e000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140550000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1404f0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309944a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1405e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140678000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140740000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309944a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30994f200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30994f200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140610000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1407a8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140878000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140610000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1407a8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140900000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30994f200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1407a8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30990ec00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309915800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309915600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140920000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1410a8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.263 seconds
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.401 seconds
+Domain Reload Profiling: 664ms
+	BeginReloadAssembly (82ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (137ms)
+		LoadAssemblies (153ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (5ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (401ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (226ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (171ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (0.9 KB). Loaded Objects now: 3642.
-Memory consumption went from 79.9 MB to 79.9 MB.
-Total: 6.883375 ms (FindLiveObjects: 0.183042 ms CreateObjectMapping: 0.040458 ms MarkObjects: 6.624542 ms  DeleteObjects: 0.034791 ms)
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 3649.
+Memory consumption went from 137.5 MB to 137.4 MB.
+Total: 2.265208 ms (FindLiveObjects: 0.104458 ms CreateObjectMapping: 0.036416 ms MarkObjects: 2.082334 ms  DeleteObjects: 0.041375 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -270,12 +381,622 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 2.04 ms, found 2 plugins.
+Begin MonoManager ReloadAssembly
+Thread 0x30a303000 may have been prematurely finalized
+Symbol file data-0x148858000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5d3800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1488b8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5d9a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5e2c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148928000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148858000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5e9600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1489c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1491f0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1492b8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5e9600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5f3e00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a5f3e00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1489e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x149320000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1493f0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1207d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x149320000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1208d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12ed06200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120850000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1380e0200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1380e6e00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1380e6c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140a08000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140a90000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.290 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.638 seconds
+Domain Reload Profiling: 928ms
+	BeginReloadAssembly (98ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (146ms)
+		LoadAssemblies (161ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (5ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (639ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (223ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (37ms)
+			ProcessInitializeOnLoadAttributes (168ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Refreshing native plugins compatible for Editor in 0.92 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (32.6 KB). Loaded Objects now: 3651.
+Memory consumption went from 144.9 MB to 144.9 MB.
+Total: 2.727917 ms (FindLiveObjects: 0.127208 ms CreateObjectMapping: 0.043667 ms MarkObjects: 2.484667 ms  DeleteObjects: 0.071625 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x30a303000 may have been prematurely finalized
+Symbol file data-0x1400e0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad6ae00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140140000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad6ae00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad79a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1401b0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1400e0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad88c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140248000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1402d8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1403a0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad88c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad90000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad8dc00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140270000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140408000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1404d8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140270000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140408000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140678000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad8da00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140420000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ad9ae00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ada1a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x30ada1800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140700000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140788000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.279 seconds
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.659 seconds
+Domain Reload Profiling: 937ms
+	BeginReloadAssembly (99ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (135ms)
+		LoadAssemblies (158ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (659ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (240ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (180ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 0.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 3654.
+Memory consumption went from 152.1 MB to 152.1 MB.
+Total: 2.690750 ms (FindLiveObjects: 0.135625 ms CreateObjectMapping: 0.044667 ms MarkObjects: 2.462541 ms  DeleteObjects: 0.047500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x30a2ff000 may have been prematurely finalized
+Symbol file data-0x120878000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a46b600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1208d8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x339364a00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x33937b600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148008000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148028000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x339382800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148b50000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120920000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1209e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a473c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a47b000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a47a400 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120a60000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1209e8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120b78000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120bc0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120a28000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120cf0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a47a400 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120a28000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a487800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a48e400 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x11a48e200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120d90000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x120e18000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.311 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.682 seconds
+Domain Reload Profiling: 993ms
+	BeginReloadAssembly (107ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (151ms)
+		LoadAssemblies (169ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (16ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (682ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (248ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (191ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 3657.
+Memory consumption went from 159.3 MB to 159.2 MB.
+Total: 2.541167 ms (FindLiveObjects: 0.123334 ms CreateObjectMapping: 0.038208 ms MarkObjects: 2.282250 ms  DeleteObjects: 0.096416 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x30a287000 may have been prematurely finalized
+Symbol file data-0x130130000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e909000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130190000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e90b200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e8d6c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130200000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130130000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e993800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130298000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130328000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1303f0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e993800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e8d6c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e993800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1302c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130458000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148a38000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1302c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148008000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130640000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e993800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x130470000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e993800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e982c00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12e989600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x148a38000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1306e0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.268 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.685 seconds
+Domain Reload Profiling: 953ms
+	BeginReloadAssembly (100ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (123ms)
+		LoadAssemblies (147ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (11ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (685ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (246ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (188ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.1 KB). Loaded Objects now: 3660.
+Memory consumption went from 166.5 MB to 166.4 MB.
+Total: 2.520292 ms (FindLiveObjects: 0.130333 ms CreateObjectMapping: 0.043042 ms MarkObjects: 2.304625 ms  DeleteObjects: 0.041708 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Thread 0x30a287000 may have been prematurely finalized
+Symbol file data-0x1207d0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309f0d600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1200c8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x12f174600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309f0d600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131148000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131168000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309ebba00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x3200b8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1207c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140040000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1385b6800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1385bdc00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1385bb800 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1207c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131148000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131210000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x140090000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131148000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1314b8000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309f0d600 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x1207c0000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x3098dca00 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309e63200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x309e63200 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.Play.Publisher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131518000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0x131158000 doesn't match image /Users/vlad/Documents/Unity Learning/Unity Projects/Unity-Space-Shooter/Space Shooter/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.293 seconds
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.614 seconds
+Domain Reload Profiling: 907ms
+	BeginReloadAssembly (97ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (147ms)
+		LoadAssemblies (158ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (24ms)
+			TypeCache.Refresh (15ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (5ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (614ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (215ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (35ms)
+			ProcessInitializeOnLoadAttributes (163ms)
+			ProcessInitializeOnLoadMethodAttributes (11ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.86 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (32.2 KB). Loaded Objects now: 3663.
+Memory consumption went from 173.5 MB to 173.5 MB.
+Total: 2.114375 ms (FindLiveObjects: 0.133209 ms CreateObjectMapping: 0.042541 ms MarkObjects: 1.906792 ms  DeleteObjects: 0.030958 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.83 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (3.0 KB). Loaded Objects now: 3642.
-Memory consumption went from 79.9 MB to 79.9 MB.
-Total: 12.701708 ms (FindLiveObjects: 0.185333 ms CreateObjectMapping: 0.039875 ms MarkObjects: 12.389625 ms  DeleteObjects: 0.086708 ms)
+Unloading 1 unused Assets / (3.1 KB). Loaded Objects now: 3663.
+Memory consumption went from 124.8 MB to 124.8 MB.
+Total: 16.694667 ms (FindLiveObjects: 0.179167 ms CreateObjectMapping: 0.040291 ms MarkObjects: 16.400125 ms  DeleteObjects: 0.074458 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):

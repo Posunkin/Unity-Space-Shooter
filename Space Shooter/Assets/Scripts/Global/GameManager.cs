@@ -1,15 +1,19 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [DllImport("__Internal")] private static extern void SetToLeaderboard(int value);
+
     public static GameManager Instance;
     [SerializeField] private PlayerStats player;
 
     [SerializeField] private GameObject playerUI;
     [SerializeField] private GameObject gameOverMenu;
-    [SerializeField] private LeaderBoard leaderBoard;
+    [SerializeField] private TextMeshProUGUI finalScore;
 
     private List<IScoreObserver> ScoreObservers = new();
 
@@ -39,6 +43,8 @@ public class GameManager : MonoBehaviour
     {
         playerUI.SetActive(false);
         gameOverMenu.SetActive(true);
+        finalScore.text = playerUI.GetComponent<PlayerUI>().PlayerScore.ToString();
+        SetToLeaderboard(int.Parse(finalScore.text));
     }
 
     public void AddScoreObserver(IScoreObserver observer)

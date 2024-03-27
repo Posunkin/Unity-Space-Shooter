@@ -33,8 +33,19 @@
               console.log('Yandex SDK initialized');
               window.ysdk = ysdk;
               auth();
+              initLeaderboard();
           });
+      
+      var lb;
 
+      function initLeaderboard()
+      {
+        ysdk.getLeaderboards()
+        .then(_lb => lb = _lb);
+      }
+  
+
+      
       var player;
 
       function initPlayer() 

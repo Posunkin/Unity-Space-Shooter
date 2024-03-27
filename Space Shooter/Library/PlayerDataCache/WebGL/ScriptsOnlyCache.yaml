@@ -41,6 +41,7 @@ ScriptsOnlyBuild:
     - SundiverRocket
     - WeaponManager
     - WeaponPowerUp
+    - YandexEndSession
     - YandexSDK
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
@@ -114,14 +115,14 @@ ScriptsOnlyBuild:
     fullTypeName: StartMenu
     methodName: StartButton
   - assembly: Assembly-CSharp
-    fullTypeName: YandexSDK
-    methodName: Test
+    fullTypeName: GameOverMenu
+    methodName: RestartButton
   - assembly: Assembly-CSharp
     fullTypeName: GameOverMenu
     methodName: ExitToMenuButton
   - assembly: Assembly-CSharp
-    fullTypeName: GameOverMenu
-    methodName: RestartButton
+    fullTypeName: YandexEndSession
+    methodName: Rate
   sceneClasses:
     Assets/Scenes/GameScene.unity:
     - Class: 1
@@ -197,75 +198,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3134}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3606}
+      Script: {instanceID: 3608}
     - Class: 114
-      Script: {instanceID: 3830}
+      Script: {instanceID: 3832}
     - Class: 114
-      Script: {instanceID: 3858}
-    - Class: 114
-      Script: {instanceID: 4036}
+      Script: {instanceID: 3860}
     - Class: 114
       Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 4180}
+      Script: {instanceID: 4040}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 4182}
     - Class: 114
-      Script: {instanceID: 4294}
+      Script: {instanceID: 4230}
     - Class: 114
-      Script: {instanceID: 4452}
+      Script: {instanceID: 4296}
     - Class: 114
-      Script: {instanceID: 4542}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 4784}
+      Script: {instanceID: 4544}
     - Class: 114
-      Script: {instanceID: 4866}
+      Script: {instanceID: 4786}
     - Class: 114
-      Script: {instanceID: 4902}
+      Script: {instanceID: 4868}
     - Class: 114
-      Script: {instanceID: 5012}
+      Script: {instanceID: 4904}
     - Class: 114
-      Script: {instanceID: 5082}
+      Script: {instanceID: 5014}
     - Class: 114
-      Script: {instanceID: 5124}
+      Script: {instanceID: 5084}
     - Class: 114
-      Script: {instanceID: 5196}
+      Script: {instanceID: 5126}
     - Class: 114
-      Script: {instanceID: 5354}
+      Script: {instanceID: 5198}
     - Class: 114
-      Script: {instanceID: 5650}
+      Script: {instanceID: 5356}
     - Class: 114
-      Script: {instanceID: 5760}
+      Script: {instanceID: 5652}
     - Class: 114
-      Script: {instanceID: 5798}
+      Script: {instanceID: 5762}
     - Class: 114
-      Script: {instanceID: 5846}
+      Script: {instanceID: 5800}
     - Class: 114
-      Script: {instanceID: 6116}
+      Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6122}
+      Script: {instanceID: 6118}
     - Class: 114
-      Script: {instanceID: 6524}
+      Script: {instanceID: 6124}
     - Class: 114
-      Script: {instanceID: 6838}
+      Script: {instanceID: 6526}
     - Class: 114
       Script: {instanceID: 6840}
     - Class: 114
-      Script: {instanceID: 6848}
+      Script: {instanceID: 6842}
     - Class: 114
-      Script: {instanceID: 7150}
+      Script: {instanceID: 6850}
     - Class: 114
-      Script: {instanceID: 7154}
+      Script: {instanceID: 7152}
     - Class: 114
-      Script: {instanceID: 7242}
+      Script: {instanceID: 7156}
     - Class: 114
-      Script: {instanceID: 7488}
+      Script: {instanceID: 7244}
     - Class: 114
-      Script: {instanceID: 7724}
+      Script: {instanceID: 7490}
     - Class: 114
-      Script: {instanceID: 7746}
+      Script: {instanceID: 7726}
+    - Class: 114
+      Script: {instanceID: 7748}
+    - Class: 114
+      Script: {instanceID: 25594}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -352,21 +355,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2828}
     - Class: 114
-      Script: {instanceID: 4116}
+      Script: {instanceID: 4118}
     - Class: 114
-      Script: {instanceID: 4376}
+      Script: {instanceID: 4378}
     - Class: 114
-      Script: {instanceID: 4762}
+      Script: {instanceID: 4764}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4768}
     - Class: 114
-      Script: {instanceID: 5082}
+      Script: {instanceID: 5084}
     - Class: 114
-      Script: {instanceID: 5354}
+      Script: {instanceID: 5356}
     - Class: 114
-      Script: {instanceID: 5798}
+      Script: {instanceID: 5800}
     - Class: 114
-      Script: {instanceID: 6122}
+      Script: {instanceID: 6124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1174,12 +1177,6 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStay2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 84c260edf7dde9a9731d133fb71d7f29
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: LeaderBoard
-  - hash:
-      serializedVersion: 2
       Hash: 279328170fe54a57eee9f8e8c1f05e04
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1324,7 +1321,7 @@ ScriptsOnlyBuild:
     className: DestroyWithDelay
   - hash:
       serializedVersion: 2
-      Hash: 55000687653701c967484cd11c49f41e
+      Hash: 1b2e736e31ae265c10115b5e669da4e6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1478,6 +1475,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: c65a9c1bdd48f0f017909742aea88e8f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: YandexEndSession
   platform: 20
   scenePathNames:
   - Assets/Scenes/StartScene.unity

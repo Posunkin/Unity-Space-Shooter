@@ -1117,7 +1117,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* Span_1__ctor_m698EC79E2E44AFF16BA096D0861CF
 IL2CPP_EXTERN_C const RuntimeMethod* Span_1_get_Length_m8E944E4954E037877A25B9FF6B901F1F901D4769_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Span_1_op_Implicit_m8619157C8809464A173FF531960A75A0ACE2CE91_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* StreamReader_Peek_m02A726104F658F68395E8D0CD77B741B9E267553_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* StreamReader_ReadLine_m9E583F06F10408D5941F889F1ECC2A1CE545728F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* StreamReader_Read_mB7DF78E453DA180AF0E360278016505417C7874E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* StreamReader_ThrowAsyncIOInProgress_m126E571F9659F0926D5319AF53B0DD2B99D4B4FA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* StreamReader__ctor_m90E2D80F6049350E83D9973ABD9607073353AB0F_RuntimeMethod_var;
@@ -5463,9 +5462,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Encoding_t65CDEF28CF20A7B8C92E85A4E808920C246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UTF32Encoding__ctor_m38354B7484E420A327F5A28F7BF0D821DA8A9175 (UTF32Encoding_t2516B0B4156BAE85C9D13711375816550842BA4B* __this, bool ___0_bigEndian, bool ___1_byteOrderMark, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool StreamReader_IsPreamble_m1212E3D5E4A056BD6CADCF328F04D51E6B09E881 (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StreamReader_DetectEncoding_m3E03B95378FBC9F10ED7F57C74971C0B39316BCF (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringBuilder_t* StringBuilder_Append_mC09A30993B77CC4D8E906720683B6386F0E15747 (StringBuilder_t* __this, CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___0_value, int32_t ___1_startIndex, int32_t ___2_charCount, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_CreateString_mB7B3AC2AF28010538650051A9000369B1CD6BAB6 (String_t* __this, CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___0_val, int32_t ___1_startIndex, int32_t ___2_length, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StringBuilder__ctor_m2619CA8D2C3476DF1A302D9D941498BB1C6164C5 (StringBuilder_t* __this, int32_t ___0_capacity, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NullStreamReader__ctor_m393C2986039ED207404B276CC1284B20D7954326 (NullStreamReader_t618B03C84D14FCA0DB20EDDE06059B954C48F094* __this, const RuntimeMethod* method) ;
 inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method)
 {
@@ -29177,15 +29173,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StreamReader__ctor_m0AD738DDCB9A0DE0DFD3
 		return;
 	}
 }
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StreamReader__ctor_m3C693DE567FB306355ECD44489F58699105DDE43 (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, String_t* ___0_path, Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* ___1_encoding, const RuntimeMethod* method) 
-{
-	{
-		String_t* L_0 = ___0_path;
-		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_1 = ___1_encoding;
-		StreamReader__ctor_mA95373EEF162CF396A1A20CDF039B29AA2D634EF(__this, L_0, L_1, (bool)1, ((int32_t)1024), NULL);
-		return;
-	}
-}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StreamReader__ctor_mA95373EEF162CF396A1A20CDF039B29AA2D634EF (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, String_t* ___0_path, Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* ___1_encoding, bool ___2_detectEncodingFromByteOrderMarks, int32_t ___3_bufferSize, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29477,7 +29464,7 @@ IL_0014:
 	}
 	{
 		int32_t L_5;
-		L_5 = VirtualFuncInvoker0< int32_t >::Invoke(11, __this);
+		L_5 = VirtualFuncInvoker0< int32_t >::Invoke(10, __this);
 		if (L_5)
 		{
 			goto IL_003a;
@@ -29525,7 +29512,7 @@ IL_0014:
 	}
 	{
 		int32_t L_4;
-		L_4 = VirtualFuncInvoker0< int32_t >::Invoke(11, __this);
+		L_4 = VirtualFuncInvoker0< int32_t >::Invoke(10, __this);
 		if (L_4)
 		{
 			goto IL_0032;
@@ -30119,218 +30106,6 @@ IL_0148:
 	{
 		int32_t L_41 = __this->____charLen;
 		return L_41;
-	}
-}
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* StreamReader_ReadLine_m9E583F06F10408D5941F889F1ECC2A1CE545728F (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringBuilder_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	StringBuilder_t* V_0 = NULL;
-	int32_t V_1 = 0;
-	Il2CppChar V_2 = 0x0;
-	String_t* V_3 = NULL;
-	{
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->____stream;
-		if (L_0)
-		{
-			goto IL_0014;
-		}
-	}
-	{
-		ObjectDisposedException_tC5FB29E8E980E2010A2F6A5B9B791089419F89EB* L_1 = (ObjectDisposedException_tC5FB29E8E980E2010A2F6A5B9B791089419F89EB*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ObjectDisposedException_tC5FB29E8E980E2010A2F6A5B9B791089419F89EB_il2cpp_TypeInfo_var)));
-		ObjectDisposedException__ctor_m5C356C25295E89559C120CB4562783AAF7F41C84(L_1, (String_t*)NULL, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralB9625354A300FF17CA9A37F1E1B1D4934A19482E)), NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&StreamReader_ReadLine_m9E583F06F10408D5941F889F1ECC2A1CE545728F_RuntimeMethod_var)));
-	}
-
-IL_0014:
-	{
-		StreamReader_CheckAsyncTaskInProgress_m1A576E85D68B488114884945F0E3536A1F8C96D1(__this, NULL);
-		int32_t L_2 = __this->____charPos;
-		int32_t L_3 = __this->____charLen;
-		if ((!(((uint32_t)L_2) == ((uint32_t)L_3))))
-		{
-			goto IL_0032;
-		}
-	}
-	{
-		int32_t L_4;
-		L_4 = VirtualFuncInvoker0< int32_t >::Invoke(11, __this);
-		if (L_4)
-		{
-			goto IL_0032;
-		}
-	}
-	{
-		return (String_t*)NULL;
-	}
-
-IL_0032:
-	{
-		V_0 = (StringBuilder_t*)NULL;
-	}
-
-IL_0034:
-	{
-		int32_t L_5 = __this->____charPos;
-		V_1 = L_5;
-	}
-
-IL_003b:
-	{
-		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_6 = __this->____charBuffer;
-		int32_t L_7 = V_1;
-		int32_t L_8 = L_7;
-		uint16_t L_9 = (uint16_t)(L_6)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(L_8));
-		V_2 = L_9;
-		Il2CppChar L_10 = V_2;
-		if ((((int32_t)L_10) == ((int32_t)((int32_t)13))))
-		{
-			goto IL_0051;
-		}
-	}
-	{
-		Il2CppChar L_11 = V_2;
-		if ((!(((uint32_t)L_11) == ((uint32_t)((int32_t)10)))))
-		{
-			goto IL_00d8;
-		}
-	}
-
-IL_0051:
-	{
-		StringBuilder_t* L_12 = V_0;
-		if (!L_12)
-		{
-			goto IL_0078;
-		}
-	}
-	{
-		StringBuilder_t* L_13 = V_0;
-		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_14 = __this->____charBuffer;
-		int32_t L_15 = __this->____charPos;
-		int32_t L_16 = V_1;
-		int32_t L_17 = __this->____charPos;
-		StringBuilder_t* L_18;
-		L_18 = StringBuilder_Append_mC09A30993B77CC4D8E906720683B6386F0E15747(L_13, L_14, L_15, ((int32_t)il2cpp_codegen_subtract(L_16, L_17)), NULL);
-		StringBuilder_t* L_19 = V_0;
-		String_t* L_20;
-		L_20 = VirtualFuncInvoker0< String_t* >::Invoke(3, L_19);
-		V_3 = L_20;
-		goto IL_0092;
-	}
-
-IL_0078:
-	{
-		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_21 = __this->____charBuffer;
-		int32_t L_22 = __this->____charPos;
-		int32_t L_23 = V_1;
-		int32_t L_24 = __this->____charPos;
-		String_t* L_25;
-		L_25 = String_CreateString_mB7B3AC2AF28010538650051A9000369B1CD6BAB6(NULL, L_21, L_22, ((int32_t)il2cpp_codegen_subtract(L_23, L_24)), NULL);
-		V_3 = L_25;
-	}
-
-IL_0092:
-	{
-		int32_t L_26 = V_1;
-		__this->____charPos = ((int32_t)il2cpp_codegen_add(L_26, 1));
-		Il2CppChar L_27 = V_2;
-		if ((!(((uint32_t)L_27) == ((uint32_t)((int32_t)13)))))
-		{
-			goto IL_00d6;
-		}
-	}
-	{
-		int32_t L_28 = __this->____charPos;
-		int32_t L_29 = __this->____charLen;
-		if ((((int32_t)L_28) < ((int32_t)L_29)))
-		{
-			goto IL_00b7;
-		}
-	}
-	{
-		int32_t L_30;
-		L_30 = VirtualFuncInvoker0< int32_t >::Invoke(11, __this);
-		if ((((int32_t)L_30) <= ((int32_t)0)))
-		{
-			goto IL_00d6;
-		}
-	}
-
-IL_00b7:
-	{
-		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_31 = __this->____charBuffer;
-		int32_t L_32 = __this->____charPos;
-		int32_t L_33 = L_32;
-		uint16_t L_34 = (uint16_t)(L_31)->GetAtUnchecked(static_cast<il2cpp_array_size_t>(L_33));
-		if ((!(((uint32_t)L_34) == ((uint32_t)((int32_t)10)))))
-		{
-			goto IL_00d6;
-		}
-	}
-	{
-		int32_t L_35 = __this->____charPos;
-		__this->____charPos = ((int32_t)il2cpp_codegen_add(L_35, 1));
-	}
-
-IL_00d6:
-	{
-		String_t* L_36 = V_3;
-		return L_36;
-	}
-
-IL_00d8:
-	{
-		int32_t L_37 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add(L_37, 1));
-		int32_t L_38 = V_1;
-		int32_t L_39 = __this->____charLen;
-		if ((((int32_t)L_38) < ((int32_t)L_39)))
-		{
-			goto IL_003b;
-		}
-	}
-	{
-		int32_t L_40 = __this->____charLen;
-		int32_t L_41 = __this->____charPos;
-		V_1 = ((int32_t)il2cpp_codegen_subtract(L_40, L_41));
-		StringBuilder_t* L_42 = V_0;
-		if (L_42)
-		{
-			goto IL_0103;
-		}
-	}
-	{
-		int32_t L_43 = V_1;
-		StringBuilder_t* L_44 = (StringBuilder_t*)il2cpp_codegen_object_new(StringBuilder_t_il2cpp_TypeInfo_var);
-		StringBuilder__ctor_m2619CA8D2C3476DF1A302D9D941498BB1C6164C5(L_44, ((int32_t)il2cpp_codegen_add(L_43, ((int32_t)80))), NULL);
-		V_0 = L_44;
-	}
-
-IL_0103:
-	{
-		StringBuilder_t* L_45 = V_0;
-		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_46 = __this->____charBuffer;
-		int32_t L_47 = __this->____charPos;
-		int32_t L_48 = V_1;
-		StringBuilder_t* L_49;
-		L_49 = StringBuilder_Append_mC09A30993B77CC4D8E906720683B6386F0E15747(L_45, L_46, L_47, L_48, NULL);
-		int32_t L_50;
-		L_50 = VirtualFuncInvoker0< int32_t >::Invoke(11, __this);
-		if ((((int32_t)L_50) > ((int32_t)0)))
-		{
-			goto IL_0034;
-		}
-	}
-	{
-		StringBuilder_t* L_51 = V_0;
-		String_t* L_52;
-		L_52 = VirtualFuncInvoker0< String_t* >::Invoke(3, L_51);
-		return L_52;
 	}
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool StreamReader_DataAvailable_m7A80FED095B4243FD128978C47835C70E2B113DA (StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* __this, const RuntimeMethod* method) 

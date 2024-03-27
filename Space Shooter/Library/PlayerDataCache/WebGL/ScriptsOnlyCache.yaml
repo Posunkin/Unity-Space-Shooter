@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - EnemyWeaponControl
     - GameManager
     - GameOverMenu
+    - Language
     - LaserAttack
     - MineProjectile
     - PlasmaProjectile
@@ -39,6 +40,7 @@ ScriptsOnlyBuild:
     - Spawner
     - StartMenu
     - SundiverRocket
+    - TextTranslate
     - WeaponManager
     - WeaponPowerUp
     - YandexEndSession
@@ -112,14 +114,14 @@ ScriptsOnlyBuild:
     fullTypeName: StartMenu
     methodName: StartButton
   - assembly: Assembly-CSharp
-    fullTypeName: StartMenu
-    methodName: StartButton
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOverMenu
-    methodName: RestartButton
+    fullTypeName: YandexSDK
+    methodName: Authorize
   - assembly: Assembly-CSharp
     fullTypeName: GameOverMenu
     methodName: ExitToMenuButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: RestartButton
   - assembly: Assembly-CSharp
     fullTypeName: YandexEndSession
     methodName: Rate
@@ -244,21 +246,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5848}
     - Class: 114
-      Script: {instanceID: 6118}
+      Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 6124}
+      Script: {instanceID: 6122}
     - Class: 114
-      Script: {instanceID: 6526}
+      Script: {instanceID: 6524}
+    - Class: 114
+      Script: {instanceID: 6838}
     - Class: 114
       Script: {instanceID: 6840}
     - Class: 114
-      Script: {instanceID: 6842}
+      Script: {instanceID: 6848}
     - Class: 114
-      Script: {instanceID: 6850}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 7152}
+      Script: {instanceID: 7154}
     - Class: 114
-      Script: {instanceID: 7156}
+      Script: {instanceID: 7212}
     - Class: 114
       Script: {instanceID: 7244}
     - Class: 114
@@ -268,7 +272,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7748}
     - Class: 114
-      Script: {instanceID: 25594}
+      Script: {instanceID: 27446}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -369,7 +373,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5800}
     - Class: 114
-      Script: {instanceID: 6124}
+      Script: {instanceID: 6122}
+    - Class: 114
+      Script: {instanceID: 26636}
+    - Class: 114
+      Script: {instanceID: 27446}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1381,6 +1389,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: c65a9c1bdd48f0f017909742aea88e8f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: YandexEndSession
+  - hash:
+      serializedVersion: 2
       Hash: 3f0519a23385598aa9402bcd8f64d0ff
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Enemies
@@ -1477,10 +1491,16 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c65a9c1bdd48f0f017909742aea88e8f
+      Hash: ed2baa1fd92e2c9f902d438043392733
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: YandexEndSession
+    className: Language
+  - hash:
+      serializedVersion: 2
+      Hash: e2336d78797c8155ee516ca7477cb7cd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TextTranslate
   platform: 20
   scenePathNames:
   - Assets/Scenes/StartScene.unity

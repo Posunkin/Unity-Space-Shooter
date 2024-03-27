@@ -14,18 +14,19 @@ public class YandexSDK : MonoBehaviour
 
     public void Authorize()
     {
+        _nameText.gameObject.SetActive(true);
+        _photo.gameObject.SetActive(true);
+
         SetPlayerData(); 
     }
 
     public void SetName(string name)
     {
-        _nameText.gameObject.SetActive(true);
         _nameText.text = name;
     }
 
     public void SetPhoto(string url)
     {
-        _photo.gameObject.SetActive(true);
         StartCoroutine(DownloadImage(url));
     }
 

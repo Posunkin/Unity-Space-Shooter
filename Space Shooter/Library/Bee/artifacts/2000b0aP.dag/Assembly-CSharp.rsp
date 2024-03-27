@@ -327,6 +327,8 @@
 "Assets/Scripts/UI/PlayerUI.cs"
 "Assets/Scripts/UI/StartMenu.cs"
 "Assets/Scripts/Utils/DestroyWithDelay.cs"
+"Assets/Scripts/Utils/Language.cs"
+"Assets/Scripts/Utils/TextTranslate.cs"
 "Assets/Scripts/Utils/Utils.cs"
 "Assets/Scripts/Weapons/Blaster.cs"
 "Assets/Scripts/Weapons/BlasterShotgun.cs"

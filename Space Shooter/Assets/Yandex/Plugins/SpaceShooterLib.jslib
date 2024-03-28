@@ -35,4 +35,8 @@ mergeInto(LibraryManager.library, {
     return buffer;
   },
 
+  ShowAdd: function () {
+    ysdk.adv.showFullscreenAdv();
+  },
+
 });

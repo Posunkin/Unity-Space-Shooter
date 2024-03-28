@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Runtime.InteropServices;
-using TMPro;
 using UnityEngine;
 
 public class Language : MonoBehaviour
@@ -10,7 +8,6 @@ public class Language : MonoBehaviour
     public string CurrentLanguage = "NO"; // ru en
 
     public static Language Instance;
-    [SerializeField] private TextMeshProUGUI _languageText;
 
     private void Awake()
     {
@@ -28,6 +25,5 @@ public class Language : MonoBehaviour
     private void Start()
     {
         CurrentLanguage = GetLang();
-       _languageText.text = CurrentLanguage;
     }
 }

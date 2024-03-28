@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [DllImport("__Internal")] private static extern void SetToLeaderboard(int value);
+    [DllImport("__Internal")] private static extern void ShowAdd();
 
     public static GameManager Instance;
     [SerializeField] private PlayerStats player;
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(true);
         finalScore.text = playerUI.GetComponent<PlayerUI>().PlayerScore.ToString();
         SetToLeaderboard(int.Parse(finalScore.text));
+        ShowAdd();
     }
 
     public void AddScoreObserver(IScoreObserver observer)

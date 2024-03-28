@@ -55,6 +55,8 @@ MonoBehaviour:
   - 15
   explosionRadius: 0
   timeToExplose: 0
+  projectilesNum: 0
+  projectileAngle: 0
 --- !u!1 &2713875814267055619
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +242,8 @@ MonoBehaviour:
   - 30
   explosionRadius: 0
   timeToExplose: 0
+  projectilesNum: 0
+  projectileAngle: 0
 --- !u!1001 &2382760142222712749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -501,11 +505,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
       propertyPath: m_fontSize
-      value: 12
+      value: 19.75
       objectReference: {fileID: 0}
+    - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b3aead3c9fe8447ada749af82cdfa5fc, type: 2}
     - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
       propertyPath: m_fontSizeBase
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5297258214086149936, guid: b3aead3c9fe8447ada749af82cdfa5fc, type: 2}
+    - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855644962558526200, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665728966233739013, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 253.4553
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665728966233739013, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665728966233739013, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8762629492066519089, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
       propertyPath: m_Pivot.x
@@ -594,7 +626,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1201553970483100303, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2026452135263297663}
   m_SourcePrefab: {fileID: 100100000, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
 --- !u!224 &3877901592571200032 stripped
 RectTransform:
@@ -612,6 +647,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec5803b0284647ad9bf895e5e0a7411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6694258980560482462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1201553970483100303, guid: 9434a0f6172814376abdba3bbd7e048f, type: 3}
+  m_PrefabInstance: {fileID: 5497223799027550737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2026452135263297663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6694258980560482462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4eaf7e126fc48e9a7d3c572cd126eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _en: Space Keeper
+  _ru: "\u0425\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C \u043A\u043E\u0441\u043C\u043E\u0441\u0430"
 --- !u!1001 &5735720061280029317
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1914,7 +1914,6 @@ struct GameOverMenu_tA556351F52DF989B5C8DB7B2D357721E10FF4567  : public MonoBeha
 struct Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	String_t* ___CurrentLanguage;
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ____languageText;
 };
 struct LaserAttack_t87BB5109BFC4BC7F19E1C8AC86038E5DE2B7A41E  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -3397,6 +3396,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PlayerUI_get_PlayerScore_
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5 (int32_t* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Int32_Parse_m273CA1A9C7717C99641291A95C543711C0202AF0 (String_t* ___0_s, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_SetToLeaderboard_m5D68201E1B4387C1D697505B7E12E45A2963897B (int32_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_ShowAdd_m80C310712266DC1D97C8269266F3150EFB141939 (const RuntimeMethod* method) ;
 inline void List_1_Add_mBCA9074AF93A59DDD30F75C01EEA79BC9FBFDA83_inline (List_1_t35E7D88D9DDA26D45DAAA88E6E8A15C8704320A8* __this, RuntimeObject* ___0_item, const RuntimeMethod* method)
 {
 	((  void (*) (List_1_t35E7D88D9DDA26D45DAAA88E6E8A15C8704320A8*, RuntimeObject*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
@@ -3838,6 +3838,7 @@ inline void List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4 (List
 	((  void (*) (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D*, RuntimeObject*, const RuntimeMethod*))List_1_AddWithResize_m79A9BF770BEF9C06BE40D5401E55E375F2726CC4_gshared)(__this, ___0_item, method);
 }
 IL2CPP_EXTERN_C void DEFAULT_CALL SetToLeaderboard(int32_t);
+IL2CPP_EXTERN_C void DEFAULT_CALL ShowAdd();
 IL2CPP_EXTERN_C char* DEFAULT_CALL GetLang();
 IL2CPP_EXTERN_C void DEFAULT_CALL RateGame();
 IL2CPP_EXTERN_C void DEFAULT_CALL SetPlayerData();
@@ -4569,6 +4570,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_SetToLeaderboard_m5D68201E1B
 	reinterpret_cast<PInvokeFunc>(SetToLeaderboard)(___0_value);
 
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_ShowAdd_m80C310712266DC1D97C8269266F3150EFB141939 (const RuntimeMethod* method) 
+{
+	typedef void (DEFAULT_CALL *PInvokeFunc) ();
+
+	reinterpret_cast<PInvokeFunc>(ShowAdd)();
+
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_OnEnable_mCBA3C942196F2FE284CA416B26833E78468F635E (GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4675,6 +4683,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameManager_GameOverMenu_m8C9F76FB3F781A
 		int32_t L_9;
 		L_9 = Int32_Parse_m273CA1A9C7717C99641291A95C543711C0202AF0(L_8, NULL);
 		GameManager_SetToLeaderboard_m5D68201E1B4387C1D697505B7E12E45A2963897B(L_9, NULL);
+		GameManager_ShowAdd_m80C310712266DC1D97C8269266F3150EFB141939(NULL);
 		return;
 	}
 }
@@ -9538,9 +9547,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Language_Start_mBFFCEB4E4A46EBCC77162330
 		L_0 = Language_GetLang_m5AFB2F6DEB954A51BB88AD35C41B15F2382EFA2E(NULL);
 		__this->___CurrentLanguage = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___CurrentLanguage), (void*)L_0);
-		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_1 = __this->____languageText;
-		String_t* L_2 = __this->___CurrentLanguage;
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_1, L_2);
 		return;
 	}
 }

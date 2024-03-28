@@ -5806,7 +5806,6 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 struct Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
 	String_t* ___CurrentLanguage;
-	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ____languageText;
 };
 struct LaserAttack_t87BB5109BFC4BC7F19E1C8AC86038E5DE2B7A41E  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -8904,9 +8903,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3701[11] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3703[1] = 
 {
 	static_cast<int32_t>(offsetof(DestroyWithDelay_tD7669231093FA6BC40F66B3919980BBF267593D1, ___delayTime)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3704[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3704[2] = 
 {
-	static_cast<int32_t>(offsetof(Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0, ___CurrentLanguage)),static_cast<int32_t>(offsetof(Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0, ____languageText)),};
+	static_cast<int32_t>(offsetof(Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0, ___CurrentLanguage)),static_cast<int32_t>(offsetof(Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0_StaticFields, ___Instance)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3705[2] = 
 {
 	static_cast<int32_t>(offsetof(TextTranslate_t93EFDF012D1705E00A1EFB98F90B0421B0BA391F, ____en)),static_cast<int32_t>(offsetof(TextTranslate_t93EFDF012D1705E00A1EFB98F90B0421B0BA391F, ____ru)),};

@@ -1,0 +1,17 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameOverMenu">
+			<method name="ExitToMenuButton"/>
+			<method name="RestartButton"/>
+		</type>
+		<type fullname="StartMenu">
+			<method name="StartButton"/>
+		</type>
+		<type fullname="YandexEndSession">
+			<method name="Rate"/>
+		</type>
+		<type fullname="YandexSDK">
+			<method name="Authorize"/>
+		</type>
+	</assembly>
+</linker>

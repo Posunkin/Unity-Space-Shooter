@@ -16,7 +16,7 @@ public class PlayerPowerUp : PowerUp
                 break;
             case PowerUpType.invulnerability:
                 powerUpType = type;
-                rend.material.color = Color.white;
+                rend.material.color = Color.green;
                 letter.text = "I";
                 break;
             case PowerUpType.damage:

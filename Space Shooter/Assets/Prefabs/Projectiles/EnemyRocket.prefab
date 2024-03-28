@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4965064746069830416}
   - component: {fileID: 6827429592854620233}
   - component: {fileID: 382235579424449693}
-  - component: {fileID: 7143228386404518299}
   m_Layer: 9
   m_Name: EnemyRocket
   m_TagString: Untagged
@@ -30,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3905956892288702158}
   m_Father: {fileID: 0}
@@ -55,7 +54,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2.5, z: 10}
+  m_Size: {x: 2, y: 2.5, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6827429592854620233
 Rigidbody:
@@ -99,18 +98,6 @@ MonoBehaviour:
   rocketExplosion: {fileID: 1312920955905056711, guid: 782db307f6d5a44918ba89ed5bfe708b, type: 3}
   rocketSmoke: {fileID: 43878113179867298}
   lifeTime: 7
---- !u!122 &7143228386404518299
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5451507248725413192}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4280352997
-  m_Size: 2
 --- !u!1 &5645913209317784621
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 5645913209317784621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.32, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

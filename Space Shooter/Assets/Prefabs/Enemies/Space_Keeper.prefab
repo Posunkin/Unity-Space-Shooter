@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784db710c1ee344adbcf76d92e4011d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
+  currentHealth: 250
   speed: 20
   _score: 500
   _chanceToSpawnPowerUp: 0

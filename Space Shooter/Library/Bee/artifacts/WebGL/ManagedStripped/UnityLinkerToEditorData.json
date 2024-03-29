@@ -409,6 +409,12 @@
             "icon": null
           },
           {
+            "name": "Skybox",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "SortingGroup",
             "scenes": [],
             "dependencyType": 0,
@@ -516,6 +522,12 @@
             "icon": "package/com.unity.modules.imageconversion"
           },
           {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
+          },
+          {
             "name": "Required by InputLegacy Module",
             "scenes": [],
             "dependencyType": 2,
@@ -540,10 +552,22 @@
             "icon": "package/com.unity.modules.physics"
           },
           {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
           },
           {
             "name": "Required by TLS Module",
@@ -594,10 +618,28 @@
             "icon": "package/com.unity.modules.unitywebrequesttexture"
           },
           {
+            "name": "Required by VFX Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vfx"
+          },
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -624,6 +666,23 @@
         ]
       },
       {
+        "name": "Input",
+        "dependencies": [
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
         "name": "InputLegacy",
         "dependencies": [
           {
@@ -644,16 +703,40 @@
         "name": "JSONSerialize",
         "dependencies": [
           {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
           },
           {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
+          },
+          {
             "name": "Required by UIElements Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -735,6 +818,35 @@
             ],
             "dependencyType": 0,
             "icon": null
+          },
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
+        "name": "Physics2D",
+        "dependencies": [
+          {
+            "name": "Collider2D",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Physics2DSettings",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
           }
         ]
       },
@@ -783,6 +895,12 @@
             "icon": "package/com.unity.modules.imageconversion"
           },
           {
+            "name": "Required by Input Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.input"
+          },
+          {
             "name": "Required by InputLegacy Module",
             "scenes": [],
             "dependencyType": 2,
@@ -807,10 +925,22 @@
             "icon": "package/com.unity.modules.physics"
           },
           {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by Subsystems Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.subsystems"
           },
           {
             "name": "Required by TLS Module",
@@ -861,10 +991,39 @@
             "icon": "package/com.unity.modules.unitywebrequesttexture"
           },
           {
+            "name": "Required by VFX Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vfx"
+          },
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          },
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
+          }
+        ]
+      },
+      {
+        "name": "Subsystems",
+        "dependencies": [
+          {
+            "name": "Required by XR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.xr"
           }
         ]
       },
@@ -1020,6 +1179,39 @@
         "dependencies": []
       },
       {
+        "name": "VFX",
+        "dependencies": [
+          {
+            "name": "VFXManager",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "VisualEffect",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "VisualEffectAsset",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "VisualEffectObject",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          }
+        ]
+      },
+      {
+        "name": "VR",
+        "dependencies": []
+      },
+      {
         "name": "WebGL",
         "dependencies": [
           {
@@ -1027,6 +1219,17 @@
             "scenes": [],
             "dependencyType": 3,
             "icon": "class/DefaultAsset"
+          }
+        ]
+      },
+      {
+        "name": "XR",
+        "dependencies": [
+          {
+            "name": "Required by VR Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.vr"
           }
         ]
       }

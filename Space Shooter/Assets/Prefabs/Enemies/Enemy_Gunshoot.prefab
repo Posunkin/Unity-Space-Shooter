@@ -121,6 +121,8 @@ MonoBehaviour:
   - 15
   explosionRadius: 0
   timeToExplose: 0
+  projectilesNum: 3
+  projectileAngle: 15
 --- !u!135 &3113238911685008959
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ namespace SpaceShooter.Weapons
             lineRenderer.startWidth = laserWidth;
             lineRenderer.endWidth = laserWidth;
             lineRenderer.enabled = false;
+            pitchRange = new Vector2(1f, 1.5f);
         }
 
         protected override void TempFire()
@@ -41,13 +42,18 @@ namespace SpaceShooter.Weapons
         private IEnumerator Shooting()
         {
             startParticles.Play();
+            audioSource.volume = 0.9f;
+            audioSource.pitch = Random.Range(minInclusive: pitchRange.x, pitchRange.y);
+            audioSource.PlayOneShot(shotSound);
             for (int i = 0; i < 7; i++)
             {
+                audioSource.volume -= 0.1f;
                 DoDamage();
                 yield return shotDuration;
             }
             lineRenderer.enabled = false;
             startParticles.Stop();
+            audioSource.Stop();
         }
 
         private void DoDamage()

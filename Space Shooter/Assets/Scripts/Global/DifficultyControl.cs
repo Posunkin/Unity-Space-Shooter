@@ -18,13 +18,13 @@ public class DifficultyControl
     {
         if (currentLevel < 4) currentLevel++;
         hpMult += 0.2f;
-        if (spawnDelay > 0.8f) spawnDelay -= 0.15f;
+        if (spawnDelay > 1f) spawnDelay -= 0.15f;
         if (speedMult < 1.2f) speedMult += 0.2f;
         if (chanceToSpawnPowerUp > 0.1f)
         {
             chanceToSpawnPowerUp -= 0.1f;
         }
-        if (maxEnemiesOnScreen < 10) maxEnemiesOnScreen++;
+        if (maxEnemiesOnScreen < 6) maxEnemiesOnScreen++;
     }
 
     public void UpEnemy(Enemy enemy)

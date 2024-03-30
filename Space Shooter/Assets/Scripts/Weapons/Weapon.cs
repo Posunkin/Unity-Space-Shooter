@@ -19,6 +19,11 @@ namespace SpaceShooter.Weapons
         internal float delayBetweenShots { get => _delayBetweenShots; set => _delayBetweenShots = value;}
         internal float projectileSpeed { get => _projectileSpeed; set => _projectileSpeed = value; }
         internal float currentDamage { get => _currentDamage; set => _currentDamage = value; }
+
+        // Audio
+        protected AudioSource audioSource => GetComponent<AudioSource>();
+        [SerializeField] protected AudioClip shotSound;
+        protected Vector2 pitchRange;
         
         [Header("Weapon parameters for WeaponPowerUp:")]
         [SerializeField] protected Color _color;

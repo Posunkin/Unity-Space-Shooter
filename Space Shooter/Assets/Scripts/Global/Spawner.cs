@@ -75,6 +75,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnBoss()
     {
+        GameManager.Instance.BossMusic();
         GameObject go = Instantiate(bossesPrefabs[bossIndex]);
         Enemy enemy = go.GetComponent<Enemy>();
         enemy.OnDeath += BossDead;

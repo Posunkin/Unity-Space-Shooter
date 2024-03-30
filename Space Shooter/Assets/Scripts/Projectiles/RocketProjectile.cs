@@ -23,6 +23,12 @@ public class RocketProjectile : Projectile
     private bool isDelayed = true;
     private float currentSpeed = 0f;
 
+    // Audio
+    private AudioSource audioSource => GetComponent<AudioSource>();
+    [SerializeField] private AudioClip fireBurstSound;
+    [SerializeField] private AudioClip rocketFlySound;
+    private bool flyMusicStarted = false;
+
     protected override void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,6 +37,7 @@ public class RocketProjectile : Projectile
 
     internal void SetProjectile(float damage, float speed, bool isPlayer)
     {
+        audioSource.PlayOneShot(fireBurstSound);
         birthTime = Time.time;
         this.isPlayer = isPlayer;
         damageToDeal = damage;
@@ -53,6 +60,11 @@ public class RocketProjectile : Projectile
         }
         else
         {
+            if (!flyMusicStarted)
+            {
+                audioSource.PlayOneShot(rocketFlySound);
+                flyMusicStarted = true;
+            }
             rocketSmoke.SetActive(true);
             if (target != null)
             {
@@ -117,6 +129,7 @@ public class RocketProjectile : Projectile
     private IEnumerator Delay()
     {
         yield return new WaitForSeconds(delayTime);
+      
         isDelayed = false;
     }
 

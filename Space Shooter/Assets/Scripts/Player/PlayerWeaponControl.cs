@@ -69,6 +69,7 @@ public class PlayerWeaponControl : WeaponControl
         GameObject weapon = weaponManager.GetWeapon(type);
         if (type != currentWeapons[0].GetComponent<Weapon>().type)
         {
+            playerUI.NewWeapon(type);
             ClearAllWeaponSlots();
             weapon = weaponManager.GetWeapon(type);
             currentWeapons[0] = SetWeaponPosition(weapon, weaponSlots[0]);
@@ -91,7 +92,6 @@ public class PlayerWeaponControl : WeaponControl
                 currentWeaponType[2] = currentWeapons[2].GetComponent<Weapon>();
                 currentWeaponType[2].currentDamage = currentWeaponType[2].defDamage / 2 * damageMult;
                 currentWeaponType[2].lastShootTime = currentWeaponType[0].lastShootTime;
-
             }
         }
     }
@@ -102,6 +102,7 @@ public class PlayerWeaponControl : WeaponControl
         GameObject weapon = weaponManager.GetWeapon(type);
         if (currentSpecWeapType.type != type)
         {
+            playerUI.NewSpecWeapon(type);
             ClearSpecSlot();
             currentSpecWeap = SetWeaponPosition(weapon, specSlot);
             currentSpecWeapType = currentSpecWeap.GetComponent<Weapon>();

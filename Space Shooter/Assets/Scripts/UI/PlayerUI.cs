@@ -19,6 +19,12 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     private int playerScore = 0;
     public int PlayerScore {get => playerScore;}
 
+    [Header("Weapons UI")]
+    [SerializeField] private GameObject rocketWeapon;
+    [SerializeField] private GameObject mineWeapon;
+    [SerializeField] private GameObject[] weapons; // 0 - blaster, 1 - blaster shotgun, 2 - plasma, 3 - laser
+
+
     private void Awake()
     {
         scoreText.text = playerScore.ToString();
@@ -91,5 +97,29 @@ public class PlayerUI : MonoBehaviour, IScoreObserver
     public void UpdateDamage(float damageMult)
     {
         damageText.text = damageMult.ToString();
+    }
+
+    public void NewSpecWeapon(WeaponType type)
+    {
+        switch (type)
+        {
+            case WeaponType.rocketLauncher:
+                rocketWeapon.SetActive(true);
+                mineWeapon.SetActive(false);
+                break;
+            case WeaponType.mineTrap:
+                rocketWeapon.SetActive(false);
+                mineWeapon.SetActive(true);
+                break;
+        }
+    }
+
+    public void NewWeapon(WeaponType type)
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (i == (int) type) weapons[i].gameObject.SetActive(true);
+            else weapons[i].gameObject.SetActive(false);
+        }
     }
 }

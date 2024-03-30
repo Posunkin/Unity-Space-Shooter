@@ -13,6 +13,8 @@ namespace SpaceShooter.Weapons
             type = WeaponType.blasterShotgun;
             projectileDirection = isPlayer ? Vector3.up : Vector3.down;
             weaponControl.OnWeaponShoot += TempFire;
+            if (isPlayer) pitchRange = new Vector2(0.85f, 1.2f);
+            else pitchRange = new Vector2(0.6f, 0.9f);
         }
 
         protected override void TempFire()
@@ -40,6 +42,8 @@ namespace SpaceShooter.Weapons
                     rb.velocity =  projGo.transform.rotation * projectileDirection * projectileSpeed;
                 }
             }
+            audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
+            audioSource.PlayOneShot(shotSound);
         }
 
         protected override GameObject Shoot()

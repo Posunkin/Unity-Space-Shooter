@@ -242,11 +242,26 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: PauseGame
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: RewardButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: RestartButton
+  - assembly: Assembly-CSharp
     fullTypeName: GameOverMenu
     methodName: ExitToMenuButton
   - assembly: Assembly-CSharp
     fullTypeName: GameOverMenu
     methodName: RestartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: ExitToMenuButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameManager
+    methodName: DeniedLastChance
   - assembly: Assembly-CSharp
     fullTypeName: YandexEndSession
     methodName: Rate
@@ -279,6 +294,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -514,6 +533,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3798}
     - Class: 114
+      Script: {instanceID: 4386}
+    - Class: 114
       Script: {instanceID: 4496}
     - Class: 114
       Script: {instanceID: 4628}
@@ -716,7 +737,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 24f3824d1d7e8974834e22a421ea6faa
+      Hash: 419689d9d47744b34fce3b040f78187f
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: Blaster
@@ -872,7 +893,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerGroup
   - hash:
       serializedVersion: 2
-      Hash: b1541b95cb38a75ac686411487681833
+      Hash: 5948662f7c78f3d82ee016c5b58ab5e0
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: PlasmaGun
@@ -1034,7 +1055,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 12da5a55d9a9d95ed198aaaba81e92f1
+      Hash: 129566d665c570abc260948c69c12ca5
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: LaserGun
@@ -1190,7 +1211,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerToggleHistory
   - hash:
       serializedVersion: 2
-      Hash: 2704a26b1cbb05d795afa93a8c9a8527
+      Hash: 978049c4626729be3cf306a18108edc4
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: RocketProjectile
@@ -1220,7 +1241,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 41c7635534e1b663014158f3219558f6
+      Hash: 6b663655ef05e331734b24f1c2ec0c8f
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: MineTrap
@@ -1280,7 +1301,7 @@ ScriptsOnlyBuild:
     className: ShadowsMidtonesHighlights
   - hash:
       serializedVersion: 2
-      Hash: affe99dccbb03bef7d7b55b351d9ec72
+      Hash: 3d5e584261c2a5334f9447cd9399f59f
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: BlasterShotgun
@@ -1340,7 +1361,7 @@ ScriptsOnlyBuild:
     className: Bloom
   - hash:
       serializedVersion: 2
-      Hash: d8f2fcb1c9b787fc67231147b20bcea5
+      Hash: cddb6aa18127e0d520a89ca37105af35
     assemblyName: Assembly-CSharp
     namespaceName: SpaceShooter.Weapons
     className: RocketLauncher
@@ -2018,7 +2039,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 1b2e736e31ae265c10115b5e669da4e6
+      Hash: 52770a6cc21ecee04ebff2dfe4841ebc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -2030,7 +2051,7 @@ ScriptsOnlyBuild:
     className: DestroyWithDelay
   - hash:
       serializedVersion: 2
-      Hash: 413cd78dd21650702e15ed0b8ebbdb24
+      Hash: ebe270ff0458e6fc67e713c7682851a1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerUI

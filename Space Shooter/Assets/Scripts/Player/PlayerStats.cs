@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour, IDamageable
 {
-    public Action OnPlayerDeath;
+    public Action<GameObject> OnPlayerDeath;
     public Action<WeaponType> OnWeaponAbsorb;
 
     [Header("Shield status")]
@@ -37,20 +37,24 @@ public class PlayerStats : MonoBehaviour, IDamageable
         StartCoroutine(Invulnerability(invulAfterTakeDamage));
         if (shieldLevel < 0)
         {
-            OnPlayerDeath?.Invoke();
-            Destroy(gameObject);
+            OnPlayerDeath?.Invoke(this.gameObject);
         }
         else
         {
             shield.ShieldLevelChange(shieldLevel);
             OnShieldLevelChange?.Invoke(shieldLevel);
-
         }
     }
 
     public void TakeDamage(float damage)
     {
         TakeDamage();
+    }
+
+    public void LastChance()
+    {
+        shieldLevel = 2;
+        shield.ShieldLevelChange(shieldLevel);
     }
 
     private IEnumerator Invulnerability(float duration)

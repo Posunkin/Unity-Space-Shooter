@@ -221,6 +221,7 @@ MonoBehaviour:
   timeToExplose: 2
   expEffect: {fileID: 1312920955905056711, guid: 893d650c3a71244908aab0d6fedb7eb3, type: 3}
   radiusVisual: {fileID: 7917094376750266212}
+  mineExploseSound: {fileID: 8300000, guid: 4adee09dddfff4a74964a31236aa5be0, type: 3}
 --- !u!1001 &3871901712566491856
 PrefabInstance:
   m_ObjectHideFlags: 0

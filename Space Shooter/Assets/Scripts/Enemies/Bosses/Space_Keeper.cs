@@ -144,7 +144,7 @@ namespace SpaceShooter.Enemies
             base.TakeDamage(damage);
             if (currentHealth < maxHealth * 0.25f && !spawingTeam)
             {   
-                InvokeRepeating(nameof(SpawnBossTeam), 2, 2);
+                InvokeRepeating(nameof(SpawnBossTeam), 2, 8);
                 spawingTeam = true;
             }   
             healthBar.ChangeHealth(currentHealth);

@@ -19,6 +19,7 @@ struct Action_1_tDF52F11383ED01DB581C39D18E0D29B0956E7681;
 struct Action_1_t566FF172AF42BE1A3BD0D13A9DD36E450CB186E9;
 struct Action_1_tAFF122BBDCF2AC45C10128CFCDA45A5CA2ED307E;
 struct Action_1_tD91E4D0ED3C2E385D3BDD4B3EA48B5F99D39F1DC;
+struct Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C;
 struct Action_1_tFAB0B519749BBE2B7AAD946105FAE8116636A8BC;
 struct Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404;
 struct Action_1_t73DDB95B444644A3C36475D55244D23E26A68A71;
@@ -2336,7 +2337,7 @@ struct MessageTypeSubscribers_t1FA1C0DBEE77D28856F8BB97C784EB77920C308D  : publi
 	int32_t ___subscriberCount;
 	MessageEvent_tBF02D60FEABA2052B9970B1DEF2322E38ADE61C9* ___messageCallback;
 };
-struct U3CInvulnerabilityU3Ed__13_t019A5EF97672579011BED7896200BB65E24A6084  : public RuntimeObject
+struct U3CInvulnerabilityU3Ed__14_t9B31BFE033F510056C70C3FAF0BC75AD8568638A  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -14664,7 +14665,13 @@ struct GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6  : public MonoBehav
 	PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8* ___player;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___playerUI;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___gameOverMenu;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___pauseMenu;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___finalScore;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___lastChanceMenu;
+	bool ___gamePaused;
+	float ___pauseDelay;
+	float ___lastPause;
+	bool ___playerHasLastChance;
 	List_1_t35E7D88D9DDA26D45DAAA88E6E8A15C8704320A8* ___ScoreObservers;
 };
 struct Language_t5724D209815260FBE53B381A2378B7C8BCF46CB0  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
@@ -14732,7 +14739,7 @@ struct PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874  : public MonoBeh
 };
 struct PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
-	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___OnPlayerDeath;
+	Action_1_tFF0F3D982F6CEB68CBA322555CBBEE6AE1D2519C* ___OnPlayerDeath;
 	Action_1_tAFEA3DB8D28503ABB1057BB3365F9F15F88DE240* ___OnWeaponAbsorb;
 	Action_1_tD69A6DC9FBE94131E52F5A73B2A9D4AB51EEC404* ___OnShieldLevelChange;
 	Shield_tD442A7319E3274746E5753D39FDA609B3535733F* ___shield;
@@ -14756,6 +14763,9 @@ struct PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F  : public MonoBehaviou
 	PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8* ___player;
 	PlayerWeaponControl_t8243BE71F0B199E5BAFE31E517D5C6B8E7934FB5* ___playerWeaponControl;
 	int32_t ___playerScore;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___rocketWeapon;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___mineWeapon;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___weapons;
 };
 struct PowerUp_tE7C54110BB5FC1180B11E810D59F8AA32123F232  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -22616,9 +22626,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4940[12] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4941[6] = 
 {
 	static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___hpMult)),static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___spawnDelay)),static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___speedMult)),static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___maxEnemiesOnScreen)),static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___chanceToSpawnPowerUp)),static_cast<int32_t>(offsetof(DifficultyControl_t88D1135007BB1207F881AA34DF140DD0217D2BA7, ___currentLevel)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4942[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4942[12] = 
 {
-	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___player)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___playerUI)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameOverMenu)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___finalScore)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___ScoreObservers)),};
+	static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_StaticFields, ___Instance)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___player)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___playerUI)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gameOverMenu)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___pauseMenu)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___finalScore)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___lastChanceMenu)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___gamePaused)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___pauseDelay)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___lastPause)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___playerHasLastChance)),static_cast<int32_t>(offsetof(GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6, ___ScoreObservers)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4943[1] = 
 {
 	static_cast<int32_t>(offsetof(ScoreSystem_t8CAD4D459454DA1C80B33F775EAA7C327006F995, ___score)),};
@@ -22636,7 +22646,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4949[8] =
 	static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___ySpeed)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___xSpeed)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___rollMult)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___pitchMult)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___xAxis)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___yAxis)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___pos)),static_cast<int32_t>(offsetof(PlayerControl_t781FCF85E3A6C0C5DE12B0E19832A8A1A0B71874, ___rb)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4950[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__13_t019A5EF97672579011BED7896200BB65E24A6084, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__13_t019A5EF97672579011BED7896200BB65E24A6084, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__13_t019A5EF97672579011BED7896200BB65E24A6084, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__13_t019A5EF97672579011BED7896200BB65E24A6084, ___duration)),};
+	static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__14_t9B31BFE033F510056C70C3FAF0BC75AD8568638A, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__14_t9B31BFE033F510056C70C3FAF0BC75AD8568638A, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__14_t9B31BFE033F510056C70C3FAF0BC75AD8568638A, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CInvulnerabilityU3Ed__14_t9B31BFE033F510056C70C3FAF0BC75AD8568638A, ___duration)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4951[10] = 
 {
 	static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___OnPlayerDeath)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___OnWeaponAbsorb)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___OnShieldLevelChange)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___shield)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___shieldLevel)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___invulnerabilityTime)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___invulAfterTakeDamage)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___isInvulnerable)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___weaponControl)),static_cast<int32_t>(offsetof(PlayerStats_t342810FB47D12358A0FB28B541C79C5D04819BE8, ___anim)),};
@@ -22682,9 +22692,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4965[11] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4966[1] = 
 {
 	static_cast<int32_t>(offsetof(BossHealthBar_t641E6E5069325CCAB2F79EC0EEE77C30310D118B, ___slider)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4968[11] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4968[14] = 
 {
-	static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___SubmitScoreEvent)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___inputName)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___scoreText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___lifeCountText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___specChargesText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___endScoreText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___damageText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerObj)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___player)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerWeaponControl)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerScore)),};
+	static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___SubmitScoreEvent)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___inputName)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___scoreText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___lifeCountText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___specChargesText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___endScoreText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___damageText)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerObj)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___player)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerWeaponControl)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___playerScore)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___rocketWeapon)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___mineWeapon)),static_cast<int32_t>(offsetof(PlayerUI_tEEE7AB3934BDE7673874A47BB104A4C45AC8BD1F, ___weapons)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4970[1] = 
 {
 	static_cast<int32_t>(offsetof(DestroyWithDelay_tD7669231093FA6BC40F66B3919980BBF267593D1, ___delayTime)),};

@@ -39,4 +39,24 @@ mergeInto(LibraryManager.library, {
     ysdk.adv.showFullscreenAdv();
   },
 
+  ShowRewardedVideo: function () {
+    ysdk.adv.showRewardedVideo({
+    callbacks: {
+        onOpen: () => {
+          console.log('Video ad open.');
+        },
+        onRewarded: () => {
+          console.log('Rewarded!');
+        },
+        onClose: () => {
+          console.log('Video ad closed.');
+          myGameInstance.SendMessage('Game Manager', 'Reward');
+        }, 
+        onError: (e) => {
+          console.log('Error while open video ad:', e);
+        }
+    }
+    })
+  },
+
 });

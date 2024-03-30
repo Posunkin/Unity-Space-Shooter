@@ -12,7 +12,6 @@ public class YandexEndSession : MonoBehaviour
 
     public void Rate()
     {
-        
         RateGame();
     }
 

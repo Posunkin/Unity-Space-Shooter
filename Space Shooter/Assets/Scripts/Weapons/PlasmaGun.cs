@@ -24,6 +24,7 @@ namespace SpaceShooter.Weapons
 
         protected override GameObject Shoot()
         {
+            audioSource.PlayOneShot(shotSound);
             GameObject projGo = (GameObject) Instantiate(currentProjectile, projectileAnchor);
             projGo.GetComponent<Projectile>().SetProjectile(currentDamage);
             projGo.transform.position = transform.position;

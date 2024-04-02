@@ -16,6 +16,10 @@ public class LaserAttack : MonoBehaviour
     private float delayBetweenShots = 5;
     private WaitForSeconds attackDelay = new WaitForSeconds(0.2f);
 
+    // Audio
+    private AudioSource audioSource => GetComponent<AudioSource>();
+    [SerializeField] private AudioClip laserSound;
+
     private void Start()
     {
         tr = transform;
@@ -40,12 +44,15 @@ public class LaserAttack : MonoBehaviour
     private IEnumerator Shoot()
     {
         lineRenderer.enabled = true;
+        audioSource.PlayOneShot(laserSound);
         attackStart = Time.time;
         while (Time.time - attackStart < duration)
         {
+            if (!audioSource.isPlaying) audioSource.PlayOneShot(laserSound);
             DoDamage();
             yield return attackDelay;
         }
+        audioSource.Stop();
         lineRenderer.enabled = false;
     }
 

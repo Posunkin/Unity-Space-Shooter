@@ -65,8 +65,11 @@ namespace SpaceShooter.Enemies
         protected virtual void Death(bool fromPlayer)
         {
             OnDeath?.Invoke(this, fromPlayer);
-            GameObject go = Instantiate(explosionEffect);
-            go.transform.position = this.transform.position;
+            if (bndCheck.isOnScreen)
+            {
+                GameObject go = Instantiate(explosionEffect);
+                go.transform.position = this.transform.position;
+            }
             Destroy(this.gameObject);
         }
         

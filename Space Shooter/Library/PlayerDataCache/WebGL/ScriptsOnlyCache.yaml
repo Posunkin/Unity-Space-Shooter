@@ -197,11 +197,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: Assembly-CSharp
-    fullTypeName: YandexSDK
-    methodName: Authorize
-  - assembly: Assembly-CSharp
     fullTypeName: StartMenu
     methodName: StartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: YandexSDK
+    methodName: Authorize
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: OnScrollbarClicked
@@ -242,6 +242,12 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: RestartButton
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: RestartButton
+  - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: PauseGame
   - assembly: Assembly-CSharp
@@ -249,19 +255,13 @@ ScriptsOnlyBuild:
     methodName: RewardButton
   - assembly: Assembly-CSharp
     fullTypeName: GameOverMenu
-    methodName: RestartButton
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOverMenu
-    methodName: ExitToMenuButton
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOverMenu
-    methodName: RestartButton
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOverMenu
     methodName: ExitToMenuButton
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: DeniedLastChance
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOverMenu
+    methodName: ExitToMenuButton
   - assembly: Assembly-CSharp
     fullTypeName: YandexEndSession
     methodName: Rate
@@ -695,7 +695,7 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: e2412b1f9c9e726805bfddc296daff7b
+      Hash: 07eca09f19708d5df9e4b5a6ff557372
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: YandexSDK
@@ -779,7 +779,7 @@ ScriptsOnlyBuild:
     className: WhiteBalance
   - hash:
       serializedVersion: 2
-      Hash: b102e6721bd320437ea53f5b78607c9a
+      Hash: 0d4aa1b0d557136f37cdc1c035ddcc5d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerStats
@@ -1637,7 +1637,7 @@ ScriptsOnlyBuild:
     className: ChannelMixer
   - hash:
       serializedVersion: 2
-      Hash: d7f6e5408020f7a85eb640c1f9bb44c3
+      Hash: 15f59ac7a4e5555de069ca7f3a47f438
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LaserAttack

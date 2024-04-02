@@ -86,6 +86,7 @@ public class RocketProjectile : Projectile
 
     private void MoveToDirection()
     {
+        if (!audioSource.isPlaying) audioSource.PlayOneShot(rocketFlySound);
         currentSpeed = Mathf.Lerp(currentSpeed, speed, accelerationRate * Time.deltaTime);
         rb.velocity = direction * currentSpeed;
     }

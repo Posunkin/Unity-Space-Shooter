@@ -1,8 +1,12 @@
 mergeInto(LibraryManager.library, {
 
+  Auth: function () {
+    auth();
+  },
+
   SetPlayerData: function () {
-    myGameInstance.SendMessage('YandexSDK', 'SetName', player.getName());
-    myGameInstance.SendMessage('YandexSDK', 'SetPhoto', player.getPhoto("medium"));
+      myGameInstance.SendMessage('YandexSDK', 'SetName', player.getName());
+      myGameInstance.SendMessage('YandexSDK', 'SetPhoto', player.getPhoto("medium"));
   },
 
   RateGame: function () {

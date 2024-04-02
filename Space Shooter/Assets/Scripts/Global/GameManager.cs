@@ -1,9 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour
     private float pauseDelay = 0.5f;
     private float lastPause;
     private bool playerHasLastChance = true;
+    private bool gameIsOver = false;
 
     private List<IScoreObserver> ScoreObservers = new();
 
@@ -41,12 +41,18 @@ public class GameManager : MonoBehaviour
         player.OnPlayerDeath -= LastChanceMenu;
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && !gamePaused) PauseGame();
+    }
+
     private void LastChanceMenu(GameObject player)
     {
         if (playerHasLastChance)
         {
             Time.timeScale = 0;
             ShowRewardedButton();
+            audioSource.Pause();
             playerHasLastChance = false;
             return;
         }
@@ -91,7 +97,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && Time.time - lastPause > pauseDelay)
+        if (Input.GetKey(KeyCode.Escape) && Time.time - lastPause > pauseDelay && !gameIsOver)
         {
             lastPause = Time.time;
             PauseGame();
@@ -101,6 +107,8 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         gamePaused = !gamePaused;
+        if (gamePaused) audioSource.Pause();
+        else audioSource.UnPause();
         Time.timeScale = gamePaused ? 0 : 1;
         pauseMenu.SetActive(gamePaused);
         playerUI.SetActive(!gamePaused);
@@ -108,6 +116,8 @@ public class GameManager : MonoBehaviour
 
     private void GameOverMenu()
     {
+        gameIsOver = true;
+        if (gamePaused) PauseGame();
         playerUI.SetActive(false);
         gameOverMenu.SetActive(true);
         finalScore.text = playerUI.GetComponent<PlayerUI>().PlayerScore.ToString();
@@ -135,6 +145,8 @@ public class GameManager : MonoBehaviour
 
     public void Reward()
     {
+        audioSource.UnPause();
+        if (gamePaused) PauseGame();
         player.LastChance();
         lastChanceMenu.SetActive(false);
         Time.timeScale = 1;
@@ -142,12 +154,14 @@ public class GameManager : MonoBehaviour
 
     public void BackMusic()
     {
+        audioSource.volume = 1;
         audioSource.Stop();
         audioSource.PlayOneShot(backMusic);
     }
 
     public void BossMusic()
     {
+        audioSource.volume = 0.5f;
         audioSource.Stop();
         audioSource.PlayOneShot(bossMusic);
     }

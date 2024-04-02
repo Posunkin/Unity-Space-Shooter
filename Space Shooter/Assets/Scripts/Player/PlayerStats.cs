@@ -21,6 +21,11 @@ public class PlayerStats : MonoBehaviour, IDamageable
     private PlayerWeaponControl weaponControl;
     private Animator anim;
 
+    // Audio
+    private AudioSource audioSource => GetComponent<AudioSource>();
+    [SerializeField] private AudioClip playerBonusSound;
+    [SerializeField] private AudioClip weaponBonusSound;
+
     private void Start()
     {
         shield.ShieldLevelChange(shieldLevel);
@@ -85,11 +90,13 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
             if (go.GetComponent<WeaponPowerUp>() != null)
             {
+                audioSource.PlayOneShot(weaponBonusSound);
                 WeaponPowerUp pwr = go.GetComponent<WeaponPowerUp>();
                 OnWeaponAbsorb?.Invoke(pwr.GetWeaponType());
             }
             else 
             {
+                audioSource.PlayOneShot(playerBonusSound);
                 PlayerPowerUp pwr = go.GetComponent<PlayerPowerUp>();
                 PowerUpType type = pwr.GetPowerUpType();
                 switch (type)

@@ -8,16 +8,30 @@ using UnityEngine.Networking;
 public class YandexSDK : MonoBehaviour
 {
     [DllImport("__Internal")] private static extern void SetPlayerData();
+    [DllImport("__Internal")] private static extern void Auth();
 
     [SerializeField] private TextMeshProUGUI _nameText;
     [SerializeField] private RawImage _photo;
+    [SerializeField] private TextMeshProUGUI _authText;
+    [SerializeField] private Button authorizeButton;
 
     public void Authorize()
     {
         _nameText.gameObject.SetActive(true);
         _photo.gameObject.SetActive(true);
+        StartCoroutine(nameof(AuthorizeIE));
+        // SetPlayerData(); 
+        // authorizeButton.gameObject.SetActive(false);
+        // _authText.gameObject.SetActive(false);
+    }
 
-        SetPlayerData(); 
+    private IEnumerator AuthorizeIE()
+    {
+        Auth();
+        yield return new WaitForSeconds(1);
+        SetPlayerData();
+        authorizeButton.gameObject.SetActive(false);
+        _authText.gameObject.SetActive(false);
     }
 
     public void SetName(string name)

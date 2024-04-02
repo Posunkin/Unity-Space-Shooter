@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using SpaceShooter.Enemies;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,6 +16,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float delayBetweenBosses;
     private DifficultyControl difficultyControl;
+    private int enemiesLevel = 0;
     private float timeSinceLastBoss;
     private int bossIndex = 0;
     internal int enemiesOnScene = 0;
@@ -49,7 +47,7 @@ public class Spawner : MonoBehaviour
         if (Time.time - timeSinceLastBoss > delayBetweenBosses)
         {
             Debug.Log("Spawn boss" + bossesPrefabs[bossIndex].gameObject.name);
-            SpawnBoss();
+            Invoke(nameof(SpawnBoss), 2);
             return;
         }
         if (enemiesOnScene == difficultyControl.MaxEnemiesOnScreen)
@@ -83,6 +81,7 @@ public class Spawner : MonoBehaviour
         enemy.Init();
 
         difficultyControl.DifficultyChange();
+        if (enemiesLevel < 3) enemiesLevel++;
         // Set the position of the new object
         go.transform.position = bossPosition.position;
         enemiesOnScene++;
@@ -141,6 +140,7 @@ public class Spawner : MonoBehaviour
     {
         boss.OnDeath -= BossDead;
         enemiesOnScene--;
+        GameManager.Instance.BackMusic();
         for (int i = 0; i < 2; i++)
         {
             SpawnPowerUp(PowerUpType.shield, boss.transform.position);

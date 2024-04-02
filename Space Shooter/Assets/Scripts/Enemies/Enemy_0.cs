@@ -12,7 +12,7 @@ namespace SpaceShooter.Enemies
 
         private void CheckBounds()
         {
-            if (bndCheck != null && bndCheck.offDown)
+            if (bndCheck != null && transform.position.y < -bndCheck.CamHeight + (bndCheck.Radius * 2))
             {
                 Death(false);
             }
